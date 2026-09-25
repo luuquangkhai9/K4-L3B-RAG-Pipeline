@@ -13,48 +13,128 @@ Cài đặt:
 -> Hoặc dùng công cụ nào bạn quen khác Markitdown
 """
 
+import json
+import zipfile
 from pathlib import Path
+from xml.etree import ElementTree
 
 
 LANDING_DIR = Path(__file__).parent.parent / "data" / "landing"
 OUTPUT_DIR = Path(__file__).parent.parent / "data" / "standardized"
+LEGAL_EXTENSIONS = {".pdf", ".doc", ".docx"}
+
+
+def _write_markdown(path: Path, content: str) -> None:
+    """Write a complete UTF-8 Markdown file, replacing the previous run."""
+    text = content.strip()
+    if not text:
+        raise ValueError("Refusing to write empty Markdown")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path = path.with_suffix(path.suffix + ".tmp")
+    temporary_path.write_text(text + "\n", encoding="utf-8")
+    temporary_path.replace(path)
+
+
+def _convert_without_markitdown(source: Path) -> str:
+    """Extract PDF/DOCX text with lightweight libraries when MarkItDown is unavailable."""
+    if source.suffix.lower() == ".pdf":
+        import pdfplumber
+
+        with pdfplumber.open(source) as pdf:
+            pages = [
+                f"## Page {index}\n\n{text.strip()}"
+                for index, page in enumerate(pdf.pages, start=1)
+                if (text := page.extract_text()) and text.strip()
+            ]
+        return "\n\n".join(pages)
+
+    if source.suffix.lower() == ".docx":
+        with zipfile.ZipFile(source) as archive:
+            document_xml = archive.read("word/document.xml")
+        root = ElementTree.fromstring(document_xml)
+        namespace = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
+        paragraphs = []
+        for paragraph in root.findall(".//w:p", namespace):
+            text = "".join(node.text or "" for node in paragraph.findall(".//w:t", namespace))
+            if text.strip():
+                paragraphs.append(text.strip())
+        return "\n\n".join(paragraphs)
+
+    raise RuntimeError(
+        f"Cannot convert {source.suffix} without MarkItDown; install a working MarkItDown runtime"
+    )
 
 
 def convert_legal_docs() -> None:
-    # TODO:Convert PDF/DOCX vào standardized/legal. 
-    #
-    # from markitdown import MarkItDown
-    # legal_dir = LANDING_DIR / "legal"
-    # output_dir = OUTPUT_DIR / "legal"
-    # output_dir.mkdir(parents=True, exist_ok=True)
-    # converter = MarkItDown()
-    # for path in legal_dir.iterdir():
-    #     if path.suffix.lower() in {".pdf", ".doc", ".docx"}:
-    #         result = converter.convert(str(path))
-    #         (output_dir / f"{path.stem}.md").write_text(
-    #             result.text_content, encoding="utf-8"
-    #         )
-    raise NotImplementedError("Implement convert_legal_docs")
+    """Convert all supported legal source documents to Markdown."""
+    legal_dir = LANDING_DIR / "legal"
+    sources = sorted(
+        path for path in legal_dir.iterdir()
+        if path.is_file() and path.suffix.lower() in LEGAL_EXTENSIONS
+    )
+    if not sources:
+        raise FileNotFoundError(f"No PDF/DOC/DOCX files found in {legal_dir}")
+
+    output_dir = OUTPUT_DIR / "legal"
+    try:
+        from markitdown import MarkItDown
+
+        converter = MarkItDown()
+    except Exception as error:
+        converter = None
+        print(f"MarkItDown unavailable ({error}); using local PDF/DOCX extraction")
+    errors = []
+    for source in sources:
+        try:
+            if converter is not None:
+                try:
+                    content = converter.convert(str(source)).text_content
+                except Exception:
+                    content = _convert_without_markitdown(source)
+            else:
+                content = _convert_without_markitdown(source)
+            _write_markdown(output_dir / f"{source.stem}.md", content)
+            print(f"Converted legal: {source.name}")
+        except Exception as error:
+            errors.append(f"{source.name}: {error}")
+    if errors:
+        raise RuntimeError("Legal conversion failed:\n- " + "\n- ".join(errors))
 
 
 def convert_news_articles() -> None:
-    # TODO: Convert JSON vào standardized/news.
-    #
-    # import json
-    # news_dir = LANDING_DIR / "news"
-    # output_dir = OUTPUT_DIR / "news"
-    # output_dir.mkdir(parents=True, exist_ok=True)
-    # for path in news_dir.glob("*.json"):
-    #     data = json.loads(path.read_text(encoding="utf-8"))
-    #     header = (
-    #         f"# {data['title']}\n\n"
-    #         f"**Source:** {data['url']}\n\n"
-    #         f"**Crawled:** {data['date_crawled']}\n\n---\n\n"
-    #     )
-    #     (output_dir / f"{path.stem}.md").write_text(
-    #         header + data["content_markdown"], encoding="utf-8"
-    #     )
-    raise NotImplementedError("Implement convert_news_articles")
+    """Convert crawled article JSON files while retaining their provenance."""
+    news_dir = LANDING_DIR / "news"
+    sources = sorted(news_dir.glob("*.json"))
+    if not sources:
+        raise FileNotFoundError(f"No article JSON files found in {news_dir}")
+
+    output_dir = OUTPUT_DIR / "news"
+    required_fields = {"url", "title", "date_crawled", "content_markdown"}
+    errors = []
+    for source in sources:
+        try:
+            article = json.loads(source.read_text(encoding="utf-8"))
+            missing = required_fields - article.keys()
+            if missing:
+                raise ValueError(f"Missing fields: {', '.join(sorted(missing))}")
+            values = {key: str(article[key]).strip() for key in required_fields}
+            empty = [key for key, value in values.items() if not value]
+            if empty:
+                raise ValueError(f"Empty fields: {', '.join(sorted(empty))}")
+
+            markdown = (
+                f"# {values['title']}\n\n"
+                f"**Source:** {values['url']}\n\n"
+                f"**Crawled:** {values['date_crawled']}\n\n"
+                "---\n\n"
+                f"{values['content_markdown']}"
+            )
+            _write_markdown(output_dir / f"{source.stem}.md", markdown)
+            print(f"Converted news: {source.name}")
+        except Exception as error:
+            errors.append(f"{source.name}: {error}")
+    if errors:
+        raise RuntimeError("News conversion failed:\n- " + "\n- ".join(errors))
 
 
 def convert_all() -> None:

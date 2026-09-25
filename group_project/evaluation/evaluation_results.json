@@ -1,0 +1,883 @@
+{
+  "metadata": {
+    "evaluated_at": "2026-09-25T13:52:08.214590+00:00",
+    "evaluator": "gpt-4o-mini",
+    "generator": "gpt4o",
+    "embedding": "text-embedding-3-small",
+    "top_k": 5,
+    "fallback_disabled_for_ab": true,
+    "judge_method": "one structured LLM-as-judge pass per answer; 0-1 scale"
+  },
+  "records": [
+    {
+      "case_id": 1,
+      "question": "What four criteria are used to assess IELTS Writing?",
+      "configuration": "dense-only",
+      "answer": "Bốn tiêu chí được sử dụng để đánh giá bài thi Viết IELTS là:\n\n1. Task Achievement\n2. Coherence and Cohesion\n3. Lexical Resource\n4. Grammatical Range and Accuracy [legal/ielts-writing-key-assessment-criteria.md::chunk-0].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-0",
+        "legal/ielts-writing-band-descriptors.md::chunk-0",
+        "news/article_04.md::chunk-17",
+        "news/article_01.md::chunk-3",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4"
+      ],
+      "retrieved_contexts": [
+        "## Page 1\n\nIELTS Writing Key Assessment Criteria\nBoth the Academic and General Training Writing Modules consist of two tasks, Task 1\nand Task 2. Each task is assessed independently. The assessment of Task 2 carries\nmore weight in marking than Task 1. The key criteria for Task 1 and Task 2 are as\nfollows:\nFor Task 1 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Achievement\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy",
+        "## Page 1\n\nWriting Band\nDescriptors\nUpdated May 2023\nPlease visit IELTS.org for updates\n\n## Page 2\n\n2\nWriting Task 1\nBand Descriptors\n\n## Page 3\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.",
+        "and write a strong response.\n\n## 4. Count it out\n\nAnother important factor to consider in IELTS Writing is the word count. In the IELTS on computer test, you don’t need to worry about manually counting each word, as the word count is displayed on the screen. This helps you stay within the specified limit, giving you more time to focus on improving your response. Writing too little or too much can negatively impact your score.",
+        "ay results should be interpreted by institutions. IELTS remains the global standard in secure English language testing, with the same quality, validity, security and recognition that makes IELTS the most trusted English test around the world.\n\nResearch has been conducted to assess score comparability between the current paper-based test and the ‘Writing on Paper’ delivery mode for IELTS on computer.",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 4.345152499998221,
+      "judge_seconds": 1.800331999998889
+    },
+    {
+      "case_id": 2,
+      "question": "What does Task 2 Task Response assess?",
+      "configuration": "dense-only",
+      "answer": "Task 2 Task Response (TR) assesses the candidates' ability to formulate and develop a position in relation to a given prompt in the form of a question or statement. It requires the use of a minimum of 250 words, and ideas should be supported by evidence [legal/ielts-writing-key-assessment-criteria.md::chunk-6].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-6",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-5",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-8"
+      ],
+      "retrieved_contexts": [
+        "and Accuracy\nTask 1 responses are assessed on the\nfollowing criteria: This criterion refers to the range and\naccurate use of the candidate’s\n• Task Achievement\ngrammatical resource within the\n• Coherence and Cohesion candidate’s writing at sentence level.\n• Lexical Resource\nTask 2\n• Grammatical Range and Accuracy\nTask Response\nTask 2 responses are assessed on the Both the Academic and General Training\nfollowing criteria: Writing Task 2 require the candidates to",
+        "bullet-pointed requirements set out in the task.\n▪ extend these three functions appropriately and relevantly.\n▪ use an appropriate format for the letter.\n▪ consistently use a tone appropriate to the task.\nTask 2\nTASK RESPONSE (TR)\nFor Task 2 of both AC and GT Writing tests, candidates are required to formulate and\ndevelop a position in relation to a given prompt in the form of a question or\nstatement, using a minimum of 250 words. Ideas should be supported by evidence,",
+        "presenting the response in an appropriate format.\nGeneral Training Writing Task 1\nThis Writing task also has a largely predictable output in that each task sets out the\ncontext and purpose of the letter and the functions the candidate should cover in\norder to achieve this purpose.\nThe TA criterion assesses the ability to:\n▪ clearly explain the purpose of the letter.\n▪ fully address the three bullet-pointed requirements set out in the task.",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half",
+        "priate the format of the response is to the task.\nTask 1 and Task 2\nCOHERENCE AND COHESION (CC)\nThis criterion is concerned with the overall organisation and logical development of\nthe message: how the response organises and links information, ideas and language.\nCoherence refers to the linking of ideas through logical sequencing, while cohesion\nrefers to the varied and appropriate use of cohesive devices (e.g. logical connectors,"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.857869600000413,
+      "judge_seconds": 1.155715600001713
+    },
+    {
+      "case_id": 3,
+      "question": "What is expected of a Band 7 Task 2 response?",
+      "configuration": "dense-only",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-6",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-5",
+        "legal/ielts-writing-band-descriptors.md::chunk-31"
+      ],
+      "retrieved_contexts": [
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band",
+        "bullet-pointed requirements set out in the task.\n▪ extend these three functions appropriately and relevantly.\n▪ use an appropriate format for the letter.\n▪ consistently use a tone appropriate to the task.\nTask 2\nTASK RESPONSE (TR)\nFor Task 2 of both AC and GT Writing tests, candidates are required to formulate and\ndevelop a position in relation to a given prompt in the form of a question or\nstatement, using a minimum of 250 words. Ideas should be supported by evidence,",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half",
+        "presenting the response in an appropriate format.\nGeneral Training Writing Task 1\nThis Writing task also has a largely predictable output in that each task sets out the\ncontext and purpose of the letter and the functions the candidate should cover in\norder to achieve this purpose.\nThe TA criterion assesses the ability to:\n▪ clearly explain the purpose of the letter.\n▪ fully address the three bullet-pointed requirements set out in the task.",
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS"
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "generation_seconds": 2.4671123000007356,
+      "judge_seconds": 1.6558310000000347
+    },
+    {
+      "case_id": 4,
+      "question": "How does Coherence and Cohesion describe a Band 8 response?",
+      "configuration": "dense-only",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-8",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-7",
+        "legal/ielts-writing-band-descriptors.md::chunk-33",
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-9"
+      ],
+      "retrieved_contexts": [
+        "priate the format of the response is to the task.\nTask 1 and Task 2\nCOHERENCE AND COHESION (CC)\nThis criterion is concerned with the overall organisation and logical development of\nthe message: how the response organises and links information, ideas and language.\nCoherence refers to the linking of ideas through logical sequencing, while cohesion\nrefers to the varied and appropriate use of cohesive devices (e.g. logical connectors,",
+        "en data.\nWriting scripts are very detailed. There\nCoherence and Cohesion are many different ways a candidate may\nachieve a particular band score. The\nThis criterion is concerned with the overall\ncandidates’ answers that follow should\norganisation and logical development of the\nnot be regarded as definitive examples of\nmessage: how the response organises and\nany particular band score.\nlinks information, ideas and language.\nPlease refer to the publicly available",
+        "ectly Cohesion is used in such a way that it very\nanswers the question/s. rarely attracts attention. A wide range of vocabulary is used Punctuation and grammar are used\naccurately and appropriately with very appropriately throughout.\n9\nIdeas are relevant, fully extended and well supported. Any lapses in coherence or cohesion are natural and sophisticated control of lexical\nminimal. features. Minor errors are extremely rare and have",
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "use of cohesive devices (e.g. logical connectors,\nconjunctions and pronouns) to assist in making clear the relationships between and\nwithin sentences.\nThe CC criterion assesses:\n▪ the coherence of the response via the logical organisation of information\nand/or ideas, or the logical progression of the argument.\n▪ the appropriate use of paragraphing for topic organisation and presentation.\n▪ the logical sequencing of ideas and/or information within and across\nparagraphs."
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 9.364904699999897,
+      "judge_seconds": 1.2166262999999162
+    },
+    {
+      "case_id": 5,
+      "question": "What characterizes Band 9 lexical resource in Task 2?",
+      "configuration": "dense-only",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+        "legal/ielts-writing-band-descriptors.md::chunk-49",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-13",
+        "legal/ielts-writing-band-descriptors.md::chunk-30"
+      ],
+      "retrieved_contexts": [
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "Lexical Resource\n▪ Grammatical Range and Accuracy\nFor Task 2 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Response\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy\nCandidates should note that scripts may be penalised if they are a) partly or wholly\nplagiarised, b) not written as full, connected text (e.g. using bullet points in any part of\nthe response, or note form, is not appropriate, etc.).\nTask 1\nTASK ACHIEVEMENT (TA)",
+        "some\nand substitution. difficulty for the reader.\nParagraphing may be inadequate or\nmissing.\n\n## Page 9\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy",
+        "e flexibility, with some less common items. For a\nhigher band, a wider range of vocabulary could be used, within the scope of the task. There is a mix of\nsimple and complex sentence structures, used fairly accurately, but again, there is not a wide enough\nvariety of structures to achieve a higher band.\n\n## Page 3",
+        "r a few isolated No rateable language is evident.\nAny copied rubric must be discounted. message and appears to be by a virtual words.\nnon-writer.\n0 Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally\nmemorised.\n\n## Page 6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7"
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.919116100001702,
+      "judge_seconds": 1.073524699997506
+    },
+    {
+      "case_id": 6,
+      "question": "What does Band 6 say about grammar in Task 2?",
+      "configuration": "dense-only",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-writing-band-descriptors.md::chunk-49",
+        "legal/ielts-writing-band-descriptors.md::chunk-30",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-13",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5"
+      ],
+      "retrieved_contexts": [
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "some\nand substitution. difficulty for the reader.\nParagraphing may be inadequate or\nmissing.\n\n## Page 9\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy",
+        "r a few isolated No rateable language is evident.\nAny copied rubric must be discounted. message and appears to be by a virtual words.\nnon-writer.\n0 Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally\nmemorised.\n\n## Page 6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7",
+        "e flexibility, with some less common items. For a\nhigher band, a wider range of vocabulary could be used, within the scope of the task. There is a mix of\nsimple and complex sentence structures, used fairly accurately, but again, there is not a wide enough\nvariety of structures to achieve a higher band.\n\n## Page 3",
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band"
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.529348400003073,
+      "judge_seconds": 0.9935040000018489
+    },
+    {
+      "case_id": 7,
+      "question": "How are Task 1 and Task 2 weighted in the Writing score?",
+      "configuration": "dense-only",
+      "answer": "Task 2 contributes twice as much as Task 1 to the Writing score [legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-0",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-2",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5"
+      ],
+      "retrieved_contexts": [
+        "ed on\nthis question paper or on a separate sheet.\nCheck your name and candidate number are on\nany separate answer sheet(s) used.\nRead the instructions for each task carefully.\nAnswer both of the tasks.\nWrite at least 150 words for Task 1.\nWrite at least 250 words for Task 2.\nAt the end of the test, hand in both this question\npaper and any answer sheets used.\nINFORMATION FOR CANDIDATES\nThere are TWO tasks on this question paper.\nTask 2 contributes twice as much as Task 1 to\nthe Writing score.\n2",
+        "## Page 1\n\nIELTS Writing Key Assessment Criteria\nBoth the Academic and General Training Writing Modules consist of two tasks, Task 1\nand Task 2. Each task is assessed independently. The assessment of Task 2 carries\nmore weight in marking than Task 1. The key criteria for Task 1 and Task 2 are as\nfollows:\nFor Task 1 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Achievement\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half",
+        "twice as much as Task 1 to\nthe Writing score.\n2\n\n## Page 3\n\nDO NOT TURN OVER UNTIL YOU ARE TOLD TO DO SO.\n3\n\n## Page 4\n\nWRITING TASK 1\nYou should spend about 20 minutes plus your\nadditional time allowance on this task.\nThe table below gives information about the\npercentage of the population by age group in one\ntown who rode a bicycle in June 2011.\nSummarise the information by selecting and\nreporting the main features, and make comparisons\nwhere relevant.\nWrite at least 150 words.",
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 5.377819600002113,
+      "judge_seconds": 1.213576899997861
+    },
+    {
+      "case_id": 8,
+      "question": "What should an Academic Task 1 response do with key features?",
+      "configuration": "dense-only",
+      "answer": "An Academic Task 1 response should summarise the information provided in the diagram by focusing on the factual content and not on speculative explanations that lie outside the given data [legal/ielts-writing-key-assessment-criteria.md::chunk-3].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-5",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-6",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-3",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-8"
+      ],
+      "retrieved_contexts": [
+        "presenting the response in an appropriate format.\nGeneral Training Writing Task 1\nThis Writing task also has a largely predictable output in that each task sets out the\ncontext and purpose of the letter and the functions the candidate should cover in\norder to achieve this purpose.\nThe TA criterion assesses the ability to:\n▪ clearly explain the purpose of the letter.\n▪ fully address the three bullet-pointed requirements set out in the task.",
+        "bullet-pointed requirements set out in the task.\n▪ extend these three functions appropriately and relevantly.\n▪ use an appropriate format for the letter.\n▪ consistently use a tone appropriate to the task.\nTask 2\nTASK RESPONSE (TR)\nFor Task 2 of both AC and GT Writing tests, candidates are required to formulate and\ndevelop a position in relation to a given prompt in the form of a question or\nstatement, using a minimum of 250 words. Ideas should be supported by evidence,",
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band",
+        "ersity Press & Assessment\nPage 1 of 4\n\n## Page 2\n\nAcademic Writing Task 1\nThis Writing task has a defined input and a largely predictable output. It is basically an\ninformation-transfer task, which relates narrowly to the factual content of a diagram,\ngraph, table, chart, map or other visual input, not to speculative explanations that lie\noutside the given data.\nThe TA criterion assesses the ability to summarise the information provided in the\ndiagram by:",
+        "priate the format of the response is to the task.\nTask 1 and Task 2\nCOHERENCE AND COHESION (CC)\nThis criterion is concerned with the overall organisation and logical development of\nthe message: how the response organises and links information, ideas and language.\nCoherence refers to the linking of ideas through logical sequencing, while cohesion\nrefers to the varied and appropriate use of cohesive devices (e.g. logical connectors,"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.148425200000929,
+      "judge_seconds": 1.276912599998468
+    },
+    {
+      "case_id": 9,
+      "question": "What can limit Task Achievement in General Training Task 1?",
+      "configuration": "dense-only",
+      "answer": "Task Achievement trong General Training Task 1 có thể bị hạn chế nếu người viết không giải thích rõ ràng mục đích của bức thư hoặc không đáp ứng đầy đủ ba yêu cầu được liệt kê trong đề bài [legal/ielts-writing-key-assessment-criteria.md::chunk-5].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-20",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+        "legal/ielts-writing-band-descriptors.md::chunk-1",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-5"
+      ],
+      "retrieved_contexts": [
+        "d/or inaccurate use of difficulty for the reader.\nareas detracts from the task achievement. reference and substitution.\nThere is limited detail when extending and illustrating the main points.\n\n## Page 5\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half",
+        "cates negative features that will limit a rating.\nde Task Achievement Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS\nAll the requirements of the task are fully and appropriately satisfied. The message can be followed effortlessly. Full flexibility and precise use are evident A wide range of structures within the scope\nwithin the scope of the task. of the task is used with full flexibility and",
+        "and Accuracy\nTask 1 responses are assessed on the\nfollowing criteria: This criterion refers to the range and\naccurate use of the candidate’s\n• Task Achievement\ngrammatical resource within the\n• Coherence and Cohesion candidate’s writing at sentence level.\n• Lexical Resource\nTask 2\n• Grammatical Range and Accuracy\nTask Response\nTask 2 responses are assessed on the Both the Academic and General Training\nfollowing criteria: Writing Task 2 require the candidates to",
+        "presenting the response in an appropriate format.\nGeneral Training Writing Task 1\nThis Writing task also has a largely predictable output in that each task sets out the\ncontext and purpose of the letter and the functions the candidate should cover in\norder to achieve this purpose.\nThe TA criterion assesses the ability to:\n▪ clearly explain the purpose of the letter.\n▪ fully address the three bullet-pointed requirements set out in the task."
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 1.931207200002973,
+      "judge_seconds": 0.857332999999926
+    },
+    {
+      "case_id": 10,
+      "question": "What is the Band 7 expectation for Task 1 coherence?",
+      "configuration": "dense-only",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-writing-band-descriptors.md::chunk-49",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-8",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5"
+      ],
+      "retrieved_contexts": [
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "some\nand substitution. difficulty for the reader.\nParagraphing may be inadequate or\nmissing.\n\n## Page 9\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half",
+        "priate the format of the response is to the task.\nTask 1 and Task 2\nCOHERENCE AND COHESION (CC)\nThis criterion is concerned with the overall organisation and logical development of\nthe message: how the response organises and links information, ideas and language.\nCoherence refers to the linking of ideas through logical sequencing, while cohesion\nrefers to the varied and appropriate use of cohesive devices (e.g. logical connectors,",
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band"
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "generation_seconds": 1.8155918999982532,
+      "judge_seconds": 1.119302900002367
+    },
+    {
+      "case_id": 11,
+      "question": "What distinguishes Band 6 from Band 7 Task Response?",
+      "configuration": "dense-only",
+      "answer": "Context không cung cấp thông tin chi tiết về sự khác biệt giữa Band 6 và Band 7 cho Task Response trong IELTS Writing. Do đó, tôi không thể xác minh sự khác biệt cụ thể giữa hai mức điểm này. Bạn có thể tham khảo trang web IELTS.org để biết thêm thông tin chi tiết [legal/ielts-writing-band-descriptors.md::chunk-31].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-6",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+        "legal/ielts-writing-band-descriptors.md::chunk-49"
+      ],
+      "retrieved_contexts": [
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band",
+        "ble output. Each response has been awarded a band\nIt is basically an information-transfer task score and is accompanied by an examiner\nwhich relates narrowly to the factual content comment on the candidate’s performance for\nof a diagram, graph, table, chart, map or that task.\nother visual input, not to speculative\nThe examiners’ guidelines for marking the\nexplanations that lie outside the given data.\nWriting scripts are very detailed. There",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half",
+        "some\nand substitution. difficulty for the reader.\nParagraphing may be inadequate or\nmissing.\n\n## Page 9\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy"
+      ],
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.4157807000010507,
+      "judge_seconds": 0.9049331999995047
+    },
+    {
+      "case_id": 12,
+      "question": "What does the descriptor say about responses of 20 words or fewer?",
+      "configuration": "dense-only",
+      "answer": "Responses of 20 words or fewer are rated at Band 1. The content is wholly unrelated to the task, and the writing fails to communicate any message, appearing to be by a virtual non-writer. No rateable language is evident [legal/ielts-writing-band-descriptors.md::chunk-58].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-58",
+        "legal/ielts-writing-band-descriptors.md::chunk-29",
+        "legal/ielts-writing-band-descriptors.md::chunk-22",
+        "legal/ielts-writing-band-descriptors.md::chunk-28",
+        "legal/ielts-writing-band-descriptors.md::chunk-11"
+      ],
+      "retrieved_contexts": [
+        "l of word\ndevelopment. formation and/or spelling.\nResponses of 20 words or fewer are rated at Band 1. Responses of 20 words or fewer are rated at Band 1. Responses of 20 words or fewer are rated Responses of 20 words or fewer are\nat Band 1. rated at Band 1.\n1\nThe content is wholly unrelated to the prompt. The writing fails to communicate any message and appears\nto be by a virtual non-writer. No resource is apparent, except for a few No rateablelanguage is evident.",
+        "parent control of word formation\nand/or spelling.\nResponses of 20 words or fewer are rated at Band 1. Responses of 20 words or fewer are Responses of 20 words or fewer are rated at Responses of 20 words or fewer are\nrated at Band 1. Band 1. rated at Band 1.\n1 The content is wholly unrelated to the task.\nThe writing fails to communicate any No resource is apparent, except for a few isolated No rateable language is evident.",
+        "dequate for A very limited range of structures is\narranged coherently, and there is no clear orunrelated to the task. Vocabulary is basic and used.\n(Academic) Few key features have been selected. progression within the response. may be used repetitively.\nSubordinate clauses are rare and\n(General Training) Not all bullet points are presented. Relationships between ideas can be unclear There may be inappropriate use of lexical chunks simple sentences predominate.",
+        ".\nThere is difficulty in identifying referencing.\nThe content barely relates to the task. There is little relevant message, or the The resource is extremely limited with few There is little or no evidence of sentence\nentire response may be off-topic. recognisable strings, apart from memorised forms (except in memorisedphrases).\n2 phrases.\nThere is little evidence of control of\norganisational features. There is no apparent control of word formation\nand/or spelling.",
+        "cates negative features that will limit a rating.\nde Task Achievement Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS\nThe response focuses on the requirements of the task and an appropriate Information and ideas are generally The resource is generally adequate and A mix of simple and complex sentence\nformat is used. arranged coherently and there is a clear appropriate for the task. forms is used but flexibility is limited.\noverall progression."
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.153027000000293,
+      "judge_seconds": 1.1179259999989881
+    },
+    {
+      "case_id": 13,
+      "question": "When may Band 0 be used?",
+      "configuration": "dense-only",
+      "answer": "Band 0 chỉ được sử dụng khi thí sinh không tham dự hoặc không cố gắng trả lời câu hỏi dưới bất kỳ hình thức nào, sử dụng một ngôn ngữ khác ngoài tiếng Anh trong suốt bài thi, hoặc có bằng chứng cho thấy câu trả lời của thí sinh hoàn toàn là học thuộc lòng [legal/ielts-writing-band-descriptors.md::chunk-30].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-0",
+        "legal/ielts-writing-band-descriptors.md::chunk-30",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5",
+        "legal/ielts-writing-band-descriptors.md::chunk-29",
+        "legal/ielts-writing-band-descriptors.md::chunk-31"
+      ],
+      "retrieved_contexts": [
+        "## Page 1\n\nWriting Band\nDescriptors\nUpdated May 2023\nPlease visit IELTS.org for updates\n\n## Page 2\n\n2\nWriting Task 1\nBand Descriptors\n\n## Page 3\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.",
+        "r a few isolated No rateable language is evident.\nAny copied rubric must be discounted. message and appears to be by a virtual words.\nnon-writer.\n0 Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally\nmemorised.\n\n## Page 6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7",
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band",
+        "parent control of word formation\nand/or spelling.\nResponses of 20 words or fewer are rated at Band 1. Responses of 20 words or fewer are Responses of 20 words or fewer are rated at Responses of 20 words or fewer are\nrated at Band 1. Band 1. rated at Band 1.\n1 The content is wholly unrelated to the task.\nThe writing fails to communicate any No resource is apparent, except for a few isolated No rateable language is evident.",
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.403136500000983,
+      "judge_seconds": 1.2469954999978654
+    },
+    {
+      "case_id": 14,
+      "question": "What happens to IELTS paper-based tests according to the collected IELTS update?",
+      "configuration": "dense-only",
+      "answer": "Theo cập nhật từ IELTS, từ giữa năm 2026, IELTS sẽ không còn được cung cấp dưới dạng bài thi trên giấy nữa. Tất cả các bài thi IELTS sẽ được thực hiện trên máy tính [news/article_01.md::chunk-1].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "news/article_01.md::chunk-1",
+        "news/article_01.md::chunk-3",
+        "news/article_01.md::chunk-0",
+        "news/article_01.md::chunk-4",
+        "news/article_01.md::chunk-2"
+      ],
+      "retrieved_contexts": [
+        "ults are faster, and it offers One Skill Retake.\n\nTherefore, after careful review, from mid-2026, we will no longer offer IELTS as a paper-based test. All IELTS tests will be delivered on computer. Exact timelines will vary by market.\n\nWe are aware that some test takers like handwriting answers, so we are introducing a new option. In selected markets, we will introduce ‘Writing on Paper’.",
+        "ay results should be interpreted by institutions. IELTS remains the global standard in secure English language testing, with the same quality, validity, security and recognition that makes IELTS the most trusted English test around the world.\n\nResearch has been conducted to assess score comparability between the current paper-based test and the ‘Writing on Paper’ delivery mode for IELTS on computer.",
+        "# IELTS | News and Insights - Updates to IELTS test delivery\n\n**Source:** https://ielts.org/news-and-insights/updates-to-ielts-test-delivery\n\n**Crawled:** 2026-09-25T11:04:12.020270\n\n---\n\nThe IELTS partners regularly review and improve our service to ensure we are meeting the needs of today's test takers. Recently, we found higher satisfaction among test takers who choose IELTS on computer because it is more convenient, results are faster, and it offers One Skill Retake.",
+        "ng on Paper’ delivery mode for IELTS on computer. The results show that scores are comparable across formats, both overall and within each score band.\n\nResearch also shows that ‘Writing on Paper’ provides a test-taker-friendly experience that builds candidates’ confidence while maintaining stable, standards-aligned score outcomes and preserving score reliability.",
+        "ed markets, we will introduce ‘Writing on Paper’. This update will allow test takers to personalise their test experience by handwriting their answers to the 'Writing' component on paper if they choose.\n\nImportantly, this update does not change the IELTS skills assessed, the test construct, or the way results should be interpreted by institutions."
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.065364900001441,
+      "judge_seconds": 0.9012450000009267
+    },
+    {
+      "case_id": 15,
+      "question": "Does Writing on Paper change the skills assessed?",
+      "configuration": "dense-only",
+      "answer": "Không, việc viết trên giấy không thay đổi các kỹ năng được đánh giá trong bài thi IELTS [news/article_01.md::chunk-2].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "news/article_01.md::chunk-2",
+        "news/article_01.md::chunk-4",
+        "news/article_01.md::chunk-1",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+        "news/article_01.md::chunk-3"
+      ],
+      "retrieved_contexts": [
+        "ed markets, we will introduce ‘Writing on Paper’. This update will allow test takers to personalise their test experience by handwriting their answers to the 'Writing' component on paper if they choose.\n\nImportantly, this update does not change the IELTS skills assessed, the test construct, or the way results should be interpreted by institutions.",
+        "ng on Paper’ delivery mode for IELTS on computer. The results show that scores are comparable across formats, both overall and within each score band.\n\nResearch also shows that ‘Writing on Paper’ provides a test-taker-friendly experience that builds candidates’ confidence while maintaining stable, standards-aligned score outcomes and preserving score reliability.",
+        "ults are faster, and it offers One Skill Retake.\n\nTherefore, after careful review, from mid-2026, we will no longer offer IELTS as a paper-based test. All IELTS tests will be delivered on computer. Exact timelines will vary by market.\n\nWe are aware that some test takers like handwriting answers, so we are introducing a new option. In selected markets, we will introduce ‘Writing on Paper’.",
+        "ed on\nthis question paper or on a separate sheet.\nCheck your name and candidate number are on\nany separate answer sheet(s) used.\nRead the instructions for each task carefully.\nAnswer both of the tasks.\nWrite at least 150 words for Task 1.\nWrite at least 250 words for Task 2.\nAt the end of the test, hand in both this question\npaper and any answer sheets used.\nINFORMATION FOR CANDIDATES\nThere are TWO tasks on this question paper.\nTask 2 contributes twice as much as Task 1 to\nthe Writing score.\n2",
+        "ay results should be interpreted by institutions. IELTS remains the global standard in secure English language testing, with the same quality, validity, security and recognition that makes IELTS the most trusted English test around the world.\n\nResearch has been conducted to assess score comparability between the current paper-based test and the ‘Writing on Paper’ delivery mode for IELTS on computer."
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 1.9294391000003088,
+      "judge_seconds": 0.8003559999997378
+    },
+    {
+      "case_id": 1,
+      "question": "What four criteria are used to assess IELTS Writing?",
+      "configuration": "hybrid+RRF",
+      "answer": "Bốn tiêu chí được sử dụng để đánh giá bài viết IELTS là: Task Achievement, Coherence and Cohesion, Lexical Resource, và Grammatical Range and Accuracy [legal/ielts-writing-key-assessment-criteria.md::chunk-0].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-0",
+        "news/article_01.md::chunk-3",
+        "legal/ielts-writing-band-descriptors.md::chunk-0",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+        "legal/ielts-writing-band-descriptors.md::chunk-10"
+      ],
+      "retrieved_contexts": [
+        "## Page 1\n\nIELTS Writing Key Assessment Criteria\nBoth the Academic and General Training Writing Modules consist of two tasks, Task 1\nand Task 2. Each task is assessed independently. The assessment of Task 2 carries\nmore weight in marking than Task 1. The key criteria for Task 1 and Task 2 are as\nfollows:\nFor Task 1 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Achievement\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy",
+        "ay results should be interpreted by institutions. IELTS remains the global standard in secure English language testing, with the same quality, validity, security and recognition that makes IELTS the most trusted English test around the world.\n\nResearch has been conducted to assess score comparability between the current paper-based test and the ‘Writing on Paper’ delivery mode for IELTS on computer.",
+        "## Page 1\n\nWriting Band\nDescriptors\nUpdated May 2023\nPlease visit IELTS.org for updates\n\n## Page 2\n\n2\nWriting Task 1\nBand Descriptors\n\n## Page 3\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half",
+        "ppropriately illustrated or extended. It presents\na clear purpose. The tone is consistent and appropriate to the task. Any lapses\nare minimal.\n\n## Page 4\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 2\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating."
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.175583200001711,
+      "judge_seconds": 0.9487124000006588
+    },
+    {
+      "case_id": 2,
+      "question": "What does Task 2 Task Response assess?",
+      "configuration": "hybrid+RRF",
+      "answer": "Task 2 Task Response assesses the candidate's ability to formulate and develop a position in relation to a given prompt in the form of a question or statement, using a minimum of 250 words. Ideas should be supported by evidence [legal/ielts-writing-key-assessment-criteria.md::chunk-6].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-6",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-8",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-4"
+      ],
+      "retrieved_contexts": [
+        "and Accuracy\nTask 1 responses are assessed on the\nfollowing criteria: This criterion refers to the range and\naccurate use of the candidate’s\n• Task Achievement\ngrammatical resource within the\n• Coherence and Cohesion candidate’s writing at sentence level.\n• Lexical Resource\nTask 2\n• Grammatical Range and Accuracy\nTask Response\nTask 2 responses are assessed on the Both the Academic and General Training\nfollowing criteria: Writing Task 2 require the candidates to",
+        "bullet-pointed requirements set out in the task.\n▪ extend these three functions appropriately and relevantly.\n▪ use an appropriate format for the letter.\n▪ consistently use a tone appropriate to the task.\nTask 2\nTASK RESPONSE (TR)\nFor Task 2 of both AC and GT Writing tests, candidates are required to formulate and\ndevelop a position in relation to a given prompt in the form of a question or\nstatement, using a minimum of 250 words. Ideas should be supported by evidence,",
+        "priate the format of the response is to the task.\nTask 1 and Task 2\nCOHERENCE AND COHESION (CC)\nThis criterion is concerned with the overall organisation and logical development of\nthe message: how the response organises and links information, ideas and language.\nCoherence refers to the linking of ideas through logical sequencing, while cohesion\nrefers to the varied and appropriate use of cohesive devices (e.g. logical connectors,",
+        "Lexical Resource\n▪ Grammatical Range and Accuracy\nFor Task 2 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Response\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy\nCandidates should note that scripts may be penalised if they are a) partly or wholly\nplagiarised, b) not written as full, connected text (e.g. using bullet points in any part of\nthe response, or note form, is not appropriate, etc.).\nTask 1\nTASK ACHIEVEMENT (TA)",
+        "8\n\n## Page 9\n\nTURN OVER TO TASK 2.\n9\n\n## Page 10\n\nWRITING TASK 2\nYou should spend about 40 minutes plus your\nadditional time allowance on this task.\nWrite about the following topic:\n‘Scientific research should be carried out and\ncontrolled by governments, rather than by private\ncompanies.’\nTo what extent do you agree or disagree?\nGive reasons for your answer and include any relevant\nexamples from your own knowledge or experience.\nWrite at least 250 words.\n10\n\n## Page 11\n\nTASK 2\n11\n\n## Page 12"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.5791768000017328,
+      "judge_seconds": 0.8344677000022784
+    },
+    {
+      "case_id": 3,
+      "question": "What is expected of a Band 7 Task 2 response?",
+      "configuration": "hybrid+RRF",
+      "answer": "Context được cung cấp không chứa thông tin cụ thể về tiêu chí đánh giá cho Band 7 của Task 2 trong IELTS Writing. Do đó, tôi không thể xác minh yêu cầu này. Bạn có thể tham khảo thêm thông tin từ trang IELTS.org để biết chi tiết về tiêu chí đánh giá cho Band 7 [legal/ielts-writing-band-descriptors.md::chunk-31].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5",
+        "legal/ielts-writing-band-descriptors.md::chunk-0",
+        "legal/ielts-writing-band-descriptors.md::chunk-49",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-3"
+      ],
+      "retrieved_contexts": [
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band",
+        "## Page 1\n\nWriting Band\nDescriptors\nUpdated May 2023\nPlease visit IELTS.org for updates\n\n## Page 2\n\n2\nWriting Task 1\nBand Descriptors\n\n## Page 3\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.",
+        "some\nand substitution. difficulty for the reader.\nParagraphing may be inadequate or\nmissing.\n\n## Page 9\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy",
+        "arisons\nwhere relevant.\nWrite at least 150 words.\nPERCENTAGE OF THE POPULATION IN ONE TOWN\nWHO RODE A BICYCLE IN JUNE 2011\nAGE\nGROUP MALE FEMALE\n0–9 51.3% 50.3%\n10–17 42.2% 24.6%\n18–39 17.1% 09.7%\n40–59 12.3% 08.0%\n60+ 18.5% 13.2%\n4\n\n## Page 5\n\nTASK 1\n5\n\n## Page 6\n\n6\n\n## Page 7\n\n7\n\n## Page 8\n\n8\n\n## Page 9\n\nTURN OVER TO TASK 2.\n9\n\n## Page 10"
+      ],
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevance": 0.5,
+        "context_recall": 0.5,
+        "context_precision": 0.5
+      },
+      "generation_seconds": 2.1894807999997283,
+      "judge_seconds": 0.9826791999985289
+    },
+    {
+      "case_id": 4,
+      "question": "How does Coherence and Cohesion describe a Band 8 response?",
+      "configuration": "hybrid+RRF",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-7",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-8",
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-writing-band-descriptors.md::chunk-40",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4"
+      ],
+      "retrieved_contexts": [
+        "en data.\nWriting scripts are very detailed. There\nCoherence and Cohesion are many different ways a candidate may\nachieve a particular band score. The\nThis criterion is concerned with the overall\ncandidates’ answers that follow should\norganisation and logical development of the\nnot be regarded as definitive examples of\nmessage: how the response organises and\nany particular band score.\nlinks information, ideas and language.\nPlease refer to the publicly available",
+        "priate the format of the response is to the task.\nTask 1 and Task 2\nCOHERENCE AND COHESION (CC)\nThis criterion is concerned with the overall organisation and logical development of\nthe message: how the response organises and links information, ideas and language.\nCoherence refers to the linking of ideas through logical sequencing, while cohesion\nrefers to the varied and appropriate use of cohesive devices (e.g. logical connectors,",
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "ectively to and/or word formation and they do not\nsupport overall coherence, and the sequencing detract from overall clarity.\nof ideas within a paragraph is generally logical.\n\n## Page 8\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 2\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half"
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.48704639999778,
+      "judge_seconds": 0.8715665000017907
+    },
+    {
+      "case_id": 5,
+      "question": "What characterizes Band 9 lexical resource in Task 2?",
+      "configuration": "hybrid+RRF",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-writing-band-descriptors.md::chunk-49",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-4"
+      ],
+      "retrieved_contexts": [
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "some\nand substitution. difficulty for the reader.\nParagraphing may be inadequate or\nmissing.\n\n## Page 9\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy",
+        "Lexical Resource\n▪ Grammatical Range and Accuracy\nFor Task 2 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Response\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy\nCandidates should note that scripts may be penalised if they are a) partly or wholly\nplagiarised, b) not written as full, connected text (e.g. using bullet points in any part of\nthe response, or note form, is not appropriate, etc.).\nTask 1\nTASK ACHIEVEMENT (TA)",
+        "sk 1. relationships between and within sentences.\nDetailed performance descriptors have been Lexical Resource\ndeveloped which describe written\nThis criterion refers to the range of\nperformance at the 9 IELTS bands. These\nvocabulary the candidate has used and the\ndescriptors apply to both the Academic and\naccuracy and appropriacy of that use in\nGeneral Training Modules.\nterms of the specific task.\nGrammatical Range and Accuracy\nTask 1 responses are assessed on the",
+        "8\n\n## Page 9\n\nTURN OVER TO TASK 2.\n9\n\n## Page 10\n\nWRITING TASK 2\nYou should spend about 40 minutes plus your\nadditional time allowance on this task.\nWrite about the following topic:\n‘Scientific research should be carried out and\ncontrolled by governments, rather than by private\ncompanies.’\nTo what extent do you agree or disagree?\nGive reasons for your answer and include any relevant\nexamples from your own knowledge or experience.\nWrite at least 250 words.\n10\n\n## Page 11\n\nTASK 2\n11\n\n## Page 12"
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.08055769999919,
+      "judge_seconds": 0.920153000002756
+    },
+    {
+      "case_id": 6,
+      "question": "What does Band 6 say about grammar in Task 2?",
+      "configuration": "hybrid+RRF",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-writing-band-descriptors.md::chunk-30",
+        "legal/ielts-writing-band-descriptors.md::chunk-0",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-4",
+        "legal/ielts-writing-band-descriptors.md::chunk-49"
+      ],
+      "retrieved_contexts": [
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "r a few isolated No rateable language is evident.\nAny copied rubric must be discounted. message and appears to be by a virtual words.\nnon-writer.\n0 Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally\nmemorised.\n\n## Page 6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7",
+        "## Page 1\n\nWriting Band\nDescriptors\nUpdated May 2023\nPlease visit IELTS.org for updates\n\n## Page 2\n\n2\nWriting Task 1\nBand Descriptors\n\n## Page 3\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.",
+        "8\n\n## Page 9\n\nTURN OVER TO TASK 2.\n9\n\n## Page 10\n\nWRITING TASK 2\nYou should spend about 40 minutes plus your\nadditional time allowance on this task.\nWrite about the following topic:\n‘Scientific research should be carried out and\ncontrolled by governments, rather than by private\ncompanies.’\nTo what extent do you agree or disagree?\nGive reasons for your answer and include any relevant\nexamples from your own knowledge or experience.\nWrite at least 250 words.\n10\n\n## Page 11\n\nTASK 2\n11\n\n## Page 12",
+        "some\nand substitution. difficulty for the reader.\nParagraphing may be inadequate or\nmissing.\n\n## Page 9\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy"
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.072444199999154,
+      "judge_seconds": 0.8667045999973197
+    },
+    {
+      "case_id": 7,
+      "question": "How are Task 1 and Task 2 weighted in the Writing score?",
+      "configuration": "hybrid+RRF",
+      "answer": "Task 2 đóng góp gấp đôi so với Task 1 vào điểm số Writing [legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-0",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-2",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2"
+      ],
+      "retrieved_contexts": [
+        "## Page 1\n\nIELTS Writing Key Assessment Criteria\nBoth the Academic and General Training Writing Modules consist of two tasks, Task 1\nand Task 2. Each task is assessed independently. The assessment of Task 2 carries\nmore weight in marking than Task 1. The key criteria for Task 1 and Task 2 are as\nfollows:\nFor Task 1 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Achievement\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy",
+        "ed on\nthis question paper or on a separate sheet.\nCheck your name and candidate number are on\nany separate answer sheet(s) used.\nRead the instructions for each task carefully.\nAnswer both of the tasks.\nWrite at least 150 words for Task 1.\nWrite at least 250 words for Task 2.\nAt the end of the test, hand in both this question\npaper and any answer sheets used.\nINFORMATION FOR CANDIDATES\nThere are TWO tasks on this question paper.\nTask 2 contributes twice as much as Task 1 to\nthe Writing score.\n2",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half",
+        "twice as much as Task 1 to\nthe Writing score.\n2\n\n## Page 3\n\nDO NOT TURN OVER UNTIL YOU ARE TOLD TO DO SO.\n3\n\n## Page 4\n\nWRITING TASK 1\nYou should spend about 20 minutes plus your\nadditional time allowance on this task.\nThe table below gives information about the\npercentage of the population by age group in one\ntown who rode a bicycle in June 2011.\nSummarise the information by selecting and\nreporting the main features, and make comparisons\nwhere relevant.\nWrite at least 150 words.",
+        "and Accuracy\nTask 1 responses are assessed on the\nfollowing criteria: This criterion refers to the range and\naccurate use of the candidate’s\n• Task Achievement\ngrammatical resource within the\n• Coherence and Cohesion candidate’s writing at sentence level.\n• Lexical Resource\nTask 2\n• Grammatical Range and Accuracy\nTask Response\nTask 2 responses are assessed on the Both the Academic and General Training\nfollowing criteria: Writing Task 2 require the candidates to"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 1.9093423999984225,
+      "judge_seconds": 1.0180631000002904
+    },
+    {
+      "case_id": 8,
+      "question": "What should an Academic Task 1 response do with key features?",
+      "configuration": "hybrid+RRF",
+      "answer": "Một bài viết cho Task 1 của kỳ thi IELTS Academic cần phải tóm tắt thông tin bằng cách chọn và báo cáo các đặc điểm chính, và thực hiện so sánh khi thích hợp [legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-2].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-5",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-0",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-2",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-6"
+      ],
+      "retrieved_contexts": [
+        "presenting the response in an appropriate format.\nGeneral Training Writing Task 1\nThis Writing task also has a largely predictable output in that each task sets out the\ncontext and purpose of the letter and the functions the candidate should cover in\norder to achieve this purpose.\nThe TA criterion assesses the ability to:\n▪ clearly explain the purpose of the letter.\n▪ fully address the three bullet-pointed requirements set out in the task.",
+        "## Page 1\n\nIELTS Writing Key Assessment Criteria\nBoth the Academic and General Training Writing Modules consist of two tasks, Task 1\nand Task 2. Each task is assessed independently. The assessment of Task 2 carries\nmore weight in marking than Task 1. The key criteria for Task 1 and Task 2 are as\nfollows:\nFor Task 1 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Achievement\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy",
+        "Lexical Resource\n▪ Grammatical Range and Accuracy\nFor Task 2 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Response\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy\nCandidates should note that scripts may be penalised if they are a) partly or wholly\nplagiarised, b) not written as full, connected text (e.g. using bullet points in any part of\nthe response, or note form, is not appropriate, etc.).\nTask 1\nTASK ACHIEVEMENT (TA)",
+        "twice as much as Task 1 to\nthe Writing score.\n2\n\n## Page 3\n\nDO NOT TURN OVER UNTIL YOU ARE TOLD TO DO SO.\n3\n\n## Page 4\n\nWRITING TASK 1\nYou should spend about 20 minutes plus your\nadditional time allowance on this task.\nThe table below gives information about the\npercentage of the population by age group in one\ntown who rode a bicycle in June 2011.\nSummarise the information by selecting and\nreporting the main features, and make comparisons\nwhere relevant.\nWrite at least 150 words.",
+        "bullet-pointed requirements set out in the task.\n▪ extend these three functions appropriately and relevantly.\n▪ use an appropriate format for the letter.\n▪ consistently use a tone appropriate to the task.\nTask 2\nTASK RESPONSE (TR)\nFor Task 2 of both AC and GT Writing tests, candidates are required to formulate and\ndevelop a position in relation to a given prompt in the form of a question or\nstatement, using a minimum of 250 words. Ideas should be supported by evidence,"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 3.3131858999986434,
+      "judge_seconds": 1.013967999999295
+    },
+    {
+      "case_id": 9,
+      "question": "What can limit Task Achievement in General Training Task 1?",
+      "configuration": "hybrid+RRF",
+      "answer": "Task Achievement trong General Training Task 1 có thể bị giới hạn nếu không giải thích rõ ràng mục đích của bức thư hoặc không đáp ứng đầy đủ ba yêu cầu được liệt kê trong đề bài [legal/ielts-writing-key-assessment-criteria.md::chunk-5].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-20",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+        "legal/ielts-writing-band-descriptors.md::chunk-1",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-0",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-5"
+      ],
+      "retrieved_contexts": [
+        "d/or inaccurate use of difficulty for the reader.\nareas detracts from the task achievement. reference and substitution.\nThere is limited detail when extending and illustrating the main points.\n\n## Page 5\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3",
+        "and Accuracy\nTask 1 responses are assessed on the\nfollowing criteria: This criterion refers to the range and\naccurate use of the candidate’s\n• Task Achievement\ngrammatical resource within the\n• Coherence and Cohesion candidate’s writing at sentence level.\n• Lexical Resource\nTask 2\n• Grammatical Range and Accuracy\nTask Response\nTask 2 responses are assessed on the Both the Academic and General Training\nfollowing criteria: Writing Task 2 require the candidates to",
+        "cates negative features that will limit a rating.\nde Task Achievement Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS\nAll the requirements of the task are fully and appropriately satisfied. The message can be followed effortlessly. Full flexibility and precise use are evident A wide range of structures within the scope\nwithin the scope of the task. of the task is used with full flexibility and",
+        "## Page 1\n\nIELTS Writing Key Assessment Criteria\nBoth the Academic and General Training Writing Modules consist of two tasks, Task 1\nand Task 2. Each task is assessed independently. The assessment of Task 2 carries\nmore weight in marking than Task 1. The key criteria for Task 1 and Task 2 are as\nfollows:\nFor Task 1 of both the AC and GT Writing tests, the key criteria are:\n▪ Task Achievement\n▪ Coherence and Cohesion\n▪ Lexical Resource\n▪ Grammatical Range and Accuracy",
+        "presenting the response in an appropriate format.\nGeneral Training Writing Task 1\nThis Writing task also has a largely predictable output in that each task sets out the\ncontext and purpose of the letter and the functions the candidate should cover in\norder to achieve this purpose.\nThe TA criterion assesses the ability to:\n▪ clearly explain the purpose of the letter.\n▪ fully address the three bullet-pointed requirements set out in the task."
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.615548999998282,
+      "judge_seconds": 0.8536328999980469
+    },
+    {
+      "case_id": 10,
+      "question": "What is the Band 7 expectation for Task 1 coherence?",
+      "configuration": "hybrid+RRF",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+        "legal/ielts-writing-band-descriptors.md::chunk-49",
+        "legal/ielts-writing-band-descriptors.md::chunk-0",
+        "legal/ielts-writing-key-assessment-criteria.md::chunk-8"
+      ],
+      "retrieved_contexts": [
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "be The other criteria for Task 2 are the same as\npenalised if they are a) partly or wholly for Task 1 (Coherence and Cohesion, Lexical\nplagiarised, b) not written as full, connected Resource, Grammatical Range and\ntext (e.g. using bullet points in any part of the Accuracy).\nresponse, or note form, is not appropriate).\nTask 1\nWriting responses are marked by trained and\nTask Achievement certificated IELTS examiners.\nThis criterion assesses how fully, Scores may be reported as whole bands or half",
+        "some\nand substitution. difficulty for the reader.\nParagraphing may be inadequate or\nmissing.\n\n## Page 9\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 3\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy",
+        "## Page 1\n\nWriting Band\nDescriptors\nUpdated May 2023\nPlease visit IELTS.org for updates\n\n## Page 2\n\n2\nWriting Task 1\nBand Descriptors\n\n## Page 3\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.",
+        "priate the format of the response is to the task.\nTask 1 and Task 2\nCOHERENCE AND COHESION (CC)\nThis criterion is concerned with the overall organisation and logical development of\nthe message: how the response organises and links information, ideas and language.\nCoherence refers to the linking of ideas through logical sequencing, while cohesion\nrefers to the varied and appropriate use of cohesive devices (e.g. logical connectors,"
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "generation_seconds": 1.9492110999999568,
+      "judge_seconds": 0.9404639999993378
+    },
+    {
+      "case_id": 11,
+      "question": "What distinguishes Band 6 from Band 7 Task Response?",
+      "configuration": "hybrid+RRF",
+      "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+      "retrieval_source": "none",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-31",
+        "legal/ielts-writing-band-descriptors.md::chunk-30",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5",
+        "legal/ielts-writing-band-descriptors.md::chunk-0",
+        "legal/ielts-writing-band-descriptors.md::chunk-29"
+      ],
+      "retrieved_contexts": [
+        "6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7\n\nWriting Task 2 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.\nde Task Response Coherence & Cohesion Lexical Resource Grammatical Range &\nnr\no\nac Accuracy\nBS",
+        "r a few isolated No rateable language is evident.\nAny copied rubric must be discounted. message and appears to be by a virtual words.\nnon-writer.\n0 Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally\nmemorised.\n\n## Page 6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7",
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band",
+        "## Page 1\n\nWriting Band\nDescriptors\nUpdated May 2023\nPlease visit IELTS.org for updates\n\n## Page 2\n\n2\nWriting Task 1\nBand Descriptors\n\n## Page 3\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.",
+        "parent control of word formation\nand/or spelling.\nResponses of 20 words or fewer are rated at Band 1. Responses of 20 words or fewer are Responses of 20 words or fewer are rated at Responses of 20 words or fewer are\nrated at Band 1. Band 1. rated at Band 1.\n1 The content is wholly unrelated to the task.\nThe writing fails to communicate any No resource is apparent, except for a few isolated No rateable language is evident."
+      ],
+      "scores": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.4253052999993088,
+      "judge_seconds": 1.0780506000010064
+    },
+    {
+      "case_id": 12,
+      "question": "What does the descriptor say about responses of 20 words or fewer?",
+      "configuration": "hybrid+RRF",
+      "answer": "Các câu trả lời có 20 từ hoặc ít hơn được xếp hạng ở Band 1. Nội dung hoàn toàn không liên quan đến nhiệm vụ, và bài viết không truyền đạt được bất kỳ thông điệp nào [legal/ielts-writing-band-descriptors.md::chunk-29].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-29",
+        "legal/ielts-writing-band-descriptors.md::chunk-58",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-2",
+        "legal/ielts-writing-band-descriptors.md::chunk-22",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-4"
+      ],
+      "retrieved_contexts": [
+        "parent control of word formation\nand/or spelling.\nResponses of 20 words or fewer are rated at Band 1. Responses of 20 words or fewer are Responses of 20 words or fewer are rated at Responses of 20 words or fewer are\nrated at Band 1. Band 1. rated at Band 1.\n1 The content is wholly unrelated to the task.\nThe writing fails to communicate any No resource is apparent, except for a few isolated No rateable language is evident.",
+        "l of word\ndevelopment. formation and/or spelling.\nResponses of 20 words or fewer are rated at Band 1. Responses of 20 words or fewer are rated at Band 1. Responses of 20 words or fewer are rated Responses of 20 words or fewer are\nat Band 1. rated at Band 1.\n1\nThe content is wholly unrelated to the prompt. The writing fails to communicate any message and appears\nto be by a virtual non-writer. No resource is apparent, except for a few No rateablelanguage is evident.",
+        "twice as much as Task 1 to\nthe Writing score.\n2\n\n## Page 3\n\nDO NOT TURN OVER UNTIL YOU ARE TOLD TO DO SO.\n3\n\n## Page 4\n\nWRITING TASK 1\nYou should spend about 20 minutes plus your\nadditional time allowance on this task.\nThe table below gives information about the\npercentage of the population by age group in one\ntown who rode a bicycle in June 2011.\nSummarise the information by selecting and\nreporting the main features, and make comparisons\nwhere relevant.\nWrite at least 150 words.",
+        "dequate for A very limited range of structures is\narranged coherently, and there is no clear orunrelated to the task. Vocabulary is basic and used.\n(Academic) Few key features have been selected. progression within the response. may be used repetitively.\nSubordinate clauses are rare and\n(General Training) Not all bullet points are presented. Relationships between ideas can be unclear There may be inappropriate use of lexical chunks simple sentences predominate.",
+        "8\n\n## Page 9\n\nTURN OVER TO TASK 2.\n9\n\n## Page 10\n\nWRITING TASK 2\nYou should spend about 40 minutes plus your\nadditional time allowance on this task.\nWrite about the following topic:\n‘Scientific research should be carried out and\ncontrolled by governments, rather than by private\ncompanies.’\nTo what extent do you agree or disagree?\nGive reasons for your answer and include any relevant\nexamples from your own knowledge or experience.\nWrite at least 250 words.\n10\n\n## Page 11\n\nTASK 2\n11\n\n## Page 12"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.6576477000016894,
+      "judge_seconds": 1.3269438999996055
+    },
+    {
+      "case_id": 13,
+      "question": "When may Band 0 be used?",
+      "configuration": "hybrid+RRF",
+      "answer": "Band 0 có thể được sử dụng khi thí sinh không tham gia hoặc không cố gắng trả lời câu hỏi theo bất kỳ cách nào, sử dụng một ngôn ngữ khác ngoài tiếng Anh trong suốt bài làm, hoặc khi có bằng chứng cho thấy câu trả lời của thí sinh đã được ghi nhớ hoàn toàn [legal/ielts-writing-band-descriptors.md::chunk-30].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "legal/ielts-writing-band-descriptors.md::chunk-30",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-13",
+        "legal/ielts-writing-band-descriptors.md::chunk-0",
+        "legal/ielts-writing-band-descriptors.md::chunk-59",
+        "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5"
+      ],
+      "retrieved_contexts": [
+        "r a few isolated No rateable language is evident.\nAny copied rubric must be discounted. message and appears to be by a virtual words.\nnon-writer.\n0 Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally\nmemorised.\n\n## Page 6\n\n6\nWriting Task 2\nBand Descriptors\n\n## Page 7",
+        "e flexibility, with some less common items. For a\nhigher band, a wider range of vocabulary could be used, within the scope of the task. There is a mix of\nsimple and complex sentence structures, used fairly accurately, but again, there is not a wide enough\nvariety of structures to achieve a higher band.\n\n## Page 3",
+        "## Page 1\n\nWriting Band\nDescriptors\nUpdated May 2023\nPlease visit IELTS.org for updates\n\n## Page 2\n\n2\nWriting Task 1\nBand Descriptors\n\n## Page 3\n\nWriting Task 1 Band Descriptors\nUpdated May 2023\nScoring criteria for Academic and General Training tests Please visit IELTS.org for updates\nPage 1\nA script must fully fit the positive features of the descriptor at a particular level. Bolded text indicates negative features that will limit a rating.",
+        "except for a few No rateablelanguage is evident.\nAny copied rubric must be discounted. isolated words.\nShould only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally\n0\nmemorised.",
+        "ly, Scores may be reported as whole bands or half\nappropriately, accurately and relevantly the bands.\nresponse fulfils the requirements set out in\nBelow you will find candidates’ responses to\nthe task, using the minimum of 150 words.\nthe two tasks in the sample Academic Writing\nTask 1 Academic is a writing task which has a test. There are two responses for each task.\ndefined input and a largely predictable output. Each response has been awarded a band"
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 3.41518509999878,
+      "judge_seconds": 0.7580119000012928
+    },
+    {
+      "case_id": 14,
+      "question": "What happens to IELTS paper-based tests according to the collected IELTS update?",
+      "configuration": "hybrid+RRF",
+      "answer": "Theo cập nhật từ IELTS, từ giữa năm 2026, IELTS sẽ không còn được cung cấp dưới dạng bài thi trên giấy nữa. Tất cả các bài thi IELTS sẽ được thực hiện trên máy tính, mặc dù thời gian cụ thể có thể khác nhau tùy theo thị trường [news/article_01.md::chunk-1].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "news/article_01.md::chunk-1",
+        "news/article_01.md::chunk-3",
+        "news/article_01.md::chunk-2",
+        "news/article_01.md::chunk-4",
+        "news/article_01.md::chunk-6"
+      ],
+      "retrieved_contexts": [
+        "ults are faster, and it offers One Skill Retake.\n\nTherefore, after careful review, from mid-2026, we will no longer offer IELTS as a paper-based test. All IELTS tests will be delivered on computer. Exact timelines will vary by market.\n\nWe are aware that some test takers like handwriting answers, so we are introducing a new option. In selected markets, we will introduce ‘Writing on Paper’.",
+        "ay results should be interpreted by institutions. IELTS remains the global standard in secure English language testing, with the same quality, validity, security and recognition that makes IELTS the most trusted English test around the world.\n\nResearch has been conducted to assess score comparability between the current paper-based test and the ‘Writing on Paper’ delivery mode for IELTS on computer.",
+        "ed markets, we will introduce ‘Writing on Paper’. This update will allow test takers to personalise their test experience by handwriting their answers to the 'Writing' component on paper if they choose.\n\nImportantly, this update does not change the IELTS skills assessed, the test construct, or the way results should be interpreted by institutions.",
+        "ng on Paper’ delivery mode for IELTS on computer. The results show that scores are comparable across formats, both overall and within each score band.\n\nResearch also shows that ‘Writing on Paper’ provides a test-taker-friendly experience that builds candidates’ confidence while maintaining stable, standards-aligned score outcomes and preserving score reliability.",
+        "ntil the end of the recommended two-year period.\n\nNote, the Secure English Language Test (SELT) for UK Visas & Immigration purposes will only be available in the fully digital format.\n\nOne Skill Retake will now be available for Writing on Paper but must be taken in the same delivery mode as the original test. If a test taker chose Writing on Paper, their One Skill Retake must also be done with Writing on Paper and not writing on computer."
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 2.5602083999983734,
+      "judge_seconds": 0.8081763000009232
+    },
+    {
+      "case_id": 15,
+      "question": "Does Writing on Paper change the skills assessed?",
+      "configuration": "hybrid+RRF",
+      "answer": "Không, việc viết trên giấy không thay đổi các kỹ năng được đánh giá trong bài thi IELTS [news/article_01.md::chunk-2].",
+      "retrieval_source": "hybrid",
+      "retrieved_ids": [
+        "news/article_01.md::chunk-2",
+        "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+        "news/article_01.md::chunk-6",
+        "news/article_01.md::chunk-4",
+        "news/article_01.md::chunk-3"
+      ],
+      "retrieved_contexts": [
+        "ed markets, we will introduce ‘Writing on Paper’. This update will allow test takers to personalise their test experience by handwriting their answers to the 'Writing' component on paper if they choose.\n\nImportantly, this update does not change the IELTS skills assessed, the test construct, or the way results should be interpreted by institutions.",
+        "ed on\nthis question paper or on a separate sheet.\nCheck your name and candidate number are on\nany separate answer sheet(s) used.\nRead the instructions for each task carefully.\nAnswer both of the tasks.\nWrite at least 150 words for Task 1.\nWrite at least 250 words for Task 2.\nAt the end of the test, hand in both this question\npaper and any answer sheets used.\nINFORMATION FOR CANDIDATES\nThere are TWO tasks on this question paper.\nTask 2 contributes twice as much as Task 1 to\nthe Writing score.\n2",
+        "ntil the end of the recommended two-year period.\n\nNote, the Secure English Language Test (SELT) for UK Visas & Immigration purposes will only be available in the fully digital format.\n\nOne Skill Retake will now be available for Writing on Paper but must be taken in the same delivery mode as the original test. If a test taker chose Writing on Paper, their One Skill Retake must also be done with Writing on Paper and not writing on computer.",
+        "ng on Paper’ delivery mode for IELTS on computer. The results show that scores are comparable across formats, both overall and within each score band.\n\nResearch also shows that ‘Writing on Paper’ provides a test-taker-friendly experience that builds candidates’ confidence while maintaining stable, standards-aligned score outcomes and preserving score reliability.",
+        "ay results should be interpreted by institutions. IELTS remains the global standard in secure English language testing, with the same quality, validity, security and recognition that makes IELTS the most trusted English test around the world.\n\nResearch has been conducted to assess score comparability between the current paper-based test and the ‘Writing on Paper’ delivery mode for IELTS on computer."
+      ],
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "generation_seconds": 1.953539499998442,
+      "judge_seconds": 0.9462371000008716
+    }
+  ]
+}

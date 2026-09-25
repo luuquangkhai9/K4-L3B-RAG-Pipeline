@@ -1,0 +1,107 @@
+[
+  {
+    "question": "What four criteria are used to assess IELTS Writing?",
+    "expected_answer": "IELTS Writing is assessed using task achievement or task response, coherence and cohesion, lexical resource, and grammatical range and accuracy.",
+    "expected_context": [
+      "IELTS Writing is assessed using four criteria: Task Achievement (Task 1) or Task Response (Task 2), Coherence and Cohesion, Lexical Resource, and Grammatical Range and Accuracy."
+    ]
+  },
+  {
+    "question": "What does Task 2 Task Response assess?",
+    "expected_answer": "It assesses how directly and fully the response addresses the prompt, presents a position, and develops and supports relevant ideas.",
+    "expected_context": [
+      "The prompt is appropriately addressed and explored in depth. A clear and fully developed position directly answers the question. Ideas are relevant, fully extended and well supported."
+    ]
+  },
+  {
+    "question": "What is expected of a Band 7 Task 2 response?",
+    "expected_answer": "It presents a clear, developed position; addresses the main parts of the prompt; and extends and supports main ideas, though support may sometimes be over-generalised or imprecise.",
+    "expected_context": [
+      "The main parts of the prompt are appropriately addressed. A clear and developed position is presented. Main ideas are extended and supported, but there may be a tendency to over-generalise or a lack of focus and precision in supporting ideas."
+    ]
+  },
+  {
+    "question": "How does Coherence and Cohesion describe a Band 8 response?",
+    "expected_answer": "Information and ideas are logically sequenced, cohesion is well managed, and paragraphing is used sufficiently and appropriately; occasional lapses may occur.",
+    "expected_context": [
+      "Information and ideas are logically sequenced, and cohesion is well managed. Occasional lapses in coherence and cohesion may occur. Paragraphing is used sufficiently and appropriately."
+    ]
+  },
+  {
+    "question": "What characterizes Band 9 lexical resource in Task 2?",
+    "expected_answer": "A wide range of vocabulary is used accurately and appropriately with natural, sophisticated control of lexical features.",
+    "expected_context": [
+      "A wide range of vocabulary is used accurately and appropriately with very natural and sophisticated control of lexical features."
+    ]
+  },
+  {
+    "question": "What does Band 6 say about grammar in Task 2?",
+    "expected_answer": "It uses a mix of simple and complex sentence forms, but flexibility is limited; grammar and punctuation errors occur but rarely impede communication.",
+    "expected_context": [
+      "A mix of simple and complex sentence forms is used but flexibility is limited. Errors in grammar and punctuation occur, but rarely impede communication."
+    ]
+  },
+  {
+    "question": "How are Task 1 and Task 2 weighted in the Writing score?",
+    "expected_answer": "Task 2 carries twice the weight of Task 1 in the overall Writing score.",
+    "expected_context": [
+      "Task 2 carries twice the weight of Task 1 in the overall Writing score."
+    ]
+  },
+  {
+    "question": "What should an Academic Task 1 response do with key features?",
+    "expected_answer": "It should select and clearly report the main features, making relevant comparisons where appropriate, rather than mechanically recounting every detail.",
+    "expected_context": [
+      "Academic Task Achievement: The response should select and clearly report the main features, making relevant comparisons where appropriate. Key features which are not adequately covered limit the rating."
+    ]
+  },
+  {
+    "question": "What can limit Task Achievement in General Training Task 1?",
+    "expected_answer": "Missing or inadequately covering one or more required bullet points, unclear purpose, or an inappropriate tone can limit the score.",
+    "expected_context": [
+      "General Training: All bullet points should be presented and adequately covered. The purpose should be clear and the tone appropriate for the letter."
+    ]
+  },
+  {
+    "question": "What is the Band 7 expectation for Task 1 coherence?",
+    "expected_answer": "Information is logically organised with clear progression; cohesive devices are used flexibly, and paragraphing generally supports coherence.",
+    "expected_context": [
+      "Information and ideas are logically organised, and there is a clear progression throughout the response. A range of cohesive devices including reference and substitution is used flexibly. Paragraphing is generally used effectively."
+    ]
+  },
+  {
+    "question": "What distinguishes Band 6 from Band 7 Task Response?",
+    "expected_answer": "Band 7 expects a clear developed position and main ideas extended and supported; Band 6 may have unclear or repetitive conclusions and ideas that lack development or adequate support.",
+    "expected_context": [
+      "Band 6: A position is presented that is directly relevant to the prompt, although conclusions may be unclear, unjustified or repetitive. Main ideas are relevant, but some may be insufficiently developed or supporting arguments may be inadequate. Band 7: A clear and developed position is presented. Main ideas are extended and supported."
+    ]
+  },
+  {
+    "question": "What does the descriptor say about responses of 20 words or fewer?",
+    "expected_answer": "Responses of 20 words or fewer are rated at Band 1.",
+    "expected_context": [
+      "Responses of 20 words or fewer are rated at Band 1."
+    ]
+  },
+  {
+    "question": "When may Band 0 be used?",
+    "expected_answer": "Only if the candidate did not attend or attempt the question, used another language throughout, or the answer is proven to be totally memorised.",
+    "expected_context": [
+      "Band 0 should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate?s answer has been totally memorised."
+    ]
+  },
+  {
+    "question": "What happens to IELTS paper-based tests according to the collected IELTS update?",
+    "expected_answer": "From mid-2026 IELTS will no longer offer paper-based tests and tests will be delivered on computer, with exact timelines varying by market.",
+    "expected_context": [
+      "From mid-2026, IELTS will no longer offer IELTS as a paper-based test. All IELTS tests will be delivered on computer. Exact timelines will vary by market."
+    ]
+  },
+  {
+    "question": "Does Writing on Paper change the skills assessed?",
+    "expected_answer": "No. The update says it does not change the IELTS skills assessed, test construct, or interpretation of results.",
+    "expected_context": [
+      "This update does not change the IELTS skills assessed, the test construct, or the way results should be interpreted by institutions."
+    ]
+  }
+]

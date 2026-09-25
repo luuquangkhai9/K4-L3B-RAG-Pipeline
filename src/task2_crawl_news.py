@@ -22,31 +22,48 @@ DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "news"
 
 ARTICLE_URLS = [
     # TODO: Thêm ít nhất 5 public URL.
-    https://ielts.org/news-and-insights/updates-to-ielts-test-delivery
-    https://ielts.idp.com/vietnam/about/news-and-articles/article-ielts-writing-skills
-    https://ielts.idp.com/vietnam/about/news-and-articles/article-best-ielts-writing-tips-for-high-scoring-essays
-    https://ielts.idp.com/prepare/article-5-tips-to-maximise-your-ielts-writing-score
-    https://ielts.idp.com/vietnam/about/news-and-articles/article-ielts-writing-task-1-2-how-to-write-clearly
+    "https://ielts.org/news-and-insights/updates-to-ielts-test-delivery",
+    "https://ielts.idp.com/vietnam/about/news-and-articles/article-ielts-writing-skills",
+    "https://ielts.idp.com/vietnam/about/news-and-articles/article-best-ielts-writing-tips-for-high-scoring-essays",
+    "https://ielts.idp.com/prepare/article-5-tips-to-maximise-your-ielts-writing-score",
+    "https://ielts.idp.com/vietnam/about/news-and-articles/article-ielts-writing-task-1-2-how-to-write-clearly"
 
 ]
 
 
-async def crawl_article(url: str) -> dict:
-    # TODO: Implement crawling logic.
-    #
-    # from datetime import datetime
-    # from crawl4ai import AsyncWebCrawler
-    #
-    # async with AsyncWebCrawler() as crawler:
-    #     result = await crawler.arun(url=url)
-    #     return {
-    #         "url": url,
-    #         "title": result.metadata.get("title", "Unknown"),
-    #         "date_crawled": datetime.now().isoformat(),
-    #         "content_markdown": result.markdown,
-    #     }
-    raise NotImplementedError("Implement crawl_article")
+from playwright.async_api import async_playwright
+import datetime
 
+async def crawl_article(url: str) -> dict:
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        # Tạo context giả lập trình duyệt thật
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        )
+        page = await context.new_page()
+        
+        try:
+            # Chờ trang tải xong DOM
+            await page.goto(url, wait_until="domcontentloaded", timeout=45000)
+            
+            # Lấy tiêu đề bài viết
+            title = await page.title()
+            
+            # Trích xuất nội dung bài viết chính
+            content = await page.content()
+            
+            await browser.close()
+            
+            return {
+                "url": url,
+                "title": title,
+                "html": content,
+                "crawled_at": datetime.datetime.now().isoformat()
+            }
+        except Exception as e:
+            await browser.close()
+            raise RuntimeError(f"Lỗi khi crawl {url}: {e}")
 
 async def crawl_all() -> None:
     """Crawl và lưu từng bài thành một file JSON."""

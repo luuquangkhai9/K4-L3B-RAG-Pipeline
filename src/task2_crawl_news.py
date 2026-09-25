@@ -22,6 +22,12 @@ DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "news"
 
 ARTICLE_URLS = [
     # TODO: Thêm ít nhất 5 public URL.
+    https://ielts.org/news-and-insights/updates-to-ielts-test-delivery
+    https://ielts.idp.com/vietnam/about/news-and-articles/article-ielts-writing-skills
+    https://ielts.idp.com/vietnam/about/news-and-articles/article-best-ielts-writing-tips-for-high-scoring-essays
+    https://ielts.idp.com/prepare/article-5-tips-to-maximise-your-ielts-writing-score
+    https://ielts.idp.com/vietnam/about/news-and-articles/article-ielts-writing-task-1-2-how-to-write-clearly
+
 ]
 
 

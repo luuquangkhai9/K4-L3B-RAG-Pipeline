@@ -45,6 +45,9 @@ data/_tmp_pdf/
 pageindex_doc_ids.json
 pageindex_pdfs/
 
+# Vector store (tạo lại bằng: python -m src.task4_chunking_indexing)
+chroma_db/
+
 # Jupyter
 .ipynb_checkpoints/
 

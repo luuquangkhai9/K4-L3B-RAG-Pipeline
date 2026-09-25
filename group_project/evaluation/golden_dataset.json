@@ -1,0 +1,170 @@
+[
+  {
+    "question": "Bài Task 1 của IELTS Writing yêu cầu tối thiểu bao nhiêu từ?",
+    "expected_answer": "Task 1 yêu cầu tối thiểu 150 từ (minimum of 150 words).",
+    "expected_context": "For Task 1 of both AC and GT Writing tests, this criterion assesses how fully, appropriately, accurately and relevantly the response fulfils the requirements set out in the task, using a minimum of 150 words.",
+    "difficulty": "easy",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Bài Task 2 của IELTS Writing yêu cầu tối thiểu bao nhiêu từ?",
+    "expected_answer": "Task 2 yêu cầu tối thiểu 250 từ (minimum of 250 words).",
+    "expected_context": "For Task 2 of both AC and GT Writing tests, candidates are required to formulate and develop a position in relation to a given prompt in the form of a question or statement, using a minimum of 250 words.",
+    "difficulty": "easy",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Task 1 hay Task 2 có trọng số điểm cao hơn trong bài thi Writing?",
+    "expected_answer": "Task 2 có trọng số cao hơn. Mỗi task được chấm độc lập, nhưng phần đánh giá Task 2 chiếm trọng số lớn hơn Task 1.",
+    "expected_context": "Both the Academic and General Training Writing Modules consist of two tasks, Task 1 and Task 2. Each task is assessed independently. The assessment of Task 2 carries more weight in marking than Task 1.",
+    "difficulty": "easy",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Bốn tiêu chí chấm điểm của Task 1 là gì?",
+    "expected_answer": "Task 1 được chấm theo bốn tiêu chí: Task Achievement, Coherence and Cohesion, Lexical Resource, và Grammatical Range and Accuracy.",
+    "expected_context": "For Task 1 of both the AC and GT Writing tests, the key criteria are: Task Achievement, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy",
+    "difficulty": "easy",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Bốn tiêu chí chấm điểm của Task 2 là gì?",
+    "expected_answer": "Task 2 được chấm theo bốn tiêu chí: Task Response, Coherence and Cohesion, Lexical Resource, và Grammatical Range and Accuracy.",
+    "expected_context": "For Task 2 of both the AC and GT Writing tests, the key criteria are: Task Response, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy",
+    "difficulty": "easy",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Bài viết bị trừ điểm trong những trường hợp nào?",
+    "expected_answer": "Bài viết có thể bị trừ điểm nếu (a) đạo văn một phần hoặc toàn bộ, hoặc (b) không được viết thành văn bản liền mạch hoàn chỉnh — ví dụ dùng gạch đầu dòng hoặc viết dạng ghi chú ở bất kỳ phần nào của bài.",
+    "expected_context": "Candidates should note that scripts may be penalised if they are a) partly or wholly plagiarised, b) not written as full, connected text (e.g. using bullet points in any part of the response, or note form, is not appropriate, etc.).",
+    "difficulty": "medium",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Bài viết dài bao nhiêu từ thì bị xếp Band 1?",
+    "expected_answer": "Bài viết từ 20 từ trở xuống bị xếp Band 1. Quy định này áp dụng cho cả bốn tiêu chí.",
+    "expected_context": "Responses of 20 words or fewer are rated at Band 1. The content is wholly unrelated to the task. Any copied rubric must be discounted.",
+    "difficulty": "medium",
+    "source": "ielts-writing-band-descriptors.md"
+  },
+  {
+    "question": "Band 0 được dùng trong trường hợp nào?",
+    "expected_answer": "Band 0 chỉ dùng khi thí sinh không dự thi hoặc không trả lời câu hỏi dưới bất kỳ hình thức nào, dùng ngôn ngữ khác ngoài tiếng Anh trong toàn bộ bài, hoặc có bằng chứng bài trả lời đã được học thuộc lòng hoàn toàn.",
+    "expected_context": "Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate's answer has been totally memorised.",
+    "difficulty": "medium",
+    "source": "ielts-writing-band-descriptors.md"
+  },
+  {
+    "question": "Tiêu chí Task Response ở Band 7 yêu cầu những gì?",
+    "expected_answer": "Ở Band 7, Task Response yêu cầu: các phần chính của đề bài được giải quyết phù hợp; có một quan điểm rõ ràng và được phát triển; các ý chính được mở rộng và hỗ trợ, nhưng có thể có xu hướng khái quát hóa quá mức hoặc thiếu trọng tâm, thiếu độ chính xác trong ý hỗ trợ.",
+    "expected_context": "The main parts of the prompt are appropriately addressed. A clear and developed position is presented. Main ideas are extended and supported but there may be a tendency to over-generalise or there may be a lack of focus and precision in supporting ideas/material.",
+    "difficulty": "medium",
+    "source": "ielts-writing-band-descriptors.md"
+  },
+  {
+    "question": "Tiêu chí Task Response ở Band 9 yêu cầu những gì?",
+    "expected_answer": "Ở Band 9, Task Response yêu cầu đề bài được giải quyết và khai thác sâu; trình bày một quan điểm rõ ràng, phát triển đầy đủ, trả lời trực tiếp câu hỏi; các ý liên quan, được mở rộng hoàn toàn và hỗ trợ tốt; sai sót về nội dung hoặc dẫn chứng cực kỳ hiếm gặp.",
+    "expected_context": "The prompt is appropriately addressed and explored in depth. A clear and fully developed position is presented which directly answers the question/s. Ideas are relevant, fully extended and well supported. Any lapses in content or support are extremely rare.",
+    "difficulty": "medium",
+    "source": "ielts-writing-band-descriptors.md"
+  },
+  {
+    "question": "Phân biệt coherence và cohesion trong tiêu chí Coherence and Cohesion.",
+    "expected_answer": "Coherence là việc liên kết các ý tưởng thông qua sắp xếp logic; cohesion là việc sử dụng đa dạng và phù hợp các phương tiện liên kết (cohesive devices) như từ nối logic, liên từ và đại từ, giúp làm rõ mối quan hệ giữa và trong các câu.",
+    "expected_context": "Coherence refers to the linking of ideas through logical sequencing, while cohesion refers to the varied and appropriate use of cohesive devices (e.g. logical connectors, conjunctions and pronouns) to assist in making clear the relationships between and within sentences.",
+    "difficulty": "hard",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Tiêu chí Lexical Resource đánh giá những khía cạnh nào?",
+    "expected_answer": "Lexical Resource đánh giá: độ đa dạng của từ vựng dùng chung (ví dụ dùng từ đồng nghĩa để tránh lặp), mức độ phù hợp của từ vựng chuyên đề, độ chính xác trong chọn từ và diễn đạt, khả năng dùng collocations và thành ngữ, cùng mật độ và mức ảnh hưởng của lỗi chính tả và lỗi cấu tạo từ.",
+    "expected_context": "This criterion refers to the range of vocabulary the candidate has used and the accuracy and appropriacy of that use in terms of the specific task. The LR criterion assesses: the range of general words used (e.g. the use of synonyms to avoid repetition). the adequacy and appropriacy of the vocabulary (e.g. topic-specific items, indicators of writer's attitude). the precision of word choice and expression. the control and use of collocations, idiomatic expressions and sophisticated phrasing. the density and communicative effect of errors in spelling. the density and communicative effect of errors in word formation.",
+    "difficulty": "medium",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Tiêu chí Coherence and Cohesion ở Band 7 của Task 2 mô tả như thế nào?",
+    "expected_answer": "Ở Band 7, thông tin và ý tưởng được tổ chức logic, có sự tiến triển rõ ràng xuyên suốt bài; một loạt cohesive devices bao gồm reference và substitution được dùng linh hoạt nhưng có một số điểm không chính xác hoặc dùng thừa/dùng thiếu; việc chia đoạn nhìn chung hiệu quả để hỗ trợ mạch lạc tổng thể.",
+    "expected_context": "Information and ideas are logically organised, and there is a clear progression throughout the response. (A few lapses may occur, but these are minor.) A range of cohesive devices including reference and substitution is used flexibly but with some inaccuracies or some over/under use. Paragraphing is generally used effectively to support overall coherence, and the sequencing of ideas within a paragraph is generally logical.",
+    "difficulty": "hard",
+    "source": "ielts-writing-band-descriptors.md"
+  },
+  {
+    "question": "Task 1 Academic được mô tả là dạng bài gì?",
+    "expected_answer": "Task 1 Academic là dạng bài có đầu vào xác định và đầu ra phần lớn có thể dự đoán được — về cơ bản là bài chuyển đổi thông tin, liên quan trực tiếp đến nội dung thực tế của biểu đồ, đồ thị, bảng, sơ đồ hoặc hình ảnh đầu vào, chứ không phải các giải thích suy đoán nằm ngoài dữ liệu đã cho.",
+    "expected_context": "This Writing task has a defined input and a largely predictable output. It is basically an information-transfer task, which relates narrowly to the factual content of a diagram, graph, table, chart, map or other visual input, not to speculative explanations that lie outside the given data.",
+    "difficulty": "medium",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Task 1 General Training khác Task 1 Academic ở điểm nào về yêu cầu bài làm?",
+    "expected_answer": "Task 1 General Training là bài viết thư: thí sinh phải giải quyết đầy đủ ba yêu cầu dạng gạch đầu dòng mà đề bài đưa ra, giải thích rõ mục đích của lá thư, mở rộng ba chức năng đó một cách phù hợp, dùng đúng định dạng thư và giữ giọng điệu nhất quán, phù hợp với đề bài.",
+    "expected_context": "This Writing task also has a largely predictable output in that each task sets out the context and purpose of the letter and the functions the candidate should cover in order to achieve this purpose. The TA criterion assesses the ability to: fully address the three bullet-pointed requirements set out in the task. clearly explain the purpose of the letter. extend these three functions appropriately and relevantly. use an appropriate format for the letter. consistently use a tone appropriate to the task.",
+    "difficulty": "hard",
+    "source": "ielts-writing-key-assessment-criteria.md"
+  },
+  {
+    "question": "Những bài thi IELTS giấy (paper-based) sẽ thay đổi thế nào trong năm 2026?",
+    "expected_answer": "Từ giữa năm 2026, IELTS sẽ không còn cung cấp hình thức thi trên giấy nữa; tất cả bài thi IELTS sẽ được thực hiện trên máy tính. Kết quả thi giấy hiện có không bị ảnh hưởng và vẫn có giá trị đến hết thời hạn hai năm khuyến nghị.",
+    "expected_context": "from mid-2026, we will no longer offer IELTS as a paper-based test. All IELTS tests will be delivered on computer. All current paper-based test results are not affected and will remain valid until the end of the recommended two-year period.",
+    "difficulty": "medium",
+    "source": "article_01.md"
+  },
+  {
+    "question": "Hình thức \"Writing on Paper\" là gì?",
+    "expected_answer": "Trong một số thị trường được chọn, IELTS giới thiệu \"Writing on Paper\" — cho phép thí sinh viết tay câu trả lời phần Writing trên giấy nếu họ muốn, nhằm cá nhân hóa trải nghiệm thi. Cập nhật này không làm thay đổi các kỹ năng được đánh giá, cấu trúc bài thi, hay cách các tổ chức diễn giải kết quả.",
+    "expected_context": "In selected markets, we will introduce 'Writing on Paper'. This update will allow test takers to personalise their test experience by handwriting their answers to the 'Writing' component on paper if they choose. Importantly, this update does not change the IELTS skills assessed, the test construct, or the way results should be interpreted by institutions.",
+    "difficulty": "medium",
+    "source": "article_01.md"
+  },
+  {
+    "question": "Điểm số giữa hình thức thi trên giấy và \"Writing on Paper\" có tương đương nhau không?",
+    "expected_answer": "Có. Nghiên cứu đã được thực hiện để đánh giá độ tương đương điểm số giữa bài thi trên giấy hiện tại và hình thức \"Writing on Paper\"; kết quả cho thấy điểm số tương đương giữa các hình thức, cả về tổng điểm lẫn trong từng band điểm.",
+    "expected_context": "Research has been conducted to assess score comparability between the current paper-based test and the 'Writing on Paper' delivery mode. The results show that scores are comparable across formats, both overall and within each score band.",
+    "difficulty": "hard",
+    "source": "article_01.md"
+  },
+  {
+    "question": "Quy định về thi lại One Skill Retake khi chọn hình thức viết trên giấy là gì?",
+    "expected_answer": "One Skill Retake sẽ có sẵn cho hình thức \"Writing on Paper\", nhưng phải được thực hiện cùng hình thức thi với bài thi gốc.",
+    "expected_context": "One Skill Retake will now be available for Writing on Paper but must be taken in the same delivery mode as the original test.",
+    "difficulty": "medium",
+    "source": "article_01.md"
+  },
+  {
+    "question": "Năm dạng bài luận thường gặp trong IELTS Writing Task 2 là gì?",
+    "expected_answer": "Năm dạng bài là: Opinion/Agree–Disagree, Discussion (two views), Problem–Solution, Advantages–Disadvantages, và Mixed/Direct Questions.",
+    "expected_context": "Xác định xem đây là dạng bài Opinion/Agree–Disagree, Discussion (two views), Problem–Solution, Advantages–Disadvantages, Mixed/Direct Questions.",
+    "difficulty": "medium",
+    "source": "article_03.md"
+  },
+  {
+    "question": "Trong bài thi IELTS trên máy tính, thí sinh có phải tự đếm số từ không?",
+    "expected_answer": "Không. Ở bài thi IELTS trên máy tính, thí sinh không cần tự đếm từng từ vì số lượng từ được hiển thị trên màn hình. Viết quá ít hoặc quá nhiều đều có thể ảnh hưởng tiêu cực đến điểm số.",
+    "expected_context": "In the IELTS on computer test, you don't need to worry about manually counting each word, as the word count is displayed on the screen. This helps you stay within the specified limit, giving you more time to focus on improving your response. Writing too little or too much can negatively impact your score. Exceeding the limit may make your response seem unfocused, while writing too little may mean that you haven't fully addressed the task.",
+    "difficulty": "easy",
+    "source": "article_04.md"
+  },
+  {
+    "question": "Bài viết Task 2 dưới 250 từ bị đánh giá thế nào trong tài liệu bài mẫu của ielts.org?",
+    "expected_answer": "Trong tài liệu bài mẫu của ielts.org, một bài Task 2 đạt Band 5.5 được giám khảo ghi rõ là không đạt mức tối thiểu 250 từ của Task 2, nên còn dư địa để phát triển thêm; các ý cần được phát triển thêm mới đạt điểm cao hơn.",
+    "expected_context": "A clear position is presented from the outset, supported by relevant ideas. These would require further development to achieve a higher score. It is also useful to note, this response does not meet the minimum word count for Task 2 of 250 words, so there is room for further development.",
+    "difficulty": "medium",
+    "source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md"
+  },
+  {
+    "question": "Ba lỗi phổ biến khi viết IELTS Writing được bài viết của IDP nêu ra là gì?",
+    "expected_answer": "Ba lỗi phổ biến là: cấu trúc câu quá phức tạp, sử dụng quá nhiều thuật ngữ chuyên môn, và không tập trung vào chủ đề chính.",
+    "expected_context": "Cấu trúc câu quá phức tạp; Sử dụng quá nhiều thuật ngữ chuyên môn; Không tập trung vào chủ đề chính.",
+    "difficulty": "medium",
+    "source": "article_05.md"
+  },
+  {
+    "question": "Bài mẫu Task 1 nào đạt Band 6 và vì sao?",
+    "expected_answer": "Một bài mẫu Task 1 Academic đạt Band 6: các đặc điểm chính được chọn đều được đề cập và làm nổi bật rõ, nhưng cách trình bày còn máy móc và dữ liệu chỉ hỗ trợ được một phần mô tả; có phần tổng quan phù hợp ở đoạn cuối với tóm tắt các thay đổi chính.",
+    "expected_context": "The key features which are selected are covered and clearly highlighted, but reporting is somewhat mechanical and data is provided to support only some of the descriptions. There is a relevant overview in the final paragraph, with a summary of the main changes.",
+    "difficulty": "hard",
+    "source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md"
+  }
+]

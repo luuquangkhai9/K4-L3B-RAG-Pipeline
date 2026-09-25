@@ -1,1 +1,1 @@
-"""Day 8 — RAG Pipeline v2: Dịch vụ đại học (University Services)."""
+"""Day 8 — RAG Pipeline v2: IELTS Writing (band descriptors, tiêu chí chấm điểm)."""

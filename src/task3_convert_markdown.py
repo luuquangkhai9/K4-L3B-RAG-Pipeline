@@ -13,48 +13,162 @@ Cài đặt:
 -> Hoặc dùng công cụ nào bạn quen khác Markitdown
 """
 
+import base64
+import os
+import re
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 LANDING_DIR = Path(__file__).parent.parent / "data" / "landing"
 OUTPUT_DIR = Path(__file__).parent.parent / "data" / "standardized"
 
 
+OCR_PROMPT = (
+    "Chép lại chính xác toàn bộ văn bản trong ảnh này thành Markdown, giữ nguyên ngôn ngữ gốc. "
+    "Bảng nhiều cột phải chép thành bảng Markdown, mỗi ô đúng cột của nó. "
+    "Không thêm lời giải thích."
+)
+
+# PDF có bảng nhiều cột: text layer bị trộn cột nên chép lại bằng vision LLM.
+VISION_PDFS = {"ielts-writing-band-descriptors.pdf"}
+
+# Nguồn gốc của tài liệu legal, ghi vào header để trích dẫn.
+LEGAL_SOURCES = {
+    "ielts-writing-band-descriptors.pdf": "https://ielts.org/cdn/ielts-guides/ielts-writing-band-descriptors.pdf",
+    "ielts-writing-key-assessment-criteria.pdf": "https://ielts.org/cdn/ielts-guides/ielts-writing-key-assessment-criteria.pdf",
+}
+
+# Khối cuối trang IDP (tác giả, chia sẻ, bài liên quan) không phải nội dung bài.
+_NEWS_FOOTER = re.compile(r"^#{1,6} (WRITTEN BY|Chia sẻ bài viết|Share this article)\b.*", re.M | re.S)
+_IMAGE_LINE = re.compile(r"^\s*!\[[^\]]*\]\([^)]*\)\s*$", re.M)
+_CONTENT_TAGS = re.compile(r"^#{1,6} Content tags\s*\n+[^\n]*\n", re.M)
+
+
+def clean_news(body: str) -> str:
+    """Bỏ footer, ảnh và tag điều hướng khỏi bài crawl."""
+    body = _NEWS_FOOTER.sub("", body)
+    body = _CONTENT_TAGS.sub("", body)
+    body = _IMAGE_LINE.sub("", body)
+    return re.sub(r"\n{3,}", "\n\n", body).strip()
+
+
+def ocr_pdf(path: Path) -> str:
+    """OCR PDF scan bằng vision LLM qua API (openai hoặc gemini), không cần model local."""
+    import io
+
+    import pypdfium2
+
+    provider = os.getenv("OCR_PROVIDER") or (
+        "openai" if os.getenv("OPENAI_API_KEY") else "gemini"
+    )
+    pages = []
+    for page in pypdfium2.PdfDocument(str(path)):
+        buffer = io.BytesIO()
+        page.render(scale=2).to_pil().convert("RGB").save(buffer, "JPEG", quality=85)
+        pages.append(buffer.getvalue())
+
+    texts = []
+    if provider == "openai":
+        from openai import OpenAI
+
+        client = OpenAI(max_retries=8)  # ảnh tốn nhiều token, dễ chạm rate limit TPM
+        model = os.getenv("OCR_MODEL", "gpt-4o-mini")
+        for image in pages:
+            data_url = "data:image/jpeg;base64," + base64.b64encode(image).decode()
+            response = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": [
+                    {"type": "text", "text": OCR_PROMPT},
+                    {"type": "image_url", "image_url": {"url": data_url}},
+                ]}],
+            )
+            texts.append(response.choices[0].message.content or "")
+    else:
+        from google import genai
+        from google.genai import types
+
+        client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+        model = os.getenv("OCR_MODEL", "gemini-2.5-flash")
+        for image in pages:
+            response = client.models.generate_content(
+                model=model,
+                contents=[types.Part.from_bytes(data=image, mime_type="image/jpeg"), OCR_PROMPT],
+            )
+            texts.append(response.text or "")
+    # LLM hay bọc output trong ```markdown ... ```; bỏ các dòng fence đó.
+    texts = [re.sub(r"^```(?:markdown)?\s*$", "", t, flags=re.M) for t in texts]
+    # Bỏ dấu cách đệm cho thẳng cột trong bảng (tốn chỗ trong chunk).
+    texts = [re.sub(r" {2,}\|", " |", re.sub(r"-{4,}", "---", t)) for t in texts]
+    return "\n\n".join(t.strip() for t in texts)
+
+
 def convert_legal_docs() -> None:
-    # TODO:Convert PDF/DOCX vào standardized/legal. 
-    #
-    # from markitdown import MarkItDown
-    # legal_dir = LANDING_DIR / "legal"
-    # output_dir = OUTPUT_DIR / "legal"
-    # output_dir.mkdir(parents=True, exist_ok=True)
-    # converter = MarkItDown()
-    # for path in legal_dir.iterdir():
-    #     if path.suffix.lower() in {".pdf", ".doc", ".docx"}:
-    #         result = converter.convert(str(path))
-    #         (output_dir / f"{path.stem}.md").write_text(
-    #             result.text_content, encoding="utf-8"
-    #         )
-    raise NotImplementedError("Implement convert_legal_docs")
+    from markitdown import MarkItDown
+
+    legal_dir = LANDING_DIR / "legal"
+    output_dir = OUTPUT_DIR / "legal"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    converter = MarkItDown()
+    for path in sorted(legal_dir.iterdir()):
+        if path.suffix.lower() not in {".pdf", ".doc", ".docx"}:
+            continue
+        target = output_dir / f"{path.stem}.md"
+        text = ""
+        if path.name in VISION_PDFS:
+            if target.exists() and target.stat().st_size > 0:
+                print(f"Skip (vision cached): {path.name}")
+                continue
+            print(f"Table layout, vision OCR: {path.name}")
+            try:
+                text = ocr_pdf(path).strip()
+            except Exception as error:
+                print(f"OCR failed: {path.name} — {error}")
+        if not text:
+            try:
+                text = converter.convert(str(path)).text_content.strip()
+            except Exception as error:
+                print(f"Failed: {path.name} — {error}")
+                continue
+        if not text and path.suffix.lower() == ".pdf":
+            print(f"No text layer, OCR: {path.name}")
+            try:
+                text = ocr_pdf(path).strip()
+            except Exception as error:
+                print(f"OCR failed: {path.name} — {error}")
+        if not text:
+            print(f"Skip (empty): {path.name}")
+            continue
+        header = f"# {path.stem.replace('-', ' ').title()}\n\n**File:** {path.name}\n\n"
+        if path.name in LEGAL_SOURCES:
+            header += f"**Source:** {LEGAL_SOURCES[path.name]}\n\n"
+        target.write_text(header + "---\n\n" + text + "\n", encoding="utf-8")
+        print(f"Converted: {path.name}")
 
 
 def convert_news_articles() -> None:
-    # TODO: Convert JSON vào standardized/news.
-    #
-    # import json
-    # news_dir = LANDING_DIR / "news"
-    # output_dir = OUTPUT_DIR / "news"
-    # output_dir.mkdir(parents=True, exist_ok=True)
-    # for path in news_dir.glob("*.json"):
-    #     data = json.loads(path.read_text(encoding="utf-8"))
-    #     header = (
-    #         f"# {data['title']}\n\n"
-    #         f"**Source:** {data['url']}\n\n"
-    #         f"**Crawled:** {data['date_crawled']}\n\n---\n\n"
-    #     )
-    #     (output_dir / f"{path.stem}.md").write_text(
-    #         header + data["content_markdown"], encoding="utf-8"
-    #     )
-    raise NotImplementedError("Implement convert_news_articles")
+    import json
+
+    news_dir = LANDING_DIR / "news"
+    output_dir = OUTPUT_DIR / "news"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    for path in sorted(news_dir.glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        body = clean_news(data.get("content_markdown", ""))
+        if not body:
+            print(f"Skip (empty): {path.name}")
+            continue
+        header = (
+            f"# {data['title']}\n\n"
+            f"**Source:** {data['url']}\n\n"
+            f"**Crawled:** {data['date_crawled']}\n\n---\n\n"
+        )
+        (output_dir / f"{path.stem}.md").write_text(
+            header + body + "\n", encoding="utf-8"
+        )
+        print(f"Converted: {path.name}")
 
 
 def convert_all() -> None:

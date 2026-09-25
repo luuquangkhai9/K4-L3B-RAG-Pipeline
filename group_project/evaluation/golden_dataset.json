@@ -1,0 +1,146 @@
+[
+  {
+    "question": "What are the four criteria used to assess IELTS Writing Task 1?",
+    "expected_answer": "Task 1 is assessed on Task Achievement, Coherence and Cohesion, Lexical Resource, and Grammatical Range and Accuracy.",
+    "expected_context": "For Task 1 of both the AC and GT Writing tests, the key criteria are: Task Achievement, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy.",
+    "source": "ielts-writing-key-assessment-criteria.md",
+    "language": "en",
+    "type": "fact"
+  },
+  {
+    "question": "Task 2 khác Task 1 ở tiêu chí chấm nào?",
+    "expected_answer": "Task 1 dùng tiêu chí Task Achievement, còn Task 2 dùng Task Response; ba tiêu chí còn lại (Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy) giống nhau.",
+    "expected_context": "For Task 2 of both the AC and GT Writing tests, the key criteria are: Task Response, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy.",
+    "source": "ielts-writing-key-assessment-criteria.md",
+    "language": "vi",
+    "type": "comparison"
+  },
+  {
+    "question": "What is the minimum word count for Task 1 and for Task 2?",
+    "expected_answer": "Task 1 requires at least 150 words and Task 2 requires at least 250 words.",
+    "expected_context": "Write at least 150 words for Task 1. Write at least 250 words for Task 2.",
+    "source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+    "language": "en",
+    "type": "fact"
+  },
+  {
+    "question": "Task 2 có trọng số điểm như thế nào so với Task 1?",
+    "expected_answer": "Task 2 được tính điểm gấp đôi Task 1 (Task 2 carries more weight in marking than Task 1).",
+    "expected_context": "Task 2 contributes twice as much as Task 1 to the Writing score. The assessment of Task 2 carries more weight in marking than Task 1.",
+    "source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+    "language": "vi",
+    "type": "fact"
+  },
+  {
+    "question": "How long should candidates spend on each task in the sample Academic Writing test?",
+    "expected_answer": "About 20 minutes on Task 1 and about 40 minutes on Task 2 (plus any additional time allowance); the whole test takes 1 hour.",
+    "expected_context": "TIME: 1 hour. You should spend about 20 minutes plus your additional time allowance on this task (Task 1). You should spend about 40 minutes plus your additional time allowance on this task (Task 2).",
+    "source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+    "language": "en",
+    "type": "fact"
+  },
+  {
+    "question": "Why can a response be penalised regardless of its content?",
+    "expected_answer": "Responses are penalised if they are partly or wholly plagiarised, or if they are not written as full, connected text (for example using bullet points or note form).",
+    "expected_context": "Candidates should note that scripts may be penalised if they are a) partly or wholly plagiarised, b) not written as full, connected text (e.g. using bullet points in any part of the response, or note form, is not appropriate, etc.).",
+    "source": "ielts-writing-key-assessment-criteria.md",
+    "language": "en",
+    "type": "fact"
+  },
+  {
+    "question": "What is the difference between coherence and cohesion?",
+    "expected_answer": "Coherence is the linking of ideas through logical sequencing; cohesion is the varied and appropriate use of cohesive devices such as logical connectors, conjunctions and pronouns to make relationships between and within sentences clear.",
+    "expected_context": "Coherence refers to the linking of ideas through logical sequencing, while cohesion refers to the varied and appropriate use of cohesive devices (e.g. logical connectors, conjunctions and pronouns) to assist in making clear the relationships between and within sentences.",
+    "source": "ielts-writing-key-assessment-criteria.md",
+    "language": "en",
+    "type": "definition"
+  },
+  {
+    "question": "Tiêu chí Task Achievement của Academic Task 1 đánh giá những khả năng nào?",
+    "expected_answer": "Chọn các đặc điểm chính của thông tin, đưa đủ chi tiết minh họa, báo cáo số liệu và xu hướng chính xác, so sánh/đối chiếu làm nổi bật xu hướng hoặc khác biệt chính, và trình bày đúng định dạng.",
+    "expected_context": "The TA criterion assesses the ability to summarise the information provided in the diagram by: selecting key features of the information; providing sufficient detail to illustrate these features; reporting the information, figures and trends accurately; comparing or contrasting the information by adequately highlighting the identifiable trends, principal changes or differences; presenting the response in an appropriate format.",
+    "source": "ielts-writing-key-assessment-criteria.md",
+    "language": "vi",
+    "type": "list"
+  },
+  {
+    "question": "What does a band 7 response need for Task Achievement in Task 1?",
+    "expected_answer": "It covers the requirements of the task; content is relevant and accurate with only a few omissions or lapses; the format is appropriate; key features are covered and clearly highlighted but could be more fully illustrated or extended (Academic), or all bullet points are covered with a clear purpose and consistent tone (General Training).",
+    "expected_context": "IELTS Writing Task 1 Band Descriptors — Band Score 7 — Task Achievement: The response covers the requirements of the task. The content is relevant and accurate – there may be a few omissions or lapses. The format is appropriate.",
+    "source": "ielts-writing-band-descriptors.md",
+    "language": "en",
+    "type": "table-lookup"
+  },
+  {
+    "question": "When is a Writing response rated at Band 1 or Band 0?",
+    "expected_answer": "Responses of 20 words or fewer are rated Band 1. Band 0 is used only when the candidate did not attend or attempt the question, wrote in a language other than English throughout, or there is proof the answer was totally memorised.",
+    "expected_context": "Responses of 20 words or fewer are rated at Band 1. Band 0: Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate's answer has been totally memorised.",
+    "source": "ielts-writing-band-descriptors.md",
+    "language": "en",
+    "type": "table-lookup"
+  },
+  {
+    "question": "Why did the sample Task 2 response get band 5.5?",
+    "expected_answer": "It presents a clear position with relevant ideas that need further development, it does not meet the 250-word minimum, paragraphing is not always logical, word choice lacks precision with spelling/word formation errors, and the level of grammatical error is too high for a higher band.",
+    "expected_context": "Band 5.5. A clear position is presented from the outset, supported by relevant ideas. These would require further development to achieve a higher score. This response does not meet the minimum word count for Task 2 of 250 words. Cohesive devices are used effectively, but paragraphing is not always logical. There is a lack of precision in word choice and there are some errors in spelling and word formation. The level of error is too high to achieve a higher band score.",
+    "source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md",
+    "language": "en",
+    "type": "explanation"
+  },
+  {
+    "question": "Bài mẫu Task 2 đạt band 7.5 được giám khảo nhận xét những điểm mạnh nào?",
+    "expected_answer": "Lập trường rõ ràng ngay từ đầu, xem xét và bác bỏ quan điểm ngược lại, ý được tổ chức logic với tiến triển rõ ràng, từ vựng đa dạng có từ ít phổ biến và kỹ thuật 'softening', ít lỗi chính tả, nhiều cấu trúc phức và câu không lỗi.",
+    "expected_context": "Band 7.5. This is a strong response. A clear position is presented at the outset and some ideas are explored to support it. An alternative position is also considered but rejected. Ideas are logically organised and there is a clear progression throughout the response. There is a wide range of vocabulary with good use of less common items as well as evidence of higher-level features, such as 'softening'. Errors in spelling and word formation are rare. There is also a variety of complex structures with frequent error-free sentences.",
+    "source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md",
+    "language": "vi",
+    "type": "explanation"
+  },
+  {
+    "question": "Will IELTS still offer a paper-based test?",
+    "expected_answer": "No. From mid-2026 IELTS will no longer be offered as a paper-based test; all tests will be delivered on computer, with exact timelines varying by market.",
+    "expected_context": "Therefore, after careful review, from mid-2026, we will no longer offer IELTS as a paper-based test. All IELTS tests will be delivered on computer. Exact timelines will vary by market.",
+    "source": "article_01.md",
+    "language": "en",
+    "type": "fact"
+  },
+  {
+    "question": "'Writing on Paper' là gì?",
+    "expected_answer": "Là lựa chọn mới ở một số thị trường, cho phép thí sinh thi IELTS trên máy tính nhưng viết tay phần Writing trên giấy; điểm số tương đương giữa các hình thức.",
+    "expected_context": "In selected markets, we will introduce 'Writing on Paper'. This update will allow test takers to personalise their test experience by handwriting their answers to the 'Writing' component on paper if they choose. The results show that scores are comparable across formats.",
+    "source": "article_01.md",
+    "language": "vi",
+    "type": "definition"
+  },
+  {
+    "question": "What are the 5 tips to maximise your IELTS Writing score?",
+    "expected_answer": "Practice makes perfect, be a bookworm (read lots), read the instructions, count it out (watch the word count), and treat it as a long game (consistent effort over time).",
+    "expected_context": "1. Practice makes perfect. 2. Be a bookworm (read lots). 3. Read the instructions. 4. Count it out. 5. It's a long game.",
+    "source": "article_04.md",
+    "language": "en",
+    "type": "list"
+  },
+  {
+    "question": "Why does reading widely help improve IELTS writing?",
+    "expected_answer": "It builds vocabulary through new words and phrases, improves grammar by showing how sentences are constructed, exposes you to different writing styles and formats, and enhances critical thinking for forming arguments.",
+    "expected_context": "By reading widely, you'll be exposed to new words and phrases that can help you build your vocabulary. In addition, reading can help you improve your grammar. Reading can also expose you to different writing styles and techniques. Finally, reading can enhance your critical thinking skills.",
+    "source": "article_04.md",
+    "language": "en",
+    "type": "explanation"
+  },
+  {
+    "question": "Có những kỹ thuật brainstorm ý tưởng nào cho IELTS Writing?",
+    "expected_answer": "Ba kỹ thuật: Mind Mapping (sơ đồ tư duy), Outlining (lập dàn ý) và Freewriting (viết tự do).",
+    "expected_context": "2. Khai thác mọi cơ hội để brainstorm và phát triển ý tưởng: Mind Mapping (Sơ đồ tư duy), Outlining (Lập dàn ý), Freewriting (Viết tự do).",
+    "source": "article_03.md",
+    "language": "vi",
+    "type": "list"
+  },
+  {
+    "question": "Vì sao nên viết ở thể chủ động trong IELTS Writing?",
+    "expected_answer": "Thể chủ động làm câu rõ ràng hơn vì chỉ ra ai đang làm gì, trực tiếp và thu hút hơn thể bị động, vốn có thể gây nhầm lẫn hoặc dài dòng.",
+    "expected_context": "Thể chủ động luôn làm cho câu rõ ràng hơn bằng cách chỉ ra ai đang làm gì. Nó trực tiếp và thu hút hơn thể bị động, đôi khi có thể dẫn đến sự nhầm lẫn hoặc dài dòng.",
+    "source": "article_05.md",
+    "language": "vi",
+    "type": "explanation"
+  }
+]

@@ -13,7 +13,6 @@ SAMPLE TEST
 MODIFIED LARGE PRINT VERSION
 TIME: 1 hour (plus your additional time allowance)
 READ THE INSTRUCTIONS ON PAGE 2
-
 INSTRUCTIONS TO CANDIDATES
 Write your name and candidate number in the
 spaces at the top of the front page of this
@@ -32,9 +31,7 @@ INFORMATION FOR CANDIDATES
 There are TWO tasks on this question paper.
 Task 2 contributes twice as much as Task 1 to
 the Writing score.
-
 DO NOT TURN OVER UNTIL YOU ARE TOLD TO DO SO.
-
 WRITING TASK 1
 You should spend about 20 minutes plus your
 additional time allowance on this task.
@@ -55,11 +52,8 @@ AGE
 | 18–39  | 17.1% | 09.7%   |
 | 40–59  | 12.3% | 08.0%   |
 | 60+    | 18.5% | 13.2%   |
-
 TASK 1
-
 TURN OVER TO TASK 2.
-
 WRITING TASK 2
 You should spend about 40 minutes plus your
 additional time allowance on this task.
@@ -71,10 +65,7 @@ To what extent do you agree or disagree?
 Give reasons for your answer and include any relevant
 examples from your own knowledge or experience.
 Write at least 250 words.
-
 TASK 2
-
 BLANK PAGE
-
 BLANK PAGE
 © Cambridge University Press & Assessment 2024

@@ -6,13 +6,17 @@ liệu và tên riêng. Output phải theo SearchResult và sort score giảm d�
 """
 
 import re
+import threading
 
 
 # Để trống thì tự nạp từ ChromaDB (cùng chunks với dense search).
 CORPUS: list[dict] = []
 
-_TOKEN = re.compile(r"\w+", re.UNICODE)
+# Giữ nguyên số thập phân ("5.5", "7.5"): tách thành "5","5" làm BM25 khớp mọi chunk có số 5.
+_TOKEN = re.compile(r"\d+(?:[.,]\d+)+|\w+", re.UNICODE)
 _index_cache: dict = {"key": None, "bm25": None, "terms": []}
+_index_lock = threading.Lock()
+_corpus_lock = threading.Lock()
 
 
 def tokenize(text: str) -> list[str]:
@@ -42,18 +46,21 @@ def build_bm25_index(corpus: list[dict]):
 
 def _get_index(corpus: list[dict]):
     key = (id(corpus), len(corpus))
-    if _index_cache["key"] != key:
-        _index_cache["key"] = key
-        _index_cache["bm25"] = build_bm25_index(corpus)
-        _index_cache["terms"] = [set(tokenize(item["content"])) for item in corpus]
-    return _index_cache["bm25"], _index_cache["terms"]
+    # Lock + gán key sau cùng: trước đây thread khác thấy key mới khi bm25 còn None.
+    with _index_lock:
+        if _index_cache["key"] != key:
+            bm25 = build_bm25_index(corpus)
+            terms = [set(tokenize(item["content"])) for item in corpus]
+            _index_cache.update(bm25=bm25, terms=terms, key=key)
+        return _index_cache["bm25"], _index_cache["terms"]
 
 
 def lexical_search(query: str, top_k: int = 10) -> list[dict]:
     """Trả về BM25 SearchResult theo score giảm dần."""
     global CORPUS
-    if not CORPUS:
-        CORPUS = load_corpus()
+    with _corpus_lock:
+        if not CORPUS:
+            CORPUS = load_corpus()
     tokens = tokenize(query)
     if not CORPUS or not tokens or top_k <= 0:
         return []

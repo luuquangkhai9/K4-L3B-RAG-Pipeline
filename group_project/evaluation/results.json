@@ -1,0 +1,1322 @@
+{
+  "run_info": {
+    "date": "2026-09-25T12:48:48",
+    "framework": "Custom LLM-as-judge (RAGAS metric definitions)",
+    "evaluator_model": "openai / gpt-4o",
+    "generator_model": "openai / gpt-4o-mini",
+    "embedding_model": "text-embedding-3-small",
+    "golden_size": 18,
+    "top_k": 5,
+    "score_threshold": 0.35
+  },
+  "configs": {
+    "A": {
+      "name": "Dense only",
+      "use_reranking": false,
+      "translation": true,
+      "summary": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.681,
+        "context_recall": 0.838,
+        "context_precision": 0.6833,
+        "average": 0.8006,
+        "answered_rate": 0.9444,
+        "source_hit_rate": 0.9444,
+        "avg_latency": 3.75,
+        "ood_refusal_rate": 1.0
+      },
+      "rows": [
+        {
+          "question": "What are the four criteria used to assess IELTS Writing Task 1?",
+          "language": "en",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "The four criteria used to assess IELTS Writing Task 1 are:\n\n- Task Achievement\n- Coherence and Cohesion\n- Lexical Resource\n- Grammatical Range and Accuracy [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-band-descriptors.md::chunk-14",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-3"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.70606529712677,
+          "latency": 6.5181386999993265,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.7454,
+          "context_recall": 1.0,
+          "context_precision": 0.5
+        },
+        {
+          "question": "Task 2 khác Task 1 ở tiêu chí chấm nào?",
+          "language": "vi",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "- Task 2 có tiêu chí \"Task Response\" trong khi Task 1 không có tiêu chí này [1][5]. \n- Ngoài ra, Task 2 yêu cầu viết tối thiểu 250 từ, trong khi Task 1 yêu cầu tối thiểu 150 từ [4].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-2",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6572874784469604,
+          "latency": 7.3243230000007316,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.5754,
+          "context_recall": 1.0,
+          "context_precision": 0.8667
+        },
+        {
+          "question": "What is the minimum word count for Task 1 and for Task 2?",
+          "language": "en",
+          "expected_source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+          "answer": "- Minimum word count for Task 1: 150 words [1].\n- Minimum word count for Task 2: 250 words [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.5579491853713989,
+          "latency": 6.940672800001266,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.734,
+          "context_recall": 1.0,
+          "context_precision": 0.7556
+        },
+        {
+          "question": "Task 2 có trọng số điểm như thế nào so với Task 1?",
+          "language": "vi",
+          "expected_source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+          "answer": "- Task 2 có trọng số điểm gấp đôi so với Task 1 [5].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+            "legal/ielts-writing-band-descriptors.md::chunk-14",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-2"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.5178740620613098,
+          "latency": 5.402478199999678,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.9377,
+          "context_recall": 1.0,
+          "context_precision": 0.8667
+        },
+        {
+          "question": "How long should candidates spend on each task in the sample Academic Writing test?",
+          "language": "en",
+          "expected_source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+          "answer": "- Candidates should spend 1 hour in total for the test, with at least 150 words for Task 1 and at least 250 words for Task 2 [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.646614134311676,
+          "latency": 2.270728000001327,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.6216,
+          "context_recall": 0.5,
+          "context_precision": 0.0
+        },
+        {
+          "question": "Why can a response be penalised regardless of its content?",
+          "language": "en",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "A response can be penalised regardless of its content for the following reasons:\n\n- If it is partly or wholly plagiarised [3].\n- If it is not written as full, connected text (e.g., using bullet points or note form) [3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-band-descriptors.md::chunk-38",
+            "legal/ielts-writing-band-descriptors.md::chunk-32",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+            "legal/ielts-writing-band-descriptors.md::chunk-36",
+            "legal/ielts-writing-band-descriptors.md::chunk-20"
+          ],
+          "expected_source_hit": false,
+          "best_dense_score": 0.38183164596557617,
+          "latency": 2.3172875000000204,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.7674,
+          "context_recall": 1.0,
+          "context_precision": 0.3333
+        },
+        {
+          "question": "What is the difference between coherence and cohesion?",
+          "language": "en",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "- Coherence refers to the linking of ideas through logical sequencing.\n- Cohesion refers to the varied and appropriate use of cohesive devices (e.g. logical connectors, conjunctions, and pronouns) to assist in making clear the relationships between and within sentences [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-5",
+            "legal/ielts-writing-band-descriptors.md::chunk-27",
+            "legal/ielts-writing-band-descriptors.md::chunk-12",
+            "legal/ielts-writing-band-descriptors.md::chunk-1",
+            "legal/ielts-writing-band-descriptors.md::chunk-21"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.45161139965057373,
+          "latency": 2.1040604999998322,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.6111,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Tiêu chí Task Achievement của Academic Task 1 đánh giá những khả năng nào?",
+          "language": "vi",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "Tiêu chí Task Achievement của Academic Task 1 đánh giá những khả năng sau:\n\n- Fulfil the requirements set out in the task\n- Select key features of the information\n- Provide sufficient detail to illustrate these features\n- Use a minimum of 150 words [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-2",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+            "news/article_05.md::chunk-0",
+            "news/article_02.md::chunk-2"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.659794270992279,
+          "latency": 4.062312100000781,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.8609,
+          "context_recall": 0.4,
+          "context_precision": 0.5889
+        },
+        {
+          "question": "What does a band 7 response need for Task Achievement in Task 1?",
+          "language": "en",
+          "expected_source": "ielts-writing-band-descriptors.md",
+          "answer": "A band 7 response for Task Achievement in Task 1 needs to have the following:\n\n- Covers the requirements of the task.\n- Content is relevant and accurate, with few omissions or lapses.\n- Appropriate format.\n- Key features selected are covered and clearly highlighted, though they could be more fully or appropriately illustrated or extended.\n- Presents a clear overview, with data appropriately categorised and main trends or differences identified [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-band-descriptors.md::chunk-5",
+            "legal/ielts-writing-band-descriptors.md::chunk-8",
+            "legal/ielts-writing-band-descriptors.md::chunk-20",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+            "legal/ielts-writing-band-descriptors.md::chunk-11"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6782382726669312,
+          "latency": 2.264688200000819,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.9043,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "When is a Writing response rated at Band 1 or Band 0?",
+          "language": "en",
+          "expected_source": "ielts-writing-band-descriptors.md",
+          "answer": "- Band 1: Responses of 20 words or fewer are rated at Band 1; no resource is apparent, except for a few isolated words [2].\n- Band 0: Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally memorised [1][2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-band-descriptors.md::chunk-20",
+            "legal/ielts-writing-band-descriptors.md::chunk-38",
+            "legal/ielts-writing-band-descriptors.md::chunk-32",
+            "legal/ielts-writing-band-descriptors.md::chunk-26",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6988075375556946,
+          "latency": 2.319159500000751,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.7385,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Why did the sample Task 2 response get band 5.5?",
+          "language": "en",
+          "expected_source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md",
+          "answer": "The sample Task 2 response received a band score of 5.5 due to the following reasons:\n\n- The response tackled the prompt in a minimal way.\n- There was a discernible position, but it required careful reading to identify.\n- Main ideas were difficult to identify and lacked relevance, clarity, and support.\n- Large parts of the response were repetitive [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-15",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-22",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-12",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-11",
+            "legal/ielts-writing-band-descriptors.md::chunk-32"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7396167516708374,
+          "latency": 3.3506030999997165,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.8744,
+          "context_recall": 0.6,
+          "context_precision": 0.8333
+        },
+        {
+          "question": "Bài mẫu Task 2 đạt band 7.5 được giám khảo nhận xét những điểm mạnh nào?",
+          "language": "vi",
+          "expected_source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md",
+          "answer": "- Đáp ứng và khám phá đề bài một cách thích hợp.\n- Trình bày vị trí rõ ràng và phát triển đầy đủ, trực tiếp trả lời câu hỏi.\n- Ý tưởng liên quan, được mở rộng đầy đủ và hỗ trợ tốt.\n- Bất kỳ thiếu sót trong nội dung hoặc hỗ trợ đều rất hiếm [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-22",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-9",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-15",
+            "legal/ielts-writing-band-descriptors.md::chunk-5",
+            "legal/ielts-writing-band-descriptors.md::chunk-20"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7292992472648621,
+          "latency": 3.933456799999476,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.405,
+          "context_recall": 0.8333,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Will IELTS still offer a paper-based test?",
+          "language": "en",
+          "expected_source": "article_01.md",
+          "answer": "- No, IELTS will no longer offer a paper-based test from mid-2026; all tests will be delivered on computer [3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_01.md::chunk-2",
+            "news/article_01.md::chunk-1",
+            "news/article_01.md::chunk-0",
+            "news/article_01.md::chunk-3",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7518333792686462,
+          "latency": 1.8991066999988107,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.7649,
+          "context_recall": 0.75,
+          "context_precision": 0.3333
+        },
+        {
+          "question": "'Writing on Paper' là gì?",
+          "language": "vi",
+          "expected_source": "article_01.md",
+          "answer": "- 'Writing on Paper' là một tùy chọn mới cho phép thí sinh viết tay câu trả lời cho phần 'Writing' trên giấy trong một số thị trường được chọn [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_01.md::chunk-1",
+            "news/article_05.md::chunk-8",
+            "news/article_05.md::chunk-19",
+            "news/article_05.md::chunk-5",
+            "news/article_05.md::chunk-17"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.4954044818878174,
+          "latency": 3.7662546999999904,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.5086,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "What are the 5 tips to maximise your IELTS Writing score?",
+          "language": "en",
+          "expected_source": "article_04.md",
+          "answer": "- Practise regularly\n- Read widely\n- Carefully read instructions\n- Plan your response\n- Pay attention to the word count and proofread your work [3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_04.md::chunk-1",
+            "news/article_04.md::chunk-6",
+            "news/article_04.md::chunk-9",
+            "news/article_04.md::chunk-0",
+            "news/article_04.md::chunk-7"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.8309025168418884,
+          "latency": 1.894824900000458,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.4243,
+          "context_recall": 1.0,
+          "context_precision": 0.5833
+        },
+        {
+          "question": "Why does reading widely help improve IELTS writing?",
+          "language": "en",
+          "expected_source": "article_04.md",
+          "answer": "Reading widely helps improve IELTS writing because:\n\n- It exposes you to new words and phrases, enhancing your vocabulary [1].\n- It improves grammar by showing how sentences are constructed and grammar rules are applied [1].\n- It allows you to learn different writing styles and techniques, helping you develop your own writing style [2].\n- It enhances critical thinking skills, enabling better argument formation and opinion expression [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_04.md::chunk-4",
+            "news/article_04.md::chunk-5",
+            "news/article_04.md::chunk-3",
+            "news/article_04.md::chunk-6",
+            "news/article_04.md::chunk-7"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7644960284233093,
+          "latency": 2.6493941999997332,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.9428,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Có những kỹ thuật brainstorm ý tưởng nào cho IELTS Writing?",
+          "language": "vi",
+          "expected_source": "article_03.md",
+          "answer": "Các kỹ thuật brainstorm ý tưởng cho IELTS Writing bao gồm:\n\n- **Mind Mapping (Sơ đồ tư duy)**: Giúp hình dung mối liên hệ giữa các ý tưởng và phát triển chúng theo từng nhánh [3].\n- **Outlining (Lập dàn ý)**: Tạo danh sách các ý chính và chi tiết hỗ trợ theo cấp bậc để sắp xếp suy nghĩ [4].\n- **Freewriting (Viết tự do)**: Viết liên tục trong một khoảng thời gian mà không lo ngại ngữ pháp hay bố cục để giải phóng tư duy [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_03.md::chunk-7",
+            "news/article_03.md::chunk-10",
+            "news/article_03.md::chunk-8",
+            "news/article_03.md::chunk-9",
+            "news/article_03.md::chunk-2"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7610527276992798,
+          "latency": 4.650257400000555,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.8409,
+          "context_recall": 1.0,
+          "context_precision": 0.6389
+        },
+        {
+          "question": "Vì sao nên viết ở thể chủ động trong IELTS Writing?",
+          "language": "vi",
+          "expected_source": "article_05.md",
+          "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+          "refused": true,
+          "refusal_reason": "LLM xác định context không có thông tin trả lời.",
+          "retrieved": [
+            "news/article_05.md::chunk-1",
+            "news/article_03.md::chunk-1",
+            "news/article_05.md::chunk-2",
+            "news/article_05.md::chunk-23",
+            "news/article_05.md::chunk-13"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6629507541656494,
+          "latency": 3.889986400001362,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        }
+      ],
+      "ood": [
+        {
+          "question": "Giá vàng hôm nay bao nhiêu?",
+          "refused": true
+        },
+        {
+          "question": "What is the TOEFL iBT speaking section format?",
+          "refused": true
+        },
+        {
+          "question": "Học phí Đại học Bách khoa Hà Nội năm 2025 là bao nhiêu?",
+          "refused": true
+        },
+        {
+          "question": "Who won the 2022 FIFA World Cup?",
+          "refused": true
+        },
+        {
+          "question": "Cách đăng ký học phần tại trường đại học",
+          "refused": true
+        }
+      ]
+    },
+    "B": {
+      "name": "Hybrid + RRF",
+      "use_reranking": true,
+      "translation": true,
+      "summary": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.6871,
+        "context_recall": 0.8806,
+        "context_precision": 0.7139,
+        "average": 0.8204,
+        "answered_rate": 0.9444,
+        "source_hit_rate": 0.8333,
+        "avg_latency": 3.09,
+        "ood_refusal_rate": 1.0
+      },
+      "rows": [
+        {
+          "question": "What are the four criteria used to assess IELTS Writing Task 1?",
+          "language": "en",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "The four criteria used to assess IELTS Writing Task 1 are:\n\n- Task Achievement\n- Coherence and Cohesion\n- Lexical Resource\n- Grammatical Range and Accuracy [1][3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-writing-band-descriptors.md::chunk-14",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-writing-band-descriptors.md::chunk-0",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.70606529712677,
+          "latency": 2.7042335999994975,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.747,
+          "context_recall": 1.0,
+          "context_precision": 0.8333
+        },
+        {
+          "question": "Task 2 khác Task 1 ở tiêu chí chấm nào?",
+          "language": "vi",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "- Task 2 có tiêu chí \"Task Response\" trong khi Task 1 không có [1][2][3]. \n- Task 2 yêu cầu phát triển và định hình một vị trí liên quan đến đề bài, trong khi Task 1 tập trung vào việc tóm tắt thông tin từ đầu vào [4].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-4",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-2",
+            "news/article_05.md::chunk-14"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6572874784469604,
+          "latency": 3.8074658000005,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.5713,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "What is the minimum word count for Task 1 and for Task 2?",
+          "language": "en",
+          "expected_source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+          "answer": "- Task 1: 150 words [4]\n- Task 2: 250 words [4]",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-4",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-4"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.5579491853713989,
+          "latency": 2.53361330000007,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.6212,
+          "context_recall": 1.0,
+          "context_precision": 0.8056
+        },
+        {
+          "question": "Task 2 có trọng số điểm như thế nào so với Task 1?",
+          "language": "vi",
+          "expected_source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+          "answer": "- Task 2 có trọng số điểm cao hơn Task 1 trong việc chấm điểm [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "news/article_05.md::chunk-1",
+            "legal/ielts-writing-band-descriptors.md::chunk-14",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+            "news/article_05.md::chunk-13"
+          ],
+          "expected_source_hit": false,
+          "best_dense_score": 0.5178740620613098,
+          "latency": 2.743175699999483,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.7888,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "How long should candidates spend on each task in the sample Academic Writing test?",
+          "language": "en",
+          "expected_source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+          "answer": "- Candidates should spend 1 hour in total for the test, with Task 2 contributing twice as much as Task 1 to the Writing score. Therefore, they should allocate their time accordingly, although specific time allocations for each task are not explicitly stated in the documents [1][3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6466122269630432,
+          "latency": 2.2326135999992403,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.6853,
+          "context_recall": 1.0,
+          "context_precision": 0.0
+        },
+        {
+          "question": "Why can a response be penalised regardless of its content?",
+          "language": "en",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "- A response can be penalised if it is a) partly or wholly plagiarised, b) not written as full, connected text (e.g. using bullet points in any part of the response, or note form, is not appropriate) [1][3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+            "legal/ielts-writing-band-descriptors.md::chunk-36",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-writing-band-descriptors.md::chunk-38",
+            "legal/ielts-writing-band-descriptors.md::chunk-32"
+          ],
+          "expected_source_hit": false,
+          "best_dense_score": 0.38183164596557617,
+          "latency": 2.1296265999990283,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.6051,
+          "context_recall": 1.0,
+          "context_precision": 0.8333
+        },
+        {
+          "question": "What is the difference between coherence and cohesion?",
+          "language": "en",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "- Coherence refers to the linking of ideas through logical sequencing.\n- Cohesion refers to the varied and appropriate use of cohesive devices (e.g. logical connectors, conjunctions, and pronouns) to assist in making clear the relationships between and within sentences [1][4].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-5",
+            "legal/ielts-writing-band-descriptors.md::chunk-27",
+            "legal/ielts-writing-band-descriptors.md::chunk-9",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-3",
+            "legal/ielts-writing-band-descriptors.md::chunk-12"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.45161139965057373,
+          "latency": 3.6085743000003276,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.6111,
+          "context_recall": 1.0,
+          "context_precision": 0.75
+        },
+        {
+          "question": "Tiêu chí Task Achievement của Academic Task 1 đánh giá những khả năng nào?",
+          "language": "vi",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "Tiêu chí Task Achievement của Academic Task 1 đánh giá những khả năng sau:\n\n- Đánh giá mức độ hoàn thành, phù hợp, chính xác và liên quan của phản hồi với yêu cầu của đề bài, sử dụng tối thiểu 150 từ.\n- Tóm tắt thông tin được cung cấp trong biểu đồ bằng cách:\n  - Lựa chọn các đặc điểm chính của thông tin.\n  - Cung cấp đủ chi tiết để minh họa cho những đặc điểm này [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-2",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+            "news/article_02.md::chunk-1",
+            "news/article_02.md::chunk-2"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.659794270992279,
+          "latency": 3.5715110000001005,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.8868,
+          "context_recall": 1.0,
+          "context_precision": 0.5889
+        },
+        {
+          "question": "What does a band 7 response need for Task Achievement in Task 1?",
+          "language": "en",
+          "expected_source": "ielts-writing-band-descriptors.md",
+          "answer": "A band 7 response for Task Achievement in Task 1 needs to meet the following criteria:\n\n- Covers the requirements of the task.\n- Content is relevant and accurate, with minimal omissions or lapses.\n- Appropriate format is used.\n- Key features are selected, covered, and clearly highlighted, though they could be more fully or appropriately illustrated or extended.\n- Presents a clear overview, categorizes data appropriately, and identifies main trends or differences [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-band-descriptors.md::chunk-5",
+            "legal/ielts-writing-band-descriptors.md::chunk-20",
+            "legal/ielts-writing-band-descriptors.md::chunk-16",
+            "legal/ielts-writing-band-descriptors.md::chunk-8",
+            "legal/ielts-writing-band-descriptors.md::chunk-0"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6782382726669312,
+          "latency": 2.8333841000003304,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.9043,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "When is a Writing response rated at Band 1 or Band 0?",
+          "language": "en",
+          "expected_source": "ielts-writing-band-descriptors.md",
+          "answer": "- Band 1:\n  - Responses of 20 words or fewer are rated at Band 1 [1][3].\n  - No resource is apparent, except for a few isolated words [1][3].\n  - Content is wholly unrelated to the task [3].\n  \n- Band 0:\n  - Used when a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally memorised [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-band-descriptors.md::chunk-38",
+            "legal/ielts-writing-band-descriptors.md::chunk-20",
+            "legal/ielts-writing-band-descriptors.md::chunk-19",
+            "legal/ielts-writing-band-descriptors.md::chunk-14",
+            "legal/ielts-writing-band-descriptors.md::chunk-32"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6988075375556946,
+          "latency": 2.5588922999995702,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.8015,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Why did the sample Task 2 response get band 5.5?",
+          "language": "en",
+          "expected_source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md",
+          "answer": "The sample Task 2 response received a band score of 5.5 due to the following reasons:\n\n- Key features of the task were not adequately covered.\n- Limited detail was provided.\n- There was a lack of clear organisation and progression in the response.\n- Some cohesive devices were used inaccurately.\n- The range of vocabulary was basic and repetitive.\n- There was limited control over spelling, causing confusion.\n- A limited range of sentence forms was used, with frequent errors that impeded meaning [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-15",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-22",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-11",
+            "legal/ielts-writing-band-descriptors.md::chunk-20",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-12"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7396167516708374,
+          "latency": 3.1607851999997365,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.8686,
+          "context_recall": 0.6,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Bài mẫu Task 2 đạt band 7.5 được giám khảo nhận xét những điểm mạnh nào?",
+          "language": "vi",
+          "expected_source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md",
+          "answer": "- Bài mẫu Task 2 đạt band 7.5 có những điểm mạnh như:\n  - Cấu trúc rõ ràng và hợp lý.\n  - Sử dụng từ vựng phong phú.\n  - Trình bày ý tưởng một cách mạch lạc và có sự phát triển hợp lý [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-22",
+            "news/article_03.md::chunk-15",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-9",
+            "news/article_03.md::chunk-14",
+            "legal/ielts-writing-band-descriptors.md::chunk-5"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7292992472648621,
+          "latency": 3.5154797000013787,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.8391,
+          "context_recall": 0.5,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Will IELTS still offer a paper-based test?",
+          "language": "en",
+          "expected_source": "article_01.md",
+          "answer": "- No, IELTS will no longer offer a paper-based test from mid-2026; all tests will be delivered on computer [3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_01.md::chunk-2",
+            "news/article_01.md::chunk-1",
+            "news/article_01.md::chunk-0",
+            "news/article_01.md::chunk-3",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7518333792686462,
+          "latency": 2.868847400000959,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.7659,
+          "context_recall": 0.75,
+          "context_precision": 0.3333
+        },
+        {
+          "question": "'Writing on Paper' là gì?",
+          "language": "vi",
+          "expected_source": "article_01.md",
+          "answer": "- 'Writing on Paper' là một tùy chọn mới cho phép thí sinh viết tay câu trả lời cho phần 'Writing' trên giấy trong kỳ thi IELTS, nhằm cá nhân hóa trải nghiệm thi của họ [1][5].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_01.md::chunk-1",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-0",
+            "news/article_01.md::chunk-2",
+            "news/article_01.md::chunk-3"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.4954044818878174,
+          "latency": 6.257997400000022,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.4611,
+          "context_recall": 1.0,
+          "context_precision": 0.7
+        },
+        {
+          "question": "What are the 5 tips to maximise your IELTS Writing score?",
+          "language": "en",
+          "expected_source": "article_04.md",
+          "answer": "- Practise regularly\n- Read widely\n- Carefully read instructions\n- Plan your response\n- Pay attention to the word count and proofread your work [3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_04.md::chunk-1",
+            "news/article_04.md::chunk-0",
+            "news/article_04.md::chunk-9",
+            "news/article_04.md::chunk-6",
+            "news/article_04.md::chunk-7"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.8309025168418884,
+          "latency": 2.6125828999993246,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.4243,
+          "context_recall": 1.0,
+          "context_precision": 0.4167
+        },
+        {
+          "question": "Why does reading widely help improve IELTS writing?",
+          "language": "en",
+          "expected_source": "article_04.md",
+          "answer": "Reading widely helps improve IELTS writing for several reasons:\n\n- Exposes you to new words and phrases, aiding vocabulary building [1].\n- Improves grammar by showing how sentences are constructed and grammar rules are applied [1].\n- Helps develop your own writing style by learning different voice, tone, and techniques from various texts [2].\n- Enhances critical thinking skills, allowing for better argument formation and opinion expression [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_04.md::chunk-4",
+            "news/article_04.md::chunk-5",
+            "news/article_04.md::chunk-3",
+            "news/article_04.md::chunk-7",
+            "news/article_04.md::chunk-9"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7644960284233093,
+          "latency": 2.5078876999996282,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.9428,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Có những kỹ thuật brainstorm ý tưởng nào cho IELTS Writing?",
+          "language": "vi",
+          "expected_source": "article_03.md",
+          "answer": "Các kỹ thuật brainstorm ý tưởng cho IELTS Writing bao gồm:\n\n- **Freewriting (Viết tự do)**: Viết liên tục trong một khoảng thời gian mà không lo ngại về ngữ pháp hay bố cục để giải phóng tư duy và tìm ra ý tưởng phong phú [3].\n  \n- **Outlining (Lập dàn ý)**: Tạo danh sách các ý chính và chi tiết hỗ trợ theo cấp bậc để sắp xếp suy nghĩ và tạo ra một bài luận có cấu trúc chặt chẽ [5].\n\n- **Mind Mapping (Sơ đồ tư duy)**: Hình dung mối liên hệ giữa các ý tưởng và phát triển chúng theo từng nhánh, giúp nhận diện luận điểm tiềm năng [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_03.md::chunk-7",
+            "news/article_03.md::chunk-8",
+            "news/article_03.md::chunk-10",
+            "news/article_04.md::chunk-5",
+            "news/article_03.md::chunk-9"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7610527276992798,
+          "latency": 3.684263600000122,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.8428,
+          "context_recall": 1.0,
+          "context_precision": 0.5889
+        },
+        {
+          "question": "Vì sao nên viết ở thể chủ động trong IELTS Writing?",
+          "language": "vi",
+          "expected_source": "article_05.md",
+          "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+          "refused": true,
+          "refusal_reason": "LLM xác định context không có thông tin trả lời.",
+          "retrieved": [
+            "news/article_04.md::chunk-5",
+            "news/article_04.md::chunk-6",
+            "news/article_02.md::chunk-0",
+            "news/article_04.md::chunk-7",
+            "news/article_04.md::chunk-3"
+          ],
+          "expected_source_hit": false,
+          "best_dense_score": 0.6629507541656494,
+          "latency": 2.3595255999989604,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        }
+      ],
+      "ood": [
+        {
+          "question": "Giá vàng hôm nay bao nhiêu?",
+          "refused": true
+        },
+        {
+          "question": "What is the TOEFL iBT speaking section format?",
+          "refused": true
+        },
+        {
+          "question": "Học phí Đại học Bách khoa Hà Nội năm 2025 là bao nhiêu?",
+          "refused": true
+        },
+        {
+          "question": "Who won the 2022 FIFA World Cup?",
+          "refused": true
+        },
+        {
+          "question": "Cách đăng ký học phần tại trường đại học",
+          "refused": true
+        }
+      ]
+    },
+    "C": {
+      "name": "Hybrid + RRF, không dịch query",
+      "use_reranking": true,
+      "translation": false,
+      "summary": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.5497,
+        "context_recall": 0.7954,
+        "context_precision": 0.5756,
+        "average": 0.7302,
+        "answered_rate": 0.8333,
+        "source_hit_rate": 0.7778,
+        "avg_latency": 2.43,
+        "ood_refusal_rate": 1.0
+      },
+      "rows": [
+        {
+          "question": "What are the four criteria used to assess IELTS Writing Task 1?",
+          "language": "en",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "The four criteria used to assess IELTS Writing Task 1 are:\n\n- Task Achievement\n- Coherence and Cohesion\n- Lexical Resource\n- Grammatical Range and Accuracy [1][3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-writing-band-descriptors.md::chunk-14",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-writing-band-descriptors.md::chunk-0",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.70606529712677,
+          "latency": 2.3668314999995346,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.747,
+          "context_recall": 1.0,
+          "context_precision": 0.8333
+        },
+        {
+          "question": "Task 2 khác Task 1 ở tiêu chí chấm nào?",
+          "language": "vi",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+          "refused": true,
+          "refusal_reason": "LLM xác định context không có thông tin trả lời.",
+          "retrieved": [
+            "news/article_05.md::chunk-14",
+            "news/article_05.md::chunk-3",
+            "news/article_03.md::chunk-2",
+            "news/article_05.md::chunk-6",
+            "news/article_03.md::chunk-17"
+          ],
+          "expected_source_hit": false,
+          "best_dense_score": 0.4687964916229248,
+          "latency": 2.8262177999986307,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.3333
+        },
+        {
+          "question": "What is the minimum word count for Task 1 and for Task 2?",
+          "language": "en",
+          "expected_source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+          "answer": "- Task 1: at least 150 words [4].\n- Task 2: at least 250 words [4].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-4",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-4"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.5579491853713989,
+          "latency": 2.2063429999998334,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.6522,
+          "context_recall": 1.0,
+          "context_precision": 0.8056
+        },
+        {
+          "question": "Task 2 có trọng số điểm như thế nào so với Task 1?",
+          "language": "vi",
+          "expected_source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+          "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+          "refused": true,
+          "refusal_reason": "LLM xác định context không có thông tin trả lời.",
+          "retrieved": [
+            "news/article_05.md::chunk-1",
+            "news/article_05.md::chunk-13",
+            "news/article_05.md::chunk-6",
+            "news/article_02.md::chunk-1",
+            "news/article_03.md::chunk-17"
+          ],
+          "expected_source_hit": false,
+          "best_dense_score": 0.4612613916397095,
+          "latency": 1.5906364000002213,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        {
+          "question": "How long should candidates spend on each task in the sample Academic Writing test?",
+          "language": "en",
+          "expected_source": "ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md",
+          "answer": "- Candidates should spend 1 hour in total for the test, with Task 2 contributing more weight in marking than Task 1. Specific time allocation for each task is not mentioned, but they should manage their time within the hour for both tasks [1][4].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-4",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-1",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-5"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.646614134311676,
+          "latency": 2.395263899999918,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.5177,
+          "context_recall": 1.0,
+          "context_precision": 0.0
+        },
+        {
+          "question": "Why can a response be penalised regardless of its content?",
+          "language": "en",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "A response can be penalised regardless of its content for the following reasons:\n\n- If it is partly or wholly plagiarised.\n- If it is not written as full, connected text (e.g. using bullet points or note form) [1][3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-2",
+            "legal/ielts-writing-band-descriptors.md::chunk-36",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-1",
+            "legal/ielts-writing-band-descriptors.md::chunk-38",
+            "legal/ielts-writing-band-descriptors.md::chunk-32"
+          ],
+          "expected_source_hit": false,
+          "best_dense_score": 0.38183164596557617,
+          "latency": 2.3786407000006875,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.7634,
+          "context_recall": 1.0,
+          "context_precision": 0.8333
+        },
+        {
+          "question": "What is the difference between coherence and cohesion?",
+          "language": "en",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "- Coherence refers to the linking of ideas through logical sequencing.\n- Cohesion refers to the varied and appropriate use of cohesive devices (e.g. logical connectors, conjunctions and pronouns) to assist in making clear the relationships between and within sentences [1][4].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-key-assessment-criteria.md::chunk-5",
+            "legal/ielts-writing-band-descriptors.md::chunk-27",
+            "legal/ielts-writing-band-descriptors.md::chunk-9",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-3",
+            "legal/ielts-writing-band-descriptors.md::chunk-12"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.45161139965057373,
+          "latency": 2.23277379999854,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.6111,
+          "context_recall": 1.0,
+          "context_precision": 0.75
+        },
+        {
+          "question": "Tiêu chí Task Achievement của Academic Task 1 đánh giá những khả năng nào?",
+          "language": "vi",
+          "expected_source": "ielts-writing-key-assessment-criteria.md",
+          "answer": "- Diễn giải thông tin, số liệu thống kê, sơ đồ [2].\n- Tóm tắt và mô tả thông tin từ sơ đồ [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_02.md::chunk-1",
+            "news/article_02.md::chunk-2",
+            "news/article_05.md::chunk-9",
+            "news/article_05.md::chunk-0",
+            "news/article_05.md::chunk-1"
+          ],
+          "expected_source_hit": false,
+          "best_dense_score": 0.546320915222168,
+          "latency": 2.0124996000013198,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.3315,
+          "context_recall": 0.8,
+          "context_precision": 0.5
+        },
+        {
+          "question": "What does a band 7 response need for Task Achievement in Task 1?",
+          "language": "en",
+          "expected_source": "ielts-writing-band-descriptors.md",
+          "answer": "A band 7 response for Task Achievement in Task 1 needs to have the following:\n\n- Covers the requirements of the task.\n- Content is relevant and accurate, with few omissions or lapses.\n- Appropriate format is used.\n- Key features are selected, covered, and clearly highlighted, but could be more fully or appropriately illustrated or extended.\n- Presents a clear overview and appropriately categorizes data.\n- Identifies main trends or differences [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-band-descriptors.md::chunk-5",
+            "legal/ielts-writing-band-descriptors.md::chunk-20",
+            "legal/ielts-writing-band-descriptors.md::chunk-16",
+            "legal/ielts-writing-band-descriptors.md::chunk-8",
+            "legal/ielts-writing-band-descriptors.md::chunk-0"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6782382726669312,
+          "latency": 2.825803600000654,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.9043,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "When is a Writing response rated at Band 1 or Band 0?",
+          "language": "en",
+          "expected_source": "ielts-writing-band-descriptors.md",
+          "answer": "- Band 1:\n  - Responses of 20 words or fewer are rated at Band 1 [1][3].\n  - No resource is apparent, except for a few isolated words [1][3].\n  - The content is wholly unrelated to the task [3].\n  - No rateable language is evident [3].\n\n- Band 0:\n  - Should only be used where a candidate did not attend or attempt the question in any way, used a language other than English throughout, or where there is proof that a candidate’s answer has been totally memorised [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-writing-band-descriptors.md::chunk-38",
+            "legal/ielts-writing-band-descriptors.md::chunk-20",
+            "legal/ielts-writing-band-descriptors.md::chunk-19",
+            "legal/ielts-writing-band-descriptors.md::chunk-14",
+            "legal/ielts-writing-band-descriptors.md::chunk-32"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6988075375556946,
+          "latency": 2.704094599999735,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.7175,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Why did the sample Task 2 response get band 5.5?",
+          "language": "en",
+          "expected_source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md",
+          "answer": "The sample Task 2 response received a band score of 5.5 due to the following reasons:\n\n- It did not adequately cover the key features of the task.\n- Limited detail was provided, lacking references to important categories.\n- The organisation of information was unclear, with no clear progression.\n- Some cohesive devices were used inaccurately.\n- The range of vocabulary was basic and repetitive.\n- There was limited control over spelling, causing confusion.\n- A limited range of sentence forms was used, with frequent errors that impeded meaning [1].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-15",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-22",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-11",
+            "legal/ielts-writing-band-descriptors.md::chunk-20",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-12"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7396167516708374,
+          "latency": 2.9085500000001048,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.9005,
+          "context_recall": 0.6,
+          "context_precision": 0.75
+        },
+        {
+          "question": "Bài mẫu Task 2 đạt band 7.5 được giám khảo nhận xét những điểm mạnh nào?",
+          "language": "vi",
+          "expected_source": "ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md",
+          "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+          "refused": true,
+          "refusal_reason": "LLM xác định context không có thông tin trả lời.",
+          "retrieved": [
+            "news/article_03.md::chunk-15",
+            "news/article_03.md::chunk-14",
+            "legal/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.md::chunk-22",
+            "news/article_03.md::chunk-11",
+            "news/article_02.md::chunk-1"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.5577622652053833,
+          "latency": 1.5863589000000502,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.1667,
+          "context_precision": 0.3333
+        },
+        {
+          "question": "Will IELTS still offer a paper-based test?",
+          "language": "en",
+          "expected_source": "article_01.md",
+          "answer": "- No, IELTS will no longer offer a paper-based test from mid-2026; all tests will be delivered on computer [3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_01.md::chunk-2",
+            "news/article_01.md::chunk-1",
+            "news/article_01.md::chunk-0",
+            "news/article_01.md::chunk-3",
+            "legal/ielts-academic-writing-access-arrangement-modified-large-print-question-paper.md::chunk-1"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7518333792686462,
+          "latency": 1.7732080000005226,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.7647,
+          "context_recall": 0.75,
+          "context_precision": 0.3333
+        },
+        {
+          "question": "'Writing on Paper' là gì?",
+          "language": "vi",
+          "expected_source": "article_01.md",
+          "answer": "- 'Writing on Paper' là một tùy chọn mới cho phép thí sinh viết tay câu trả lời cho phần 'Writing' trên giấy nếu họ chọn, nhằm cá nhân hóa trải nghiệm thi của họ [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_05.md::chunk-5",
+            "news/article_01.md::chunk-1",
+            "news/article_05.md::chunk-8",
+            "news/article_01.md::chunk-3",
+            "news/article_05.md::chunk-19"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.4210726022720337,
+          "latency": 2.029798600000504,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.4759,
+          "context_recall": 1.0,
+          "context_precision": 0.5
+        },
+        {
+          "question": "What are the 5 tips to maximise your IELTS Writing score?",
+          "language": "en",
+          "expected_source": "article_04.md",
+          "answer": "- Practise regularly\n- Read widely\n- Carefully read instructions\n- Plan your response\n- Pay attention to the word count and proofread your work [3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_04.md::chunk-1",
+            "news/article_04.md::chunk-0",
+            "news/article_04.md::chunk-9",
+            "news/article_04.md::chunk-6",
+            "news/article_04.md::chunk-7"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.8309025168418884,
+          "latency": 3.7731308999991597,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.4243,
+          "context_recall": 1.0,
+          "context_precision": 0.4167
+        },
+        {
+          "question": "Why does reading widely help improve IELTS writing?",
+          "language": "en",
+          "expected_source": "article_04.md",
+          "answer": "Reading widely helps improve IELTS writing for several reasons:\n\n- Exposes you to new words and phrases, building your vocabulary [1].\n- Improves grammar by showing how sentences are constructed and grammar rules are applied [1].\n- Helps develop your own writing style by learning different writing techniques and formats [2].\n- Enhances critical thinking skills, allowing for better argument formation and opinion expression [2].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_04.md::chunk-4",
+            "news/article_04.md::chunk-5",
+            "news/article_04.md::chunk-3",
+            "news/article_04.md::chunk-7",
+            "news/article_04.md::chunk-9"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7644960284233093,
+          "latency": 3.645076100001461,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.9428,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        {
+          "question": "Có những kỹ thuật brainstorm ý tưởng nào cho IELTS Writing?",
+          "language": "vi",
+          "expected_source": "article_03.md",
+          "answer": "- Freewriting (Viết tự do) [3]\n- Outlining (Lập dàn ý) [4]\n- Mind Mapping (Sơ đồ tư duy) [2]",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_03.md::chunk-7",
+            "news/article_03.md::chunk-8",
+            "news/article_03.md::chunk-10",
+            "news/article_03.md::chunk-9",
+            "news/article_03.md::chunk-11"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.7610527276992798,
+          "latency": 2.034776700000293,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.573,
+          "context_recall": 1.0,
+          "context_precision": 0.6389
+        },
+        {
+          "question": "Vì sao nên viết ở thể chủ động trong IELTS Writing?",
+          "language": "vi",
+          "expected_source": "article_05.md",
+          "answer": "- Viết ở thể chủ động làm cho câu rõ ràng hơn bằng cách chỉ ra ai đang làm gì, giúp thu hút người đọc hiệu quả hơn và làm cho bài viết sắc nét hơn [3].",
+          "refused": false,
+          "refusal_reason": null,
+          "retrieved": [
+            "news/article_02.md::chunk-0",
+            "news/article_05.md::chunk-1",
+            "news/article_05.md::chunk-8",
+            "news/article_03.md::chunk-1",
+            "news/article_05.md::chunk-15"
+          ],
+          "expected_source_hit": true,
+          "best_dense_score": 0.6629507541656494,
+          "latency": 2.4734231000002183,
+          "faithfulness": 1.0,
+          "answer_relevance": 0.5694,
+          "context_recall": 1.0,
+          "context_precision": 0.3333
+        }
+      ],
+      "ood": [
+        {
+          "question": "Giá vàng hôm nay bao nhiêu?",
+          "refused": true
+        },
+        {
+          "question": "What is the TOEFL iBT speaking section format?",
+          "refused": true
+        },
+        {
+          "question": "Học phí Đại học Bách khoa Hà Nội năm 2025 là bao nhiêu?",
+          "refused": true
+        },
+        {
+          "question": "Who won the 2022 FIFA World Cup?",
+          "refused": true
+        },
+        {
+          "question": "Cách đăng ký học phần tại trường đại học",
+          "refused": true
+        }
+      ]
+    }
+  }
+}

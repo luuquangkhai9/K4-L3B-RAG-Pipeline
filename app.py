@@ -9,22 +9,53 @@ load_dotenv()
 
 from src.task9_retrieval_pipeline import SCORE_THRESHOLD  # noqa: E402
 from src.task10_generation import LLM_MODEL, LLM_PROVIDER, generate_with_trace  # noqa: E402
+from ui_evaluation import render_evaluation  # noqa: E402
 
 
 st.set_page_config(
     page_title="IELTS Writing RAG",
     page_icon="📝",
     layout="wide",
+    initial_sidebar_state="expanded",
 )
 
-EXAMPLES = [
-    "What does a band 7 response need for Task Achievement in Task 1?",
-    "Task 2 cần viết tối thiểu bao nhiêu từ?",
-    "How is Coherence and Cohesion assessed?",
-    "Mẹo tăng điểm IELTS Writing là gì?",
-    "Will IELTS still offer a paper-based test?",
-    "Giá vàng hôm nay bao nhiêu?",
-]
+# Mỗi câu gợi ý kiểm tra một khả năng cụ thể của pipeline (lý do hiện ở tooltip).
+EXAMPLE_GROUPS = {
+    ":material/grading: Band descriptors & tiêu chí chấm": {
+        "What does a band 7 response need for Task Achievement in Task 1?":
+            "Tra bảng: kiểm tra chunking theo ô bảng (Task 1 × Band 7 × Task Achievement).",
+        "Band 6 Lexical Resource trong Task 2 yêu cầu gì?":
+            "Hỏi tiếng Việt về bảng tiếng Anh: kiểm tra query translation + tra bảng Task 2.",
+        "How is Coherence and Cohesion assessed?":
+            "Câu định nghĩa có ở nhiều tài liệu: kiểm tra RRF gộp nguồn và citation nhiều nguồn.",
+        "Task 2 cần viết tối thiểu bao nhiêu từ?":
+            "Số liệu chính xác (250 từ) chỉ có trong tài liệu tiếng Anh: từng bị từ chối trước khi thêm dịch query.",
+    },
+    ":material/description: Đề mẫu & nhận xét giám khảo": {
+        "Why did the sample Task 2 response get band 5.5?":
+            "Cần đúng đoạn nhận xét giám khảo: kiểm tra heading 'Examiner comment — Band' giữ nhãn band.",
+        "Trong đề thi mẫu IELTS Academic Writing (large print), Task 1 yêu cầu mô tả bảng số liệu gì?":
+            "Nội dung nằm giữa tài liệu đề thi: kiểm tra contextual chunk header (tên tài liệu trong mỗi chunk).",
+        "What is the Task 2 essay topic in the IELTS sample question paper?":
+            "Trích nguyên văn đề bài: kiểm tra câu trả lời trích đúng, không diễn giải sai.",
+    },
+    ":material/newspaper: Tin tức & mẹo luyện thi": {
+        "Will IELTS still offer a paper-based test?":
+            "Thông tin thời sự (bỏ thi giấy từ giữa 2026): kiểm tra nguồn news và link nguồn gốc.",
+        "Mẹo tăng điểm IELTS Writing là gì?":
+            "Câu mở, cần tổng hợp nhiều bài: kiểm tra câu trả lời có nhiều citation [n].",
+        "Làm sao viết IELTS Writing rõ ràng và súc tích?":
+            "Hỏi tiếng Việt, bài tiếng Việt: kiểm tra BM25 khớp từ khóa có dấu.",
+    },
+    ":material/block: Ngoài phạm vi (test từ chối an toàn)": {
+        "Giá vàng hôm nay bao nhiêu?":
+            "Hoàn toàn ngoài domain (cosine ~0.26 < ngưỡng): bị chặn ngay ở bước threshold, không gọi LLM.",
+        "What is the TOEFL iBT speaking section format?":
+            "Gần domain (kỳ thi tiếng Anh, cosine ~0.48 > ngưỡng): phải được LLM từ chối vì không có evidence.",
+    },
+}
+TAB_CHAT = ":material/chat: Chatbot"
+TAB_EVAL = ":material/analytics: Đánh giá A/B"
 METHOD_LABEL = {"hybrid": "Hybrid (Dense + BM25 → RRF)", "pageindex": "PageIndex fallback", "none": "Từ chối an toàn"}
 _CITATION = re.compile(r"\[(\d+)\]")
 
@@ -52,6 +83,25 @@ def ask(query: str, top_k: int, use_reranking: bool) -> dict:
         "trace": trace,
         "latency": time.perf_counter() - started,
     }
+
+
+def queue_question(question: str) -> None:
+    st.session_state.pending = question
+    st.session_state.main_tab = TAB_CHAT  # bấm câu mẫu khi đang ở tab Đánh giá thì quay về chat
+
+
+def render_suggestions() -> None:
+    st.markdown("#### Câu hỏi gợi ý để test")
+    st.caption("Bấm một câu để hỏi ngay, hoặc tự nhập câu hỏi ở ô chat bên dưới.")
+    columns = st.columns(2)
+    for index, (group, questions) in enumerate(EXAMPLE_GROUPS.items()):
+        with columns[index % 2].container(border=True):
+            st.markdown(f"**{group}**")
+            for question, reason in questions.items():
+                st.button(
+                    question, key=f"suggest-{question}", width="stretch", help=reason,
+                    on_click=queue_question, args=(question,),
+                )
 
 
 def render_answer(message: dict) -> None:
@@ -159,25 +209,38 @@ with st.sidebar:
         st.error(f"Chưa đọc được ChromaDB: {error}. Chạy `python -m src.task4_chunking_indexing`.")
     st.divider()
     st.subheader("Câu hỏi mẫu")
-    for example in EXAMPLES:
-        if st.button(example, use_container_width=True):
-            st.session_state.pending = example
+    for group, questions in EXAMPLE_GROUPS.items():
+        with st.expander(group):
+            for question, reason in questions.items():
+                st.button(
+                    question, key=f"side-{question}", width="stretch", help=reason,
+                    on_click=queue_question, args=(question,),
+                )
     st.divider()
-    if st.button("🗑️ Xoá hội thoại", use_container_width=True):
+    if st.button("Xoá hội thoại", icon=":material/delete:", width="stretch"):
         st.session_state.messages = []
         st.rerun()
 
 st.title("Chatbot IELTS Writing")
 st.caption("Trả lời chỉ từ tài liệu đã thu thập. Không đủ bằng chứng thì chatbot sẽ từ chối thay vì đoán.")
 
-query = st.chat_input("Nhập câu hỏi về IELTS Writing...") or st.session_state.pending
-st.session_state.pending = None
+chat_tab, eval_tab = st.tabs([TAB_CHAT, TAB_EVAL], key="main_tab", on_change="rerun")
 
-chat_col, detail_col = st.columns([3, 2], gap="large")
+with eval_tab:
+    if eval_tab.open:
+        render_evaluation()
+
+query = None
+if chat_tab.open:
+    query = st.chat_input("Nhập câu hỏi về IELTS Writing...") or st.session_state.pending
+    st.session_state.pending = None
+
+with chat_tab:
+    chat_col, detail_col = st.columns([3, 2], gap="large")
 
 with chat_col:
     if not st.session_state.messages and not query:
-        st.info("Chọn một câu hỏi mẫu ở thanh bên hoặc nhập câu hỏi bên dưới.")
+        render_suggestions()
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             if message["role"] == "assistant":

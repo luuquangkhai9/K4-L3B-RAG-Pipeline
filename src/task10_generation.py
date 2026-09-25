@@ -36,10 +36,11 @@ LLM_MODEL = os.getenv("LLM_MODEL") or _DEFAULT_MODELS.get(LLM_PROVIDER, "")
 REFUSAL = "Tôi không thể xác minh thông tin này từ nguồn hiện có."
 REFUSAL_MARKER = "NO_EVIDENCE"
 
-SYSTEM_PROMPT = f"""Bạn là trợ lý về IELTS Writing. Trả lời chỉ từ context được cung cấp.
-- Mỗi khẳng định phải có citation dạng [n], n là số của Document trong context; có thể ghép [1][3].
+SYSTEM_PROMPT = f"""Bạn là trợ lý về IELTS Writing. Trả lời chỉ từ các <document> trong context.
+- Mỗi khẳng định phải có citation dạng [n], n là id của <document>; có thể ghép [1][3].
 - Không dùng kiến thức ngoài context, không đoán.
-- Nếu context không chứa thông tin để trả lời, chỉ trả lời đúng một từ: {REFUSAL_MARKER}
+- Nếu context có thông tin trả lời được câu hỏi (kể cả một phần), hãy trả lời phần đó kèm citation.
+- Chỉ khi không document nào liên quan đến câu hỏi, trả lời đúng một từ duy nhất: {REFUSAL_MARKER}
 - Trả lời bằng ngôn ngữ của câu hỏi, ngắn gọn, rõ ràng; dùng gạch đầu dòng khi liệt kê."""
 
 _CITATION = re.compile(r"\[(\d+)\]")
@@ -64,11 +65,16 @@ def format_context(chunks: list[dict], numbers: list[int] | None = None) -> str:
     parts = []
     for number, chunk in zip(numbers, chunks):
         metadata = chunk["metadata"]
+        # Bỏ contextual header "[title]" của Task 4 (chỉ phục vụ embedding/BM25):
+        # title đã có trong nhãn Document, và dòng "[...]" dễ làm LLM nhầm ranh giới.
+        content = chunk["content"].removeprefix(f"[{metadata['title']}]\n")
+        # Bọc bằng thẻ thay vì "---": nội dung Markdown cũng có "---" nên LLM
+        # từng hiểu nhầm phần sau là đoạn mồ côi không thuộc Document nào.
         parts.append(
-            f"[Document {number} | Title: {metadata['title']} | "
-            f"Source: {metadata['source']}]\n{chunk['content']}"
+            f'<document id="{number}" title="{metadata["title"]}" source="{metadata["source"]}">\n'
+            f"{content}\n</document>"
         )
-    return "\n\n---\n\n".join(parts)
+    return "\n\n".join(parts)
 
 
 def call_llm(system_prompt: str, user_message: str) -> str:
@@ -126,6 +132,8 @@ def generate_with_trace(
     except Exception as error:
         return _refusal(f"Retrieval lỗi: {error}", {})
     trace["refusal_reason"] = None
+    # Giữ chunks đã truy xuất kể cả khi từ chối: evaluation chấm context recall/precision.
+    trace["retrieved"] = chunks
     if not chunks:
         return _refusal("Không tìm thấy chunk nào.", trace)
     # Dense không đủ tự tin và fallback không dùng được: không đủ evidence.

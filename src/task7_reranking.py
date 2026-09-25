@@ -19,13 +19,18 @@ def rerank_rrf(
     scores: dict[str, float] = {}
     items: dict[str, dict] = {}
     ranks: dict[str, dict[str, int]] = {}
+    seen_methods: dict[str, int] = {}
     for ranked_list in ranked_lists:
+        method = ranked_list[0].get("retrieval_method", "?") if ranked_list else "?"
+        # Nhiều danh sách cùng method (vd. dense cho query gốc và bản dịch): dense, dense_2...
+        seen_methods[method] = seen_methods.get(method, 0) + 1
+        label = method if seen_methods[method] == 1 else f"{method}_{seen_methods[method]}"
         for rank, item in enumerate(ranked_list, 1):
             item_id = item["id"]
             scores[item_id] = scores.get(item_id, 0.0) + 1 / (k + rank)
             # Giữ bản đầu tiên (dense đứng trước) làm nội dung/metadata.
             items.setdefault(item_id, item)
-            ranks.setdefault(item_id, {})[item.get("retrieval_method", "?")] = rank
+            ranks.setdefault(item_id, {})[label] = rank
 
     ranked_ids = sorted(scores, key=scores.get, reverse=True)
     results = []

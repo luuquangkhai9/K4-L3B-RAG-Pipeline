@@ -1,0 +1,72 @@
+[
+  {
+    "metric": "faithfulness",
+    "case": "grounded answer",
+    "score": 1.0,
+    "expect": ">= 0.9",
+    "passed": true
+  },
+  {
+    "metric": "faithfulness",
+    "case": "hallucinated answer",
+    "score": 0.0,
+    "expect": "<= 0.3",
+    "passed": true
+  },
+  {
+    "metric": "faithfulness",
+    "case": "half hallucinated",
+    "score": 0.5,
+    "expect": "<= 0.6",
+    "passed": true
+  },
+  {
+    "metric": "answer_relevance",
+    "case": "on-topic answer",
+    "score": 0.747,
+    "expect": ">= 0.7",
+    "passed": true
+  },
+  {
+    "metric": "answer_relevance",
+    "case": "off-topic answer",
+    "score": 0.142,
+    "expect": "<= 0.5",
+    "passed": true
+  },
+  {
+    "metric": "context_recall",
+    "case": "context has answer",
+    "score": 1.0,
+    "expect": ">= 0.9",
+    "passed": true
+  },
+  {
+    "metric": "context_recall",
+    "case": "context lacks answer",
+    "score": 0.0,
+    "expect": "<= 0.1",
+    "passed": true
+  },
+  {
+    "metric": "context_precision",
+    "case": "relevant ranked first",
+    "score": 1.0,
+    "expect": ">= 0.9",
+    "passed": true
+  },
+  {
+    "metric": "context_precision",
+    "case": "relevant ranked last",
+    "score": 0.333,
+    "expect": "<= 0.5",
+    "passed": true
+  },
+  {
+    "metric": "context_precision",
+    "case": "no relevant context",
+    "score": 0.0,
+    "expect": "<= 0.1",
+    "passed": true
+  }
+]

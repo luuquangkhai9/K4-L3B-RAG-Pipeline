@@ -25,12 +25,16 @@ from .task8_pageindex_vectorless import pageindex_search
 
 load_dotenv()
 
-# Hiệu chỉnh bằng calibrate_threshold(): in-domain thấp nhất 0.48,
-# out-of-domain phần lớn < 0.29 (2 câu sát ngưỡng 0.48–0.51 do LLM từ chối).
-SCORE_THRESHOLD = float(os.getenv("SCORE_THRESHOLD") or 0.45)
+# Hiệu chỉnh bằng calibrate_threshold() + golden dataset: in-domain thấp nhất 0.38
+# ("Why can a response be penalised..."), out-of-domain 0.12–0.51 → hai vùng chồng nhau.
+# 0.35 chặn chắc câu ngoài domain rõ ràng (≤ 0.28); phần chồng lấn do LLM từ chối
+# (NO_EVIDENCE), đã đạt 5/5 safe refusal trong evaluation.
+SCORE_THRESHOLD = float(os.getenv("SCORE_THRESHOLD") or 0.35)
 DEFAULT_TOP_K = 5
 # Lấy rộng hơn top_k cho mỗi nhánh để RRF có đủ ứng viên.
 CANDIDATE_MULTIPLIER = 2
+# Query expansion bằng bản dịch tiếng Anh; tắt để chạy A/B (config C trong evaluation).
+QUERY_TRANSLATION = os.getenv("QUERY_TRANSLATION", "1") != "0"
 
 
 _VIETNAMESE = re.compile(r"[ăâđêôơưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]", re.I)
@@ -63,7 +67,7 @@ def retrieve_with_trace(
 ) -> tuple[list[dict], dict]:
     """Như retrieve() nhưng trả thêm trace để UI/eval giải thích quyết định."""
     candidates = top_k * CANDIDATE_MULTIPLIER
-    translated = translate_query(query)
+    translated = translate_query(query) if QUERY_TRANSLATION else None
     queries = [query] + ([translated] if translated else [])
 
     dense_lists = [semantic_search(q, top_k=candidates) for q in queries]

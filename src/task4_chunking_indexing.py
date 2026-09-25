@@ -13,6 +13,7 @@ chạy lại pipeline không tạo dữ liệu trùng. Task 5 phải dùng chung
 
 import os
 import re
+import threading
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -68,13 +69,22 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
     return vectors
 
 
+_client_lock = threading.Lock()
+_client = None
+
+
 def get_collection():
     """Mở Chroma collection dùng cosine distance."""
     import chromadb
 
-    CHROMA_DIR.mkdir(parents=True, exist_ok=True)
-    client = chromadb.PersistentClient(path=str(CHROMA_DIR))
-    return client.get_or_create_collection(
+    global _client
+    # Dùng chung một client: tạo PersistentClient đồng thời từ nhiều thread
+    # (Streamlit, evaluation song song) làm Chroma lỗi "Could not connect to tenant".
+    with _client_lock:
+        if _client is None:
+            CHROMA_DIR.mkdir(parents=True, exist_ok=True)
+            _client = chromadb.PersistentClient(path=str(CHROMA_DIR))
+    return _client.get_or_create_collection(
         name=COLLECTION_NAME,
         metadata={"hnsw:space": "cosine"},
     )
@@ -167,13 +177,16 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
     """Chia Document thành chunks có id và chunk_index."""
     from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=CHUNK_SIZE,
-        chunk_overlap=CHUNK_OVERLAP,
-        separators=["\n## ", "\n### ", "\n\n", "\n", ". ", " ", ""],
-    )
     chunks = []
     for document in documents:
+        # Contextual chunk header: chunk giữa tài liệu vẫn biết mình thuộc tài
+        # liệu nào (vd. đề thi mẫu) để khớp các câu hỏi nhắc tới tài liệu đó.
+        header = f"[{document['metadata']['title']}]\n"
+        splitter = RecursiveCharacterTextSplitter(
+            chunk_size=CHUNK_SIZE - len(header),
+            chunk_overlap=CHUNK_OVERLAP,
+            separators=["\n## ", "\n### ", "\n\n", "\n", ". ", " ", ""],
+        )
         # Bỏ mảnh không có nội dung chữ (vd. chỉ còn "|" khi cắt ngang bảng).
         texts = [
             t for t in splitter.split_text(expand_tables(document["content"]))
@@ -182,7 +195,8 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
         for index, text in enumerate(texts):
             chunks.append({
                 "id": f"{document['id']}::chunk-{index}",
-                "content": text,
+                # Chunk đầu đã bắt đầu bằng "# <title>" nên không lặp lại.
+                "content": text if text.startswith("# ") else header + text,
                 "metadata": {**document["metadata"], "chunk_index": index},
             })
     return chunks

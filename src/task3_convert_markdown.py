@@ -48,6 +48,41 @@ _IMAGE_LINE = re.compile(r"^\s*!\[[^\]]*\]\([^)]*\)\s*$", re.M)
 _CONTENT_TAGS = re.compile(r"^#{1,6} Content tags\s*\n+[^\n]*\n", re.M)
 
 
+def structure_headings(text: str) -> str:
+    """Đổi các dòng cấu trúc của tài liệu bài mẫu thành heading Markdown.
+
+    PDF chỉ có dòng trơn "Sample Academic Writing Part 2" / "Candidate Response 1" /
+    "Examiner comment" + "Band 7.5". Khi chunk cắt giữa "Band 7.5" và lời nhận xét,
+    chunk nhận xét mất nhãn band. Heading đủ ngữ cảnh giúp splitter cắt đúng chỗ.
+    """
+    lines = text.splitlines()
+    output: list[str] = []
+    part = response = ""
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+        if re.fullmatch(r"Sample Academic Writing Part \d", line):
+            part = line
+        elif re.fullmatch(r"Candidate Response \d", line):
+            response = line
+            output.append(f"## {part}, {response}".strip(", "))
+            i += 1
+            continue
+        elif line == "Examiner comment":
+            j = i + 1
+            while j < len(lines) and not lines[j].strip():
+                j += 1
+            band = lines[j].strip() if j < len(lines) and re.fullmatch(r"Band [\d.]+", lines[j].strip()) else ""
+            label = f"{part}, {response}".strip(", ")
+            output.append(f"### Examiner comment — {label} — {band}".rstrip(" —"))
+            i = j + 1 if band else i + 1
+            continue
+        if line != part:
+            output.append(lines[i])
+        i += 1
+    return "\n".join(output)
+
+
 def clean_news(body: str) -> str:
     """Bỏ footer, ảnh và tag điều hướng khỏi bài crawl."""
     body = _NEWS_FOOTER.sub("", body)
@@ -148,6 +183,7 @@ def convert_legal_docs() -> None:
         text = re.sub(r"\n{3,}", "\n\n", text).strip()
         # pdfminer không map được glyph en-dash trong khoảng số ("0–9" thành "0?9").
         text = re.sub(r"(?<=\d)\?(?=\d)", "–", text)
+        text = structure_headings(text)
         if not text:
             print(f"Skip (empty): {path.name}")
             continue

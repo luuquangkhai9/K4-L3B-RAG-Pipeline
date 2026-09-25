@@ -5,56 +5,39 @@
 ---
 
 Sample Candidate Writing Responses and Examiner Comments
-
 Both the Academic and General Training
 Writing Modules consist of two tasks, Task 1
 and Task 2. Each task is assessed
 independently. The assessment of Task 2
 carries more weight in marking than Task 1.
-
 Detailed performance descriptors have been
 developed which describe written
 performance at the 9 IELTS bands. These
 descriptors apply to both the Academic and
 General Training Modules.
-
 Task 1 responses are assessed on the
 following criteria:
-
 • Task Achievement
-
 • Coherence and Cohesion
-
 • Lexical Resource
-
 • Grammatical Range and Accuracy
-
 Task 2 responses are assessed on the
 following criteria:
-
 • Task Response
-
 • Coherence and Cohesion
-
 • Lexical Resource
-
 • Grammatical Range and Accuracy
-
 Candidates should note that responses will be
 penalised if they are a) partly or wholly
 plagiarised, b) not written as full, connected
 text (e.g. using bullet points in any part of the
 response, or note form, is not appropriate).
-
 Task 1
-
 Task Achievement
-
 This criterion assesses how fully,
 appropriately, accurately and relevantly the
 response fulfils the requirements set out in
 the task, using the minimum of 150 words.
-
 Task 1 Academic is a writing task which has a
 defined input and a largely predictable output.
 It is basically an information-transfer task
@@ -62,40 +45,29 @@ which relates narrowly to the factual content
 of a diagram, graph, table, chart, map or
 other visual input, not to speculative
 explanations that lie outside the given data.
-
 Coherence and Cohesion
-
 This criterion is concerned with the overall
 organisation and logical development of the
 message: how the response organises and
 links information, ideas and language.
-
 Coherence refers to the linking of ideas through
-
 logical sequencing, while cohesion refers to the
 varied and appropriate use of cohesive devices
 (e.g. logical connectors, conjunctions and
 pronouns) to assist in making clear the
 relationships between and within sentences.
-
 Lexical Resource
-
 This criterion refers to the range of
 vocabulary the candidate has used and the
 accuracy and appropriacy of that use in
 terms of the specific task.
-
 Grammatical Range and Accuracy
-
 This criterion refers to the range and
 accurate use of the candidate’s
 grammatical resource within the
 candidate’s writing at sentence level.
-
 Task 2
-
 Task Response
-
 Both the Academic and General Training
 Writing Task 2 require the candidates to
 formulate and develop a position in relation
@@ -104,18 +76,14 @@ or statement, using a minimum of 250
 words. Ideas should be supported by
 evidence, and examples may be drawn
 from a candidates’ own experience.
-
 The other criteria for Task 2 are the same as
 for Task 1 (Coherence and Cohesion, Lexical
 Resource, Grammatical Range and
 Accuracy).
-
 Writing responses are marked by trained and
 certificated IELTS examiners.
-
 Scores may be reported as whole bands or half
 bands.
-
 Below you will find candidates’ responses to
 the two tasks in the sample Academic Writing
 test. There are two responses for each task.
@@ -123,7 +91,6 @@ Each response has been awarded a band
 score and is accompanied by an examiner
 comment on the candidate’s performance for
 that task.
-
 The examiners’ guidelines for marking the
 Writing scripts are very detailed. There
 are many different ways a candidate may
@@ -131,13 +98,10 @@ achieve a particular band score. The
 candidates’ answers that follow should
 not be regarded as definitive examples of
 any particular band score.
-
 Please refer to the publicly available
 IELTS Writing Key Criteria on our website.
 
-Sample Academic Writing Part 1
-
-Candidate Response 1
+## Sample Academic Writing Part 1, Candidate Response 1
 
 The chart gives you information on how children travelled to and from school in the years
 1990 and 2010. The modes of transport were by car, walking, cycling, walking and by bus
@@ -158,9 +122,7 @@ lower than the children who travelled by walking. In contrast in 2010 the number
 who travelled to school by car increased and the number of children walking to school has
 decreased. In 2010 children travelled to school by bus more than they cycled to school.
 
-Examiner comment
-
-Band 6
+### Examiner comment — Sample Academic Writing Part 1, Candidate Response 1 — Band 6
 
 The key features which are selected are covered and clearly highlighted, but reporting is somewhat
 mechanical and data is provided to support only some of the descriptions. There is a relevant
@@ -172,9 +134,9 @@ higher band, a wider range of vocabulary could be used, within the scope of the 
 simple and complex sentence structures, used fairly accurately, but again, there is not a wide enough
 variety of structures to achieve a higher band.
 
-Sample Academic Writing Part 1
 
-Candidate Response 2
+
+## Sample Academic Writing Part 1, Candidate Response 2
 
 The statistice show the number of tripe mad by children in one country over the past to years
 to travel to end from school using different modes of transport.
@@ -185,9 +147,7 @@ children walking (6 million) are Twice as high as the children use cycling (3 mi
 overall, At the end priod there were 12,000,000 children walking in 1990, 11,000,000
 children use care in 2010 and 5,000,000 children use bus.
 
-Examiner comment
-
-Band 4
+### Examiner comment — Sample Academic Writing Part 1, Candidate Response 2 — Band 4
 
 This response does generally try to address the requirements of the task but the key features are not
 adequately covered. Limited detail is provided, for example, there is no reference to the ‘walking and
@@ -198,9 +158,9 @@ is limited control over spelling, and errors cause confusion [tripe mad/trips ma
 sentence forms is used and although some structures are produced accurately, errors are frequent
 and this does impede meaning.
 
-Sample Academic Writing Part 2
 
-Candidate Response 1
+
+## Sample Academic Writing Part 2, Candidate Response 1
 
 WRITING TASK 2
 I completly disagree with the written statment. I believe that most of the people in the world
@@ -219,9 +179,7 @@ Another important issue that I would like to mention is how medicine is changing
 new discovers and treatments almost every week and that is an inequivoque sintom of how
 things are changing in order to improve the world’s health.
 
-Examiner comment
-
-Band 5.5
+### Examiner comment — Sample Academic Writing Part 2, Candidate Response 1 — Band 5.5
 
 A clear position is presented from the outset, supported by relevant ideas. These would require further
 development to achieve a higher score. It is also useful to note, this response does not meet the
@@ -234,9 +192,9 @@ taker’s first language, e.g. ‘alimentation’, but these features do not mak
 understand. There is a mix of sentence forms, but the level of error is too high to achieve a higher band
 score.
 
-Sample Academic Writing Part 2
 
-Candidate Response 2
+
+## Sample Academic Writing Part 2, Candidate Response 2
 
 Recently, there have been a lot of discussions about health and whether it is going to
 improve or not. In my opinion, I think that people will become unhealthier in the future than
@@ -270,9 +228,7 @@ In conclusion, I believe that people’s health is affected negatively by fast f
 
 and sports and it will be a problem in the future.
 
-Examiner comment
-
-Band 7.5
+### Examiner comment — Sample Academic Writing Part 2, Candidate Response 2 — Band 7.5
 
 This is a strong response. A clear position is presented at the outset and some ideas are explored to
 support  it.  An  alternative  position  is  also  considered  but  rejected.  Ideas  are  logically  organised  and

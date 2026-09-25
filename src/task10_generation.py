@@ -16,7 +16,7 @@ import re
 
 from dotenv import load_dotenv
 
-from .task9_retrieval_pipeline import retrieve
+from .task9_retrieval_pipeline import retrieve_with_trace
 
 
 load_dotenv()
@@ -25,102 +25,165 @@ TOP_K = 5
 TOP_P = 0.9
 TEMPERATURE = 0.3
 
-LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openai")
-LLM_MODEL = os.getenv("LLM_MODEL", "")
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openai").lower()
+_DEFAULT_MODELS = {
+    "openai": "gpt-4o-mini",
+    "gemini": "gemini-2.5-flash",
+    "anthropic": "claude-haiku-4-5-20251001",
+}
+LLM_MODEL = os.getenv("LLM_MODEL") or _DEFAULT_MODELS.get(LLM_PROVIDER, "")
+if LLM_PROVIDER == "openai":
+    LLM_MODEL = {"gpt4o": "gpt-4o", "gpt4o-mini": "gpt-4o-mini"}.get(
+        LLM_MODEL.lower(), LLM_MODEL
+    )
 
-SYSTEM_PROMPT = """Trả lời bằng tiếng Việt chỉ từ context được cung cấp.
-Mỗi khẳng định phải có citation theo dạng [ID], trong đó ID là giá trị sau 'Source ID:' trong context.
-Không viết tiền tố 'chunk-id:' bên trong citation; chép chính xác ID, gồm dấu gạch chéo và dấu hai chấm nếu có.
-Không suy diễn ngoài nguồn. Nếu context không đủ để trả lời, hãy nói rõ rằng bạn không thể xác minh."""
-SAFE_REFUSAL = "Tôi không thể xác minh thông tin này từ nguồn hiện có."
+REFUSAL = "Tôi không thể xác minh thông tin này từ nguồn hiện có."
+REFUSAL_MARKER = "NO_EVIDENCE"
+
+SYSTEM_PROMPT = f"""Bạn là trợ lý về IELTS Writing. Trả lời chỉ từ các <document> trong context.
+- Mỗi khẳng định phải có citation dạng [n], n là id của <document>; có thể ghép [1][3].
+- Không dùng kiến thức ngoài context, không đoán.
+- Nếu context có thông tin trả lời được câu hỏi (kể cả một phần), hãy trả lời phần đó kèm citation.
+- Chỉ khi không document nào liên quan đến câu hỏi, trả lời đúng một từ duy nhất: {REFUSAL_MARKER}
+- Trả lời bằng ngôn ngữ của câu hỏi, ngắn gọn, rõ ràng; dùng gạch đầu dòng khi liệt kê."""
+
+_CITATION = re.compile(r"\[(\d+)\]")
 
 
 def reorder_for_llm(chunks: list[dict]) -> list[dict]:
     """Đưa chunks quan trọng về đầu và cuối context."""
     if len(chunks) <= 2:
         return list(chunks)
-    return list(chunks[::2]) + list(chunks[1::2][::-1])
+    front = chunks[::2]
+    back = chunks[1::2]
+    return front + back[::-1]
 
 
-def format_context(chunks: list[dict]) -> str:
-    """Tạo context có title và source label."""
+def format_context(chunks: list[dict], numbers: list[int] | None = None) -> str:
+    """Tạo context có title và source label.
+
+    numbers: số Document của từng chunk (mặc định 1..n). Generation truyền vào
+    thứ hạng gốc để citation [n] luôn trỏ tới sources[n-1] dù đã reorder.
+    """
+    numbers = numbers or list(range(1, len(chunks) + 1))
     parts = []
-    for chunk in chunks:
-        metadata = chunk.get("metadata") or {}
+    for number, chunk in zip(numbers, chunks):
+        metadata = chunk["metadata"]
+        # Bỏ contextual header "[title]" của Task 4 (chỉ phục vụ embedding/BM25):
+        # title đã có trong nhãn Document, và dòng "[...]" dễ làm LLM nhầm ranh giới.
+        content = chunk["content"].removeprefix(f"[{metadata['title']}]\n")
+        # Bọc bằng thẻ thay vì "---": nội dung Markdown cũng có "---" nên LLM
+        # từng hiểu nhầm phần sau là đoạn mồ côi không thuộc Document nào.
         parts.append(
-            f"[Source ID: {chunk['id']} | Title: {metadata.get('title', 'Unknown')} | "
-            f"Source: {metadata.get('source', 'Unknown')}]\n{chunk['content']}"
+            f'<document id="{number}" title="{metadata["title"]}" source="{metadata["source"]}">\n'
+            f"{content}\n</document>"
         )
-    return "\n\n---\n\n".join(parts)
+    return "\n\n".join(parts)
 
 
 def call_llm(system_prompt: str, user_message: str) -> str:
     """Gọi OpenAI, Gemini hoặc Anthropic theo cấu hình."""
-    provider = LLM_PROVIDER.strip().lower()
-    if provider == "openai":
+    if LLM_PROVIDER == "openai":
         from openai import OpenAI
 
-        api_key = os.getenv("OPENAI_API_KEY", "").strip()
-        if not api_key:
-            raise RuntimeError("OPENAI_API_KEY is required for OpenAI generation")
-        model = LLM_MODEL.strip() or "gpt-4o-mini"
-        model = {"gpt4o": "gpt-4o", "gpt4o-mini": "gpt-4o-mini"}.get(model.lower(), model)
-        response = OpenAI(api_key=api_key).chat.completions.create(
-            model=model,
-            messages=[{"role": "system", "content": system_prompt}, {"role": "user", "content": user_message}],
+        response = OpenAI().chat.completions.create(
+            model=LLM_MODEL,
             temperature=TEMPERATURE,
             top_p=TOP_P,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_message},
+            ],
         )
-        return (response.choices[0].message.content or "").strip()
-    if provider == "gemini":
+        return response.choices[0].message.content or ""
+    if LLM_PROVIDER == "gemini":
         from google import genai
+        from google.genai import types
 
-        api_key = os.getenv("GEMINI_API_KEY", "").strip()
-        if not api_key:
-            raise RuntimeError("GEMINI_API_KEY is required for Gemini generation")
-        model = LLM_MODEL.strip() or "gemini-2.5-flash"
-        response = genai.Client(api_key=api_key).models.generate_content(
-            model=model, contents=f"{system_prompt}\n\n{user_message}"
+        response = genai.Client(api_key=os.getenv("GEMINI_API_KEY")).models.generate_content(
+            model=LLM_MODEL,
+            contents=user_message,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt, temperature=TEMPERATURE, top_p=TOP_P
+            ),
         )
-        return (response.text or "").strip()
-    if provider == "anthropic":
-        import anthropic
+        return response.text or ""
+    if LLM_PROVIDER == "anthropic":
+        from anthropic import Anthropic
 
-        api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
-        if not api_key:
-            raise RuntimeError("ANTHROPIC_API_KEY is required for Anthropic generation")
-        model = LLM_MODEL.strip() or "claude-3-5-haiku-latest"
-        response = anthropic.Anthropic(api_key=api_key).messages.create(
-            model=model, max_tokens=1200, system=system_prompt,
+        response = Anthropic().messages.create(
+            model=LLM_MODEL,
+            max_tokens=1024,
+            temperature=TEMPERATURE,
+            system=system_prompt,
             messages=[{"role": "user", "content": user_message}],
-            temperature=TEMPERATURE, top_p=TOP_P,
         )
-        return "\n".join(block.text for block in response.content if getattr(block, "type", None) == "text").strip()
-    raise ValueError("Unsupported LLM_PROVIDER; use openai, gemini, or anthropic")
+        return "".join(block.text for block in response.content if block.type == "text")
+    raise ValueError(f"LLM_PROVIDER must be openai, gemini or anthropic, got {LLM_PROVIDER!r}")
+
+
+def _refusal(reason: str, trace: dict) -> tuple[dict, dict]:
+    trace["refusal_reason"] = reason
+    return {"answer": REFUSAL, "sources": [], "retrieval_source": "none"}, trace
+
+
+def generate_with_trace(
+    query: str, top_k: int = TOP_K, use_reranking: bool = True,
+    score_threshold: float | None = None,
+) -> tuple[dict, dict]:
+    """generate_with_citation() kèm trace (retrieval, citation, lý do từ chối) cho UI/eval."""
+    try:
+        options = {} if score_threshold is None else {"score_threshold": score_threshold}
+        chunks, trace = retrieve_with_trace(
+            query, top_k=top_k, use_reranking=use_reranking, **options
+        )
+    except Exception as error:
+        return _refusal(f"Retrieval lỗi: {error}", {})
+    trace["refusal_reason"] = None
+    # Giữ chunks đã truy xuất kể cả khi từ chối: evaluation chấm context recall/precision.
+    trace["retrieved"] = chunks
+    if not chunks:
+        return _refusal("Không tìm thấy chunk nào.", trace)
+    # Dense không đủ tự tin và fallback không dùng được: không đủ evidence.
+    if trace["low_confidence"] and trace["used"] != "pageindex":
+        return _refusal(
+            f"Cosine cao nhất {trace['best_dense_score']:.2f} < threshold "
+            f"{trace['score_threshold']:.2f} và không có fallback.",
+            trace,
+        )
+
+    order = reorder_for_llm(list(range(len(chunks))))
+    context = format_context([chunks[i] for i in order], numbers=[i + 1 for i in order])
+    user_message = f"Context:\n{context}\n\nQuestion: {query}"
+    try:
+        answer = call_llm(SYSTEM_PROMPT, user_message).strip()
+    except Exception as error:
+        return _refusal(f"LLM provider lỗi: {error}", trace)
+    if not answer or REFUSAL_MARKER in answer:
+        return _refusal("LLM xác định context không có thông tin trả lời.", trace)
+
+    # Chỉ giữ citation map được về sources; bỏ số không tồn tại.
+    answer = _CITATION.sub(
+        lambda m: m.group(0) if 1 <= int(m.group(1)) <= len(chunks) else "", answer
+    )
+    trace["cited"] = sorted({int(n) for n in _CITATION.findall(answer)})
+    if not trace["cited"]:
+        return _refusal("Câu trả lời không có citation hợp lệ.", trace)
+    retrieval_source = "pageindex" if trace["used"] == "pageindex" else "hybrid"
+    return {"answer": answer, "sources": chunks, "retrieval_source": retrieval_source}, trace
 
 
 def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
     """Trả về GenerationResult."""
-    if not isinstance(query, str) or not query.strip():
-        raise ValueError("query must be a non-empty string")
-    chunks = retrieve(query.strip(), top_k=top_k)
-    if not chunks:
-        return {"answer": SAFE_REFUSAL, "sources": [], "retrieval_source": "none"}
-
-    context = format_context(reorder_for_llm(chunks))
-    try:
-        answer = call_llm(SYSTEM_PROMPT, f"Context:\n{context}\n\nQuestion: {query.strip()}")
-    except Exception:
-        return {"answer": SAFE_REFUSAL, "sources": [], "retrieval_source": "none"}
-    valid_ids = {str(chunk["id"]) for chunk in chunks}
-    cited_ids = set(re.findall(r"\[([^\[\]]+)\]", answer)) & valid_ids
-    if not answer or not cited_ids:
-        return {"answer": SAFE_REFUSAL, "sources": [], "retrieval_source": "none"}
-    sources = [chunk for chunk in chunks if chunk["id"] in cited_ids]
-    method = chunks[0].get("retrieval_method")
-    retrieval_source = "pageindex" if method == "pageindex" else "hybrid"
-    return {"answer": answer, "sources": sources, "retrieval_source": retrieval_source}
+    result, _ = generate_with_trace(query, top_k=top_k)
+    return result
 
 
 if __name__ == "__main__":
-    print(generate_with_citation("test query"))
+    for question in (
+        "What does a band 7 response need for Task Achievement in Task 1?",
+        "Giá vàng hôm nay bao nhiêu?",
+    ):
+        result = generate_with_citation(question)
+        print(f"Q: {question}\nA: {result['answer']}\n[{result['retrieval_source']}] "
+              f"{[s['id'] for s in result['sources']]}\n")

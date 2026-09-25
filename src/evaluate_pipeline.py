@@ -9,7 +9,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent.parent
-GOLDEN_PATH = ROOT / "group_project" / "evaluation" / "golden_dataset.json"
+GOLDEN_PATH = ROOT / "group_project" / "evaluation" / "golden_dataset_khailq.json"
 OUTPUT_PATH = ROOT / "group_project" / "evaluation" / "evaluation_results.json"
 METRICS = ("faithfulness", "answer_relevance", "context_recall", "context_precision")
 
@@ -45,7 +45,6 @@ def main() -> None:
     load_dotenv(ROOT / ".env")
     from openai import OpenAI
     import src.task10_generation as generation
-    from src.task9_retrieval_pipeline import retrieve as base_retrieve
 
     api_key = os.getenv("OPENAI_API_KEY", "").strip()
     if not api_key:
@@ -63,20 +62,13 @@ def main() -> None:
         for case_id, case in enumerate(dataset, start=1):
             if (case_id, config) in finished:
                 continue
-            captured = []
-
-            def configured_retrieve(query, top_k=5):
-                found = base_retrieve(
-                    query, top_k=top_k, score_threshold=-1.0,
-                    use_reranking=(config == "hybrid+RRF"),
-                )
-                captured.extend(found)
-                return found
-
-            generation.retrieve = configured_retrieve
             started = time.perf_counter()
-            generated = generation.generate_with_citation(case["question"], top_k=5)
+            generated, trace = generation.generate_with_trace(
+                case["question"], top_k=5,
+                use_reranking=(config == "hybrid+RRF"), score_threshold=-1.0,
+            )
             generation_seconds = time.perf_counter() - started
+            captured = trace.get("retrieved") or []
             contexts = [chunk["content"] for chunk in captured]
             judge_started = time.perf_counter()
             scores = _judge(
@@ -108,7 +100,6 @@ def main() -> None:
             OUTPUT_PATH.write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             print(f"{config}: {case_id}/{len(dataset)} complete")
 
-    generation.retrieve = base_retrieve
     print(f"Saved {len(results.get('records', []))} evaluations to {OUTPUT_PATH}")
 
 

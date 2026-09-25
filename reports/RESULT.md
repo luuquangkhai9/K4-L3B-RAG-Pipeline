@@ -9,7 +9,7 @@
 | Evaluator model | `gpt-4o-mini` |
 | Generator model | `gpt4o` (configured alias normalized to provider model ID) |
 | Embedding model | `text-embedding-3-small` |
-| Corpus version/commit | Branch `khailq`; working tree corpus, 4 legal PDFs + 5 news pages |
+| Corpus version/commit | Historical run on branch `khailq` (`0b43ec3`), 4 legal PDFs + 5 news pages; retained after integration |
 | Golden dataset size | 15 questions; 30 scored answers |
 | `top_k` | 5 |
 | Fallback threshold and calibration | Disabled in A/B with threshold `-1.0` to isolate the retrieval strategy. Production default remains cosine similarity 0.30; this threshold is provisional and needs in-domain/out-of-domain calibration. |
@@ -57,4 +57,4 @@ Both configurations used the same golden set, generator, evaluator, prompt, corp
 
 | Experiment | Baseline | Metric delta | Latency/cost delta | Conclusion |
 | --- | --- | ---: | ---: | --- |
-| Dense-only vs hybrid + RRF | Dense-only | Average +{fmt(delta_avg)} for hybrid | Generation mean {lat['dense-only']:.2f}s vs {lat['hybrid+RRF']:.2f}s; excludes indexing and judge cost | Hybrid + RRF performed better on average, led by context retrieval metrics. |
+| Dense-only vs hybrid + RRF | Dense-only | Average +0.025 for hybrid | Generation mean 3.11s vs 2.43s; excludes indexing and judge cost | Hybrid + RRF performed better on average, led by context retrieval metrics. |

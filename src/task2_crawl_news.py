@@ -72,4 +72,8 @@ async def crawl_and_format():
         await browser.close()
 
 if __name__ == "__main__":
+    import sys
+
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     asyncio.run(crawl_and_format())

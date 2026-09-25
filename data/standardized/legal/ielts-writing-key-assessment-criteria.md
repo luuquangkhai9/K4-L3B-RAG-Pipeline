@@ -1,4 +1,4 @@
-# Ielts Writing Key Assessment Criteria
+# IELTS Writing Key Assessment Criteria
 
 **File:** ielts-writing-key-assessment-criteria.pdf
 

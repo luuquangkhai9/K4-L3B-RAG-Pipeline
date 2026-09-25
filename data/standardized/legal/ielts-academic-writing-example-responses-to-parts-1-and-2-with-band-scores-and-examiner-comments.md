@@ -1,4 +1,4 @@
-# Ielts Academic Writing Example Responses To Parts 1 And 2 With Band Scores And Examiner Comments
+# IELTS Academic Writing Example Responses To Parts 1 And 2 With Band Scores And Examiner Comments
 
 **File:** ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.pdf
 

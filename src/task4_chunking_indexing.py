@@ -108,6 +108,61 @@ def load_documents() -> list[dict]:
     return documents
 
 
+def _cells(line: str) -> list[str]:
+    return [c.strip().replace("<br>", " ") for c in line.strip().strip("|").split("|")]
+
+
+def expand_tables(content: str) -> str:
+    """Đổi bảng Markdown thành các đoạn tự đủ ngữ cảnh.
+
+    Mỗi ô (hàng x cột) thành "<heading> — <cột 1> <giá trị> — <cột>: <nội dung>".
+    Hàng có ô đầu trống là phần tiếp của hàng trên. Nhờ vậy chunk cắt ở đâu
+    cũng còn biết Task/Band/tiêu chí (hàng bảng band descriptors dài > CHUNK_SIZE).
+    """
+    output: list[str] = []
+    heading = ""
+    header: list[str] = []
+    rows: list[list[str]] = []
+
+    def flush() -> None:
+        for row in rows:
+            label = f"{header[0]} {row[0]}".strip()
+            for column, text in zip(header[1:], row[1:]):
+                if text.strip():
+                    output.extend([f"{heading} — {label} — {column}: {text.strip()}", ""])
+        rows.clear()
+
+    for line in content.splitlines():
+        if line.lstrip().startswith("|"):
+            cells = _cells(line)
+            if all(re.fullmatch(r":?-{3,}:?", c) for c in cells if c):
+                continue
+            if not header:
+                header = cells
+            elif cells == header:
+                continue  # header lặp lại khi bảng sang trang
+            elif cells[0] or not rows:
+                rows.append(cells + [""] * (len(header) - len(cells)))
+            else:
+                for i, text in enumerate(cells[1:], 1):
+                    if text and i < len(rows[-1]):
+                        rows[-1][i] = f"{rows[-1][i]} {text}".strip()
+            continue
+        if header:
+            flush()
+            header = []
+        if line.startswith("#"):
+            text = line.lstrip("#").strip()
+            # Heading phụ ("Scoring criteria...") không thay heading có tên Task.
+            if "task" in text.lower() or not heading:
+                heading = text
+        output.append(line)
+    if header:
+        flush()
+    # Bảng rỗng không sinh đoạn nào nhưng để lại dòng trống liên tiếp.
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(output))
+
+
 def chunk_documents(documents: list[dict]) -> list[dict]:
     """Chia Document thành chunks có id và chunk_index."""
     from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -121,7 +176,7 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
     for document in documents:
         # Bỏ mảnh không có nội dung chữ (vd. chỉ còn "|" khi cắt ngang bảng).
         texts = [
-            t for t in splitter.split_text(document["content"])
+            t for t in splitter.split_text(expand_tables(document["content"]))
             if len(re.sub(r"\W", "", t)) >= 20
         ]
         for index, text in enumerate(texts):

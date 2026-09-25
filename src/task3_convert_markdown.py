@@ -28,6 +28,7 @@ OUTPUT_DIR = Path(__file__).parent.parent / "data" / "standardized"
 
 OCR_PROMPT = (
     "Chép lại chính xác toàn bộ văn bản trong ảnh này thành Markdown, giữ nguyên ngôn ngữ gốc. "
+    "Tiêu đề ở đầu trang (vd. tên phần, 'Writing Task 2 Band Descriptors') phải giữ thành heading Markdown '#'. "
     "Bảng nhiều cột phải chép thành bảng Markdown, mỗi ô đúng cột của nó. "
     "Không thêm lời giải thích."
 )
@@ -75,7 +76,8 @@ def ocr_pdf(path: Path) -> str:
         from openai import OpenAI
 
         client = OpenAI(max_retries=8)  # ảnh tốn nhiều token, dễ chạm rate limit TPM
-        model = os.getenv("OCR_MODEL", "gpt-4o-mini")
+        # gpt-4o-mini lệch cột trên bảng band descriptors dày chữ; gpt-4o chép đúng.
+        model = os.getenv("OCR_MODEL", "gpt-4o")
         for image in pages:
             data_url = "data:image/jpeg;base64," + base64.b64encode(image).decode()
             response = client.chat.completions.create(
@@ -138,10 +140,19 @@ def convert_legal_docs() -> None:
                 text = ocr_pdf(path).strip()
             except Exception as error:
                 print(f"OCR failed: {path.name} — {error}")
+        # Bỏ bảng rỗng (khung kẻ dòng của trang giấy làm bài), dòng chỉ có số
+        # trang, rồi gộp dòng trống.
+        text = re.sub(r"^\|[ |]*\|[ \t]*\n\|[ |:-]*\|[ \t]*$", "", text, flags=re.M)
+        text = re.sub(r"^\|[ |]*\|[ \t]*$", "", text, flags=re.M)
+        text = re.sub(r"^\s*\d{1,3}\s*$", "", text, flags=re.M)
+        text = re.sub(r"\n{3,}", "\n\n", text).strip()
+        # pdfminer không map được glyph en-dash trong khoảng số ("0–9" thành "0?9").
+        text = re.sub(r"(?<=\d)\?(?=\d)", "–", text)
         if not text:
             print(f"Skip (empty): {path.name}")
             continue
-        header = f"# {path.stem.replace('-', ' ').title()}\n\n**File:** {path.name}\n\n"
+        title = path.stem.replace("-", " ").title().replace("Ielts", "IELTS")
+        header = f"# {title}\n\n**File:** {path.name}\n\n"
         if path.name in LEGAL_SOURCES:
             header += f"**Source:** {LEGAL_SOURCES[path.name]}\n\n"
         target.write_text(header + "---\n\n" + text + "\n", encoding="utf-8")

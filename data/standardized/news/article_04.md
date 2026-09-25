@@ -41,14 +41,3 @@ All the best with your IELTS test.
 #### Share this article
 ##### Content tags
 WritingPreparation
-[View all articles](https://ielts.idp.com/about/news-and-articles)
-[ Preparation IELTS on computer: Advantages, sample questions and answers 30mins read ](https://ielts.idp.com/about/article-advantages-ielts-on-computer)
-[ 9 myths about the IELTS Listening test you should not believe! ](https://ielts.idp.com/prepare/article-ielts-listening-test-myths-debunk)
-[ Preparation How to Answer Multiple-Choice Questions in the IELTS Reading Test 15mins read ](https://ielts.idp.com/prepare/article-how-to-answer-multiple-choice-in-the-ielts-reading-test)
-[ Test day English teacher Jay does IELTS on computer 5mins read ](https://ielts.idp.com/prepare/article-english-teacher-jay-does-computer-delivered-ielts)
-[ Test day IELTS Dos and Don'ts - Be your best on test day 5mins read ](https://ielts.idp.com/prepare/article-d-is-for-dos-and-donts)
-[ Preparation Get the best IELTS score as a native speaker ](https://ielts.idp.com/prepare/article-best-ielts-score-for-native-speakers)
-[ What to do after IELTS: Study, Migration & Work ](https://ielts.idp.com/prepare/article-after-ielts-exam)
-[ Immigration Tips to claim superior English for your Points Test Visa 5mins read ](https://ielts.idp.com/prepare/article-5-tips-to-claim-superior-english-for-your-points-test-visa)
-[ Immigration IELTS General Training or PTE Core: Which test is better for migration to Canada? 5mins read ](https://ielts.idp.com/news/article-ielts-general-training-or-pte-core-which-test-is-better-for-migration-to-canada)
-[ Immigration Achieve Your Dream of Migrating to Canada with IELTS 5mins read ](https://ielts.idp.com/news/article-achieve-your-dream-of-migrating-to-canada-with-ielts)

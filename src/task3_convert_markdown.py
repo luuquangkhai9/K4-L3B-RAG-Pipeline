@@ -64,6 +64,46 @@ def _is_fresh(source: Path, output: Path) -> bool:
     return output.exists() and output.stat().st_mtime >= source.stat().st_mtime
 
 
+MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\([^)]*\)")
+
+
+def _link_ratio(line: str) -> float:
+    """Tỉ lệ ký tự của dòng nằm trong cú pháp link Markdown."""
+    if not line.strip():
+        return 0.0
+    inside = sum(len(match) for match in MARKDOWN_LINK.findall(line))
+    return inside / len(line)
+
+
+def strip_trailing_link_block(text: str, threshold: float = 0.5) -> str:
+    """Bỏ khối link điều hướng ở cuối bài (ví dụ mục "Có thể bạn quan tâm").
+
+    Các trang IDP để lại một cụm bài viết liên quan toàn link ở cuối. Nếu giữ,
+    chúng thành những chunk chỉ toàn link, làm giảm context precision khi truy
+    vấn. Chỉ cắt phần đuôi có mật độ link cao, không đụng tới thân bài.
+    """
+    lines = text.rstrip().splitlines()
+    cut = len(lines)
+    removed_any = False
+
+    while cut > 0:
+        line = lines[cut - 1]
+        if not line.strip():
+            cut -= 1
+            continue
+        if _link_ratio(line) > threshold:
+            cut -= 1
+            removed_any = True
+            continue
+        # Tiêu đề dẫn vào khối vừa bị bỏ thì bỏ luôn.
+        if removed_any and line.lstrip().startswith("#"):
+            cut -= 1
+            continue
+        break
+
+    return "\n".join(lines[:cut]).rstrip()
+
+
 def _clean_cell(cell: object) -> str:
     """Gộp khoảng trắng và xuống dòng bên trong một ô của bảng PDF."""
     return " ".join(str(cell or "").split())
@@ -209,6 +249,11 @@ def convert_news_articles() -> int:
             print(f"Failed: {path.name} — content_markdown rỗng")
             continue
 
+        cleaned = strip_trailing_link_block(body)
+        if len(cleaned) < 200:
+            print(f"Cảnh báo: {path.name} — lọc link làm nội dung còn {len(cleaned)} ký tự, giữ bản gốc")
+            cleaned = body
+
         url = str(data.get("url", "")).strip()
         output.write_text(
             _header(
@@ -218,12 +263,12 @@ def convert_news_articles() -> int:
                 source=urlparse(url).netloc or path.stem,
                 url=url,
             )
-            + body
+            + cleaned
             + "\n",
             encoding="utf-8",
         )
         converted += 1
-        print(f"Saved: {output.name} — {len(body):,} ký tự")
+        print(f"Saved: {output.name} — {len(cleaned):,} ký tự (bỏ {len(body) - len(cleaned):,} ký tự link điều hướng)")
 
     return converted
 

@@ -1,5 +1,17 @@
 # Day 8 — RAG Pipeline
 
+## Đề tài nhóm
+
+**IELTS Writing** — band descriptors, tiêu chí chấm điểm và bài viết mẫu.
+
+Corpus gồm 9 tài liệu lấy từ nguồn chính thức:
+
+- 4 tài liệu chính sách (ielts.org): Writing Band Descriptors, Writing Key Assessment
+  Criteria, Sample Candidate Writing Responses kèm band score và nhận xét giám khảo,
+  đề Academic Writing bản Modified Large Print.
+- 5 bài viết (ielts.org và ielts.idp.com) về cách tổ chức thi, hướng dẫn viết Task 1/2
+  và mẹo đạt điểm cao.
+
 ## Mục tiêu
 
 Mỗi nhóm xây dựng một chatbot RAG trả lời câu hỏi từ bộ tài liệu do nhóm thu thập. Sản phẩm phải có hybrid retrieval, citation, giao diện chat và báo cáo đánh giá.
@@ -14,7 +26,7 @@ Nhóm tự chọn bài toán và thu thập dữ liệu phù hợp; repo không 
 - Chatbot Streamlit hiển thị câu trả lời và nguồn đã dùng.
 - Golden dataset tối thiểu 15 câu; đánh giá 4 metric và so sánh A/B.
 - `group_project/evaluation/RESULT.md`.
-- Mỗi thành viên nộp báo cáo cá nhân theo template trong `group_project/ịndividual/INDIVIDUAL_REPORT.md`.
+- Mỗi thành viên nộp báo cáo cá nhân theo template trong `reports/INDIVIDUAL_REPORT.md`.
 
 ## Quick start
 
@@ -29,6 +41,12 @@ cp .env.example .env
 
 Điền API key cần dùng trong `.env`; không commit file này.
 
+Nhóm dùng gateway OpenAI-compatible nên `.env` cần thêm `OPENAI_BASE_URL`. Đặt
+`EMBEDDING_PROVIDER=openai` với model `text-embedding-v4` (1024 chiều) và
+`LLM_PROVIDER=openai` với model `qwen3.8-flash`. Không cần cài
+`sentence-transformers`; nếu muốn dùng embedding local thì cài thêm
+`pip install -e ".[local-embedding]"`.
+
 ```bash
 # 1. Thu thập và chuẩn hoá
 python -m src.task1_collect_legal_docs
@@ -39,8 +57,12 @@ python -m src.task3_convert_markdown
 python -m src.task4_chunking_indexing
 pytest -q
 
-# 3. Chạy sản phẩm
+# 3. Hiệu chỉnh threshold và chạy sản phẩm
+python -m src.calibrate_threshold
 streamlit run app.py
+
+# 4. Đánh giá
+python -m src.evaluation
 ```
 
 ## Lộ trình 3 giờ
@@ -67,7 +89,7 @@ streamlit run app.py
 - [Module contracts](docs/MODULE_CONTRACTS.md): schema, interface và invariant mà code/test nên tuân theo.
 - [Step-by-step guide](docs/STEP_BY_STEP.md): thứ tự triển khai và tiêu chí hoàn thành từng bước.
 - [Grading rubric](docs/GRADING_RUBRIC.md): Rubric thang điểm.
-- [Individual report](group_project/ịndividual/INDIVIDUAL_REPORT.md): template báo cáo cá nhân.
+- [Individual report](reports/INDIVIDUAL_REPORT.md): template báo cáo cá nhân.
 - [Suggested topics](docs/SUGGESTED_TOPICS.md): danh sách chủ đề tham khảo, không bắt buộc.
 
 ## Kiểm tra

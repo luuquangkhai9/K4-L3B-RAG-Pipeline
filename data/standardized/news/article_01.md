@@ -26,5 +26,3 @@ All current paper-based test results are not affected and will remain valid unti
 Note, the Secure English Language Test (SELT) for UK Visas & Immigration purposes will only be available in the fully digital format.
 
 One Skill Retake will now be available for Writing on Paper but must be taken in the same delivery mode as the original test. If a test taker chose Writing on Paper, their One Skill Retake must also be done with Writing on Paper and not writing on computer.
-
-Visit our [IELTS booking page](https://ielts.org/test-centres "Find available IELTS test dates and locations on the IELTS booking page") to find available test dates.

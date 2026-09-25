@@ -19,6 +19,7 @@ Chạy: python -m src.evaluation
 import json
 import os
 import statistics
+import time
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -36,6 +37,9 @@ LLM_MODEL = os.getenv("LLM_MODEL", "")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-v4")
 
 METRIC_NAMES = ["faithfulness", "answer_relevancy", "context_recall", "context_precision"]
+
+# Số lần thử lại khi gateway đóng kết nối keep-alive giữa chừng.
+CONNECTION_RETRIES = 4
 
 CONFIGS = {
     "A_dense_only": {"label": "A — dense-only", "use_reranking": False},
@@ -66,7 +70,20 @@ def _openai_client(*, disable_thinking: bool = False):
         body = dict(kwargs.get("extra_body") or {})
         body.setdefault("enable_thinking", False)
         kwargs["extra_body"] = body
-        return original_create(*args, **kwargs)
+
+        # Gateway định kỳ đóng kết nối keep-alive, và httpx tái dùng kết nối đã
+        # chết nên lỗi trả về tức thì ("Connection error", Total attempts: 1).
+        # Thử lại vài lần để có kết nối mới thay vì mất luôn cả điểm số.
+        last_error: Exception | None = None
+        for attempt in range(CONNECTION_RETRIES):
+            try:
+                return original_create(*args, **kwargs)
+            except Exception as error:
+                last_error = error
+                if "onnection" not in str(error) or attempt == CONNECTION_RETRIES - 1:
+                    raise
+                time.sleep(1.0 * (attempt + 1))
+        raise last_error  # pragma: no cover - vòng lặp luôn raise hoặc return
 
     client.chat.completions.create = create
     return client
@@ -112,6 +129,23 @@ def _answer_from_chunks(query: str, chunks: list[dict]) -> str:
         return SAFE_REFUSAL
 
 
+def _save(payload: dict) -> None:
+    RUNS_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _load_partial_scores() -> list[dict]:
+    """Điểm đã chấm ở lần chạy trước (nếu có), để không phải chấm lại."""
+    if not RUNS_PATH.exists():
+        return []
+    try:
+        payload = json.loads(RUNS_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return []
+    if isinstance(payload, dict):
+        return payload.get("scores", []) or []
+    return []
+
+
 def collect_rows(force: bool = False) -> list[dict]:
     """Chạy retrieval + generation cho cả hai config trên golden dataset.
 
@@ -154,7 +188,7 @@ def collect_rows(force: bool = False) -> list[dict]:
             )
             print(f"  [{index:2}/{len(golden)}] {item['question'][:58]}")
 
-    RUNS_PATH.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    _save({"rows": rows, "scores": []})
     print(f"\nĐã lưu {len(rows)} dòng vào {RUNS_PATH.name}")
     return rows
 
@@ -177,10 +211,14 @@ def score_rows(rows: list[dict]) -> list[dict]:
     # Gateway api.ai-box.vn giới hạn ~1 request đồng thời: đo được 8 request song
     # song mất 22.1s trong khi 3 request tuần tự chỉ mất 4.5s. Để max_workers mặc
     # định (16) thì request xếp hàng, vượt timeout rồi retry nên càng chậm.
-    run_config = RunConfig(max_workers=2, timeout=600, max_retries=2)
-    scored: list[dict] = []
+    run_config = RunConfig(max_workers=1, timeout=600, max_retries=1)
+    scored: list[dict] = _load_partial_scores()
 
     for config_key, config in CONFIGS.items():
+        if any(row["config"] == config_key for row in scored):
+            print(f"\nBỏ qua config {config['label']} — đã chấm trước đó.")
+            continue
+
         subset = [row for row in rows if row["config"] == config_key]
         samples = [
             SingleTurnSample(
@@ -210,7 +248,12 @@ def score_rows(rows: list[dict]) -> list[dict]:
             )
             print(f"  {row['question'][:52]}")
 
-    RUNS_PATH.write_text(json.dumps({"rows": rows, "scores": scored}, ensure_ascii=False, indent=2), encoding="utf-8")
+        # Lưu ngay sau mỗi config: chấm điểm tốn thời gian và gateway có thể đứt
+        # kết nối giữa chừng, không nên mất công đã chấm.
+        _save({"rows": rows, "scores": scored})
+        print(f"  -> đã lưu điểm của {config['label']}")
+
+    _save({"rows": rows, "scores": scored})
     return scored
 
 
